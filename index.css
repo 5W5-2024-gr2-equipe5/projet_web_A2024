@@ -1,3 +1,12 @@
+:root {
+  --color1: #FF8C00; /* orange */
+  --color2: #7FFFD4; /* turquoise */
+  --color3: #FFFF00; /* yellow */
+  --color4: #F5F5DC; /* off-white */
+  --color5: #191970; /* navy blue */
+}
+
+
 @font-face {
   font-family: "Poppins-Black";
   src: url("fonts/Poppins-Black.ttf") format("truetype");
@@ -201,26 +210,30 @@ footer {
   text-align: center;
 }
 /*hover menu*/
-.test {
-  &.alternative {
-      --color-hover: #2B3044;
-      --background: #362A89;
-      --hover-back: #6D58FF;
-      --hover-front: #F6F8FF;
-  }
-  &.simple {
-      --background: #275EFE;
-      --background-hover: #1749DB;
-  }
+.test.alternative {
+  background-color: var(--background);
+}
+
+.test.alternative:hover {
+  background-color: var(--hover-back);
+  color: var(--hover-front);
+}
+
+.test.simple {
+  background-color: var(--background);
+}
+
+.test.simple:hover {
+  background-color: var(--background-hover);
 }
 
 .test {
-  --color: #fff;
-  --color-hover: var(--color);
-  --background: #2B3044;
-  --background-hover: var(--background);
-  --hover-back: #6D58FF;
-  --hover-front: #5C86FF;
+  --color: var(--color4); /* off-white */
+  --color-hover: var(--color4); /* off-white */
+  --background: var(--color1); /* orange */
+  --background-hover: var(--color5); /* navy blue */
+  --hover-back: var(--color1); /* orange */
+  --hover-front: var(--color5); /* navyblue */
   padding: 8px 28px;
   border-radius: 20px;
   line-height: 24px;
@@ -238,6 +251,7 @@ footer {
   color: var(--c, var(--color));
   background: var(--b, var(--background));
   transition: color .2s linear var(--c-d, .2s), background .3s linear var(--b-d, .2s);
+  margin:10px;
   &:not(.simple) {
       &:before,
       &:after {
@@ -250,6 +264,7 @@ footer {
           height: 200%;
           border-radius: var(--br, 40%);
           transform: translateY(var(--y, 50%));
+          /* temps animation */
           transition: transform var(--d, .4s) ease-in var(--d-d, 0s), border-radius .5s ease var(--br-d, .08s);
 
       }
@@ -266,7 +281,8 @@ footer {
           display: block;
           backface-visibility: hidden;
           transform: translateZ(0);
-          animation: var(--name, none) .7s linear forwards .18s;
+          /* temps animation  */
+          animation: var(--name, none) .5s linear forwards .18s;
       }
   }
   &.in {
@@ -318,4 +334,4 @@ footer {
       transform: translateY(calc(2px * var(--move))) translateZ(0) rotate(calc(3deg * var(--rotate) * var(--part)));
   }
 }
-
+/************************************************************************************************************************/
