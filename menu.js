@@ -1,3 +1,5 @@
+/****burger icon****/
+
 document.addEventListener('DOMContentLoaded', function() {
   const burger = document.getElementById('openBtn');
   const menu = document.querySelector('.menu');
@@ -8,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-/********button */
+/********button menu *******/
 document.querySelectorAll('.test').forEach(button => {
 
   let div = document.createElement('div'),
@@ -49,3 +51,4 @@ document.querySelectorAll('.test').forEach(button => {
   });
 
 });
+
