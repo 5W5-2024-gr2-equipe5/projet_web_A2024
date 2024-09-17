@@ -170,27 +170,18 @@ header {
   .menu ul {
     display: flex;
     flex-direction: row;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
   }
 
-  .menu > ul > li {
-    position: static;
+  .menu ul li {
+    position: relative;
+    display: inline-block;
   }
 
   .menu > ul > li > a {
     padding: 0.5rem 1rem;
-  }
-
-  .sous-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #444;
-    width: 200px;
-  }
-
-  .menu > ul > li:hover > .sous-menu {
-    display: block;
   }
 
   #closeBtn {
@@ -199,6 +190,22 @@ header {
 
   .burger {
     display: none;
+  }
+  /* Fixe pour le menu/sousmenu pour desktop*/
+  .menu ul li ul.sous-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #444;
+  }
+  
+  .menu ul li:hover ul.sous-menu {
+    display: block;
+  }
+  
+  .menu ul li ul.sous-menu li {
+    display: block;
   }
 }
 
@@ -335,3 +342,4 @@ footer {
   }
 }
 /************************************************************************************************************************/
+
