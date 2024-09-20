@@ -195,7 +195,13 @@ footer {
   background-color: var(--color5);
   color: white;
   padding: 1rem;
-  text-align: center;
+}
+
+footer div {
+  margin-left: 30%;
+  margin-right: 30%;
+}
+.map {
 }
 /************************************hover menu****************************/
 .test.alternative {
