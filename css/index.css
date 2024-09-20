@@ -1,20 +1,5 @@
-:root {
-  --color1: #ff7b00; /* orange */
-  --color2: #59b4d0; /* turquoise */
-  --color3: #ece639; /* yellow */
-  --color4: #f0f0c2; /* beige */
-  --color5: #260f51; /* navy blue */
-}
-
-@font-face {
-  font-family: "Poppins-Regular";
-  src: url("fonts/Poppins-Regular.ttf") format("truetype");
-  font-weight: normal;
-}
-
-body {
-  margin: 0;
-  font-family: "Poppins-Regular", sans-serif;
+* {
+  scroll-behavior: smooth;
 }
 
 header {
@@ -23,7 +8,7 @@ header {
   justify-content: center;
   align-items: center;
   padding: 2rem;
-  background-color: #333;
+  background: var(--color5);
   color: white;
 }
 
@@ -70,25 +55,12 @@ header {
 /********************************/
 
 /* Menu Styles */
-
-.menu {
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  background-color: #333;
-  width: 100%;
-}
-
-.menu.active {
-  display: flex;
-}
-
 /* Mobile Menu */
 .menu {
   display: none;
   flex-direction: column;
   align-items: center;
-  background-color: #333;
+  background-color: var(--color4);
   width: 100%;
 }
 
@@ -107,7 +79,7 @@ header {
 }
 
 .menu > ul > li > a {
-  color: white;
+  color: var(--color4);
   text-decoration: none;
   padding: 1rem;
   display: block;
@@ -120,7 +92,7 @@ header {
 
 .sous-menu {
   display: none;
-  background-color: #444;
+  background-color: var(--color4);
   list-style: none;
   margin: 0;
   padding: 0;
@@ -128,13 +100,13 @@ header {
 
 .sous-menu li a {
   padding: 1rem;
-  color: white;
+  color: var(--color5);
   text-decoration: none;
   display: block;
 }
 
 .sous-menu li a:hover {
-  background-color: #555;
+  background-color: var(--color2);
 }
 
 #closeBtn {
@@ -195,7 +167,7 @@ header {
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: #444;
+    background-color: var(--color4);
   }
 
   .menu ul li:hover ul.sous-menu {
@@ -207,14 +179,25 @@ header {
   }
 }
 
-/* Footer and Other Styles */
+/* **********************video*********************** */
+.video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: black;
+  color: white;
+  max-height: 65vh; /*lespace que le video prend*/
+}
+
+/* ******************************Footer **************************/
 footer {
-  background-color: #333;
+  background-color: var(--color5);
   color: white;
   padding: 1rem;
   text-align: center;
 }
-/*hover menu*/
+/************************************hover menu****************************/
 .test.alternative {
   background-color: var(--background);
 }
@@ -236,9 +219,9 @@ footer {
   --color: var(--color4); /* off-white */
   --color-hover: var(--color4); /* off-white */
   --background: var(--color1); /* orange */
-  --background-hover: var(--color5); /* navy blue */
+  --background-hover: var(--color2); /* navy blue */
   --hover-back: var(--color1); /* orange */
-  --hover-front: var(--color5); /* navyblue */
+  --hover-front: var(--color2); /* navyblue */
   padding: 8px 28px;
   border-radius: 20px;
   line-height: 24px;
