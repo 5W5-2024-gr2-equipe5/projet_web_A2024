@@ -14,7 +14,7 @@ header {
 
 .logo img {
   height: 40px;
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
 }
 
 /* Burger Menu Styles */
@@ -53,6 +53,23 @@ header {
   top: -7.5px;
 }
 /********************************/
+
+/* previent avoir du blanc */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+@media (max-width: 600px) {
+  .container {
+      width: 100%;
+      padding: 0;
+  }
+}
+
+
+
 
 /* Menu Styles */
 /* Mobile Menu */
@@ -168,6 +185,7 @@ header {
     top: 100%;
     left: 0;
     background-color: var(--color4);
+    z-index: 10;
   }
 
   .menu ul li:hover ul.sous-menu {
@@ -185,9 +203,17 @@ header {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: black;
-  color: white;
-  max-height: 65vh; /*lespace que le video prend*/
+  background-color: var(--color5);
+  max-height: 65vh;
+  overflow: hidden; 
+  z-index:  1;
+}
+.video video {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  box-sizing: border-box;
+  border-radius: 20px;
 }
 
 /* ******************************Footer **************************/
@@ -336,3 +362,39 @@ footer div {
   }
 }
 /************************************************************************************************************************/
+/* Style pour logos sociaux */
+.social-icons a {
+  display: inline-block;
+  font-size: 30px; 
+  margin: 0 10px;
+  transition: transform 0.3s ease;
+  color: var(--color1);
+}
+
+.social-icons a:hover {
+  transform: translateY(-10px); 
+  animation: bounce 0.6s ease-in-out;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+/* S'inscription*/
+.inscription {
+  color: white;
+  text-decoration: none;
+}
+.inscription:visited {
+  color: white;
+}
+
+/*  */
+
+
+
+
