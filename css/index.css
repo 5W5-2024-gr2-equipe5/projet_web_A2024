@@ -203,7 +203,7 @@ html, body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: var(--color5);
+  background-color: #000000;
   max-height: 65vh;
   overflow: hidden; 
   z-index:  1;
@@ -212,18 +212,16 @@ html, body {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
-  box-sizing: border-box;
-  border-radius: 20px;
 }
 
 /* ******************************Footer **************************/
-footer {
+.footer {
   background-color: var(--color5);
   color: white;
   padding: 1rem;
 }
 
-footer div {
+.footer div {
   margin-left: 30%;
   margin-right: 30%;
 }
@@ -393,8 +391,33 @@ footer div {
   color: white;
 }
 
+/*BANDE ROLLE LOGOS*/
+.carousel {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  background: var(--color5);
+}
+
+.wrapper {
+  display: flex;
+  animation: scroll 15s linear infinite;
+  padding-top: 10px;
+}
+
+.wrapper img {
+  width: 100px; 
+  padding: 10px; 
+  margin-right: 5px;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
 /*  */
-
-
-
 
