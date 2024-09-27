@@ -397,6 +397,7 @@ html, body {
   overflow: hidden;
   position: relative;
   background: var(--color5);
+  
 }
 
 .wrapper {
