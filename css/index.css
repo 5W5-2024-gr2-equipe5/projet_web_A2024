@@ -82,7 +82,7 @@ html, body {
 }
 
 .menu.active {
-  display: flex;
+  display: flex;  
 }
 
 .menu ul {
