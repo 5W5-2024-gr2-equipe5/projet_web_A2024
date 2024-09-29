@@ -235,19 +235,75 @@ html, body {
 /* ************************************************** */
 
 /* ******************************Footer **************************/
+
 .footer {
   background-color: var(--color5);
+  padding: 20px;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer h2 {
+  margin-bottom: 10px;
   color: white;
-  padding: 1rem;
 }
 
-.footer div {
-  margin-left: 30%;
-  margin-right: 30%;
+.map-info iframe {
+  max-width: 100%;
+  border: 0;
+}
+.footer p {
+  color: white;
 }
 
-.map {
+/* S'inscription*/
+.inscription {
+  color: white;
+  text-decoration: none;
 }
+.inscription:visited {
+  color: white;
+}
+
+/*(mobile-first style) */
+.inscription-logo,
+.sociaux {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inscription-logo img {
+  width: 100px;
+  margin-top: 10px;
+}
+
+.social-icons a {
+  margin: 0 10px;
+  font-size: 24px;
+}
+
+/* Media query pour ecran plus large */
+@media screen and (min-width: 768px) {
+  .footer-content {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .map-info, .inscription-logo, .sociaux {
+    flex: 1;
+    margin: 0 10px;
+  }
+
+  .inscription-logo img {
+    width: 100px;
+  }
+}
+
 /************************************hover menu****************************/
 .test.alternative {
   background-color: var(--background);
@@ -394,6 +450,7 @@ html, body {
 .social-icons a:hover {
   transform: translateY(-10px); 
   animation: bounce 0.6s ease-in-out;
+  color: var(--color4);
 }
 
 @keyframes bounce {
@@ -403,14 +460,6 @@ html, body {
   50% {
     transform: translateY(-10px);
   }
-}
-/* S'inscription*/
-.inscription {
-  color: white;
-  text-decoration: none;
-}
-.inscription:visited {
-  color: white;
 }
 
 /*BANDE ROLLE LOGOS*/
@@ -441,13 +490,6 @@ html, body {
     transform: translateX(-100%);
   }
 }
-/*  Logo Maisonneuve*/
-.logoM9{
-  width: 50px;
-  padding: 10px;
-  margin-right: 5px;
-}
-
 /* MENU de bas ver le haut seulement en Mobile */
 @media (max-width: 768px) {
   @keyframes slideUp {
