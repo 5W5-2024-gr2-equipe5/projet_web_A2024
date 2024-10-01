@@ -52,4 +52,12 @@ document.querySelectorAll('.test').forEach(button => {
 
 });
 // 
-
+document.querySelectorAll('.banner .slider .item').forEach(item => {
+    item.addEventListener('mouseenter', () => {
+      item.querySelector('.popup-message').style.display = 'block';
+    });
+  
+    item.addEventListener('mouseleave', () => {
+      item.querySelector('.popup-message').style.display = 'none';
+    });
+  });

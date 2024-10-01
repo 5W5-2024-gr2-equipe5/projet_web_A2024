@@ -33,7 +33,7 @@ header {
   height: 2.5px;
   margin-bottom: 5px;
   border-radius: 5px;
-  background-color: #fff;
+  background-color: var(--color1);
   position: relative;
   top: 0;
   transition: all 0.3s ease-in-out;
@@ -59,7 +59,7 @@ html, body {
   margin: 0;
   padding: 0;
   width: 100%;
-  overflow-x: hidden; /* Prevent horizontal scroll */
+  overflow-x: hidden;
 }
 @media (max-width: 600px) {
   .container {
@@ -67,10 +67,6 @@ html, body {
       padding: 0;
   }
 }
-
-
-
-
 /* Menu Styles */
 /* Mobile Menu */
 .menu {
@@ -82,7 +78,7 @@ html, body {
 }
 
 .menu.active {
-  display: flex;  
+  display: flex;
 }
 
 .menu ul {
@@ -203,25 +199,494 @@ html, body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #000000;
-  max-height: 65vh;
+  background-color: var(--color5);
+  max-height: 75vh;
   overflow: hidden; 
-  z-index:  1;
+  z-index: 1; 
 }
+
 .video video {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
+ 
 }
 
+/* Media query pour responsive video*/
+@media (max-width: 768px) {
+  .video {
+    height: 50vh;
+    max-height: 50vh;
+  }
+  /* prevenir que le sous-menu ne interact pas avec la video
+  .sous-menu li{
+    display: none;
+  } */
+}
+
+@media (max-width: 480px) {
+  .video {
+    height: 30vh;
+    max-height: 30vh;
+  }
+}
+/* ************************************************** */
+
 /* ******************************Footer **************************/
+
 .footer {
+  background-color: var(--color5);
+  padding: 20px;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer h2 {
+  margin-bottom: 10px;
+  color: white;
+}
+
+.map-info iframe {
+  max-width: 100%;
+  border: 0;
+}
+.footer p {
+  color: white;
+}
+
+/* S'inscription*/
+.inscription {
+  color: white;
+  text-decoration: none;
+}
+.inscription:visited {
+  color: white;
+}
+
+/*(mobile-first style) */
+.inscription-logo,
+.sociaux {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inscription-logo img {
+  width: 100px;
+  margin-top: 10px;
+}
+
+.social-icons a {
+  margin: 0 10px;
+  font-size: 24px;
+}
+
+/* Media query pour ecran plus large */
+@media screen and (min-width: 768px) {
+  .footer-content {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .map-info, .inscription-logo, .sociaux {
+    flex: 1;
+    margin: 0 10px;
+  }
+
+  .inscription-logo img {
+    width: 100px;
+  }
+}
+
+/************************************hover menu****************************/
+.test.alternative {
+  background-color: var(--background);
+}
+
+.test.alternative:hover {
+  background-color: var(--hover-back);
+  color: var(--hover-front);
+}
+
+.test.simple {
+  background-color: var(--background);
+}
+
+.test.simple:hover {
+  background-color: var(--background-hover);
+}
+
+.test {
+  --color: var(--color4); 
+  --color-hover: var(--color4); 
+  --background: var(--color1); 
+  --background-hover: var(--color2); 
+  --hover-back: var(--color1); 
+  --hover-front: var(--color2); 
+  padding: 8px 28px;
+  border-radius: 20px;
+  line-height: 24px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border: none;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  color: var(--c, var(--color));
+  background: var(--b, var(--background));
+  transition: color 0.2s linear var(--c-d, 0.2s),
+    background 0.3s linear var(--b-d, 0.2s);
+  margin: 10px;
+  &:not(.simple) {
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      background: var(--pb, var(--hover-back));
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 200%;
+      border-radius: var(--br, 40%);
+      transform: translateY(var(--y, 50%));
+      /* temps animation */
+      transition: transform var(--d, 0.4s) ease-in var(--d-d, 0s),
+        border-radius 0.5s ease var(--br-d, 0.08s);
+    }
+    &:after {
+      --pb: var(--hover-front);
+      --d: 0.44s;
+    }
+  }
+  div {
+    z-index: 1;
+    position: relative;
+    display: flex;
+    span {
+      display: block;
+      backface-visibility: hidden;
+      transform: translateZ(0);
+      /* temps animation  */
+      animation: var(--name, none) 0.5s linear forwards 0.18s;
+    }
+  }
+  &.in {
+    --name: move;
+    &:not(.out) {
+      --c: var(--color-hover);
+      --b: var(--background-hover);
+      &:before,
+      &:after {
+        --y: 0;
+        --br: 5%;
+      }
+      &:after {
+        --br: 10%;
+        --d-d: 0.02s;
+      }
+    }
+    &.out {
+      --name: move-out;
+      &:before {
+        --d-d: 0.06s;
+      }
+    }
+  }
+}
+
+@keyframes move {
+  30%,
+  36% {
+    transform: translateY(calc(-6px * var(--move))) translateZ(0)
+      rotate(calc(-13deg * var(--rotate) * var(--part)));
+  }
+  50% {
+    transform: translateY(calc(3px * var(--move))) translateZ(0)
+      rotate(calc(6deg * var(--rotate) * var(--part)));
+  }
+  70% {
+    transform: translateY(calc(-2px * var(--move))) translateZ(0)
+      rotate(calc(-3deg * var(--rotate) * var(--part)));
+  }
+}
+
+@keyframes move-out {
+  30%,
+  36% {
+    transform: translateY(calc(6px * var(--move))) translateZ(0)
+      rotate(calc(13deg * var(--rotate) * var(--part)));
+  }
+  50% {
+    transform: translateY(calc(-3px * var(--move))) translateZ(0)
+      rotate(calc(-6deg * var(--rotate) * var(--part)));
+  }
+  70% {
+    transform: translateY(calc(2px * var(--move))) translateZ(0)
+      rotate(calc(3deg * var(--rotate) * var(--part)));
+  }
+}
+/************************************************************************************************************************/
+
+/* Style pour logos sociaux */
+.social-icons a {
+  display: inline-block;
+  font-size: 30px; 
+  margin: 0 10px;
+  transition: transform 0.3s ease;
+  color: var(--color1);
+}
+
+.social-icons a:hover {
+  transform: translateY(-10px); 
+  animation: bounce 0.6s ease-in-out;
+  color: var(--color4);
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/*BANDE ROLLE LOGOS*/
+.carousel {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  background: var(--color5);
+  
+}
+.wrapper {
+  display: flex;
+  animation: scroll 15s linear infinite;
+  padding-top: 10px;
+}
+
+.wrapper img {
+  width: 100px; 
+  padding: 10px; 
+  margin-right: 5px;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+/* MENU de bas ver le haut seulement en Mobile */
+@media (max-width: 768px) {
+  @keyframes slideUp {
+    0% {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  .menu {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 85vh;
+    background-color: var(--color5);
+    transform: translateY(100%);
+    opacity: 0;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    z-index: 1000;
+  }
+
+  .menu.active {
+    animation: slideUp 0.3s forwards;
+  }
+}
+
+/* Style pour le banner */
+.banner .slider .item figure {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.banner .slider .item figcaption {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: var(--color2);
+  color: white;
+  text-align: center; 
+  padding: 5px 0; 
+  font-size: 14px; 
+  box-sizing: border-box; 
+  z-index: 1; 
+}
+
+.banner {
+  width: 100%;
+  height: 40vh;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  background-color: var(--color5);
+  
+}
+
+.banner .slider {
+  position: absolute;
+  width: 150px;
+  height: 200px;
+  top: 10%;
+  left: calc(50% - 75px);
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+  animation: autoRun 20s linear infinite;
+  z-index: 2;
+}
+
+.banner .slider:hover {
+  animation-play-state: paused;
+}
+
+@keyframes autoRun {
+  from {
+    transform: perspective(1000px) rotateX(-16deg) rotateY(0deg);
+  }
+  to {
+    transform: perspective(1000px) rotateX(-16deg) rotateY(360deg);
+  }
+}
+
+.banner .slider .item {
+  position: absolute;
+  inset: 0 0 0 0;
+  transform: rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+    translateZ(400px);
+}
+
+.banner .content {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(1400px, 100vw);
+  height: max-content;
+  padding-bottom: 50px; 
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+}
+
+/* Responsive Banner */
+
+@media screen and (max-width: 1023px) {
+  .banner .slider {
+    width: 120px; 
+    height: 160px; 
+    left: calc(50% - 60px); 
+  }
+  .banner .slider .item {
+    transform: rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+      translateZ(250px); 
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .banner .slider {
+    width: 80px; 
+    height: 120px; 
+    left: calc(50% - 40px); 
+  }
+  .banner .slider .item {
+    transform: rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+      translateZ(150px); 
+  }
+}
+
+@media (max-width: 600px) {
+  .banner .slider .item figcaption {
+    font-size: 1px; 
+    padding: 3px 0; 
+  }
+  .banner {
+    height: 30vh; 
+  }
+}
+
+.banner .slider .item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease; 
+}
+
+.banner .slider .item:hover img {
+  filter: grayscale(0%); 
+}
+
+.popup-message {
+  display: none;
+  position: absolute;
+  bottom: 150px; 
+  left: 50%;
+  transform: translateX(-50%);
+  width: 250px; 
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px; 
+  letter-spacing: normal; 
+  text-align: center; 
+  z-index: 10;
+}
+
+.banner .slider .item:hover .popup-message {
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .popup-message {
+    width: 90%; 
+    bottom: 100px;
+    font-size: 10px; 
+    padding: 5px; 
+    height: auto;
+  }
+  figcaption {
+    display: none;
+  }
+}
+/* ******************************Footer **************************/
+footer {
   background-color: var(--color5);
   color: white;
   padding: 1rem;
 }
 
-.footer div {
+footer div {
   margin-left: 30%;
   margin-right: 30%;
 }
@@ -390,34 +855,3 @@ html, body {
 .inscription:visited {
   color: white;
 }
-
-/*BANDE ROLLE LOGOS*/
-.carousel {
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-  background: var(--color5);
-}
-
-.wrapper {
-  display: flex;
-  animation: scroll 15s linear infinite;
-  padding-top: 10px;
-}
-
-.wrapper img {
-  width: 100px; 
-  padding: 10px; 
-  margin-right: 5px;
-}
-
-@keyframes scroll {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-/*  */
-
