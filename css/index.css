@@ -109,7 +109,6 @@ html, body {
   list-style: none;
   margin: 0;
   padding: 0;
-
 }
 
 .sous-menu li a {
@@ -117,7 +116,6 @@ html, body {
   color: var(--color5);
   text-decoration: none;
   display: block;
-
 }
 
 .sous-menu li a:hover {
@@ -680,4 +678,180 @@ html, body {
   figcaption {
     display: none;
   }
+}
+/* ******************************Footer **************************/
+footer {
+  background-color: var(--color5);
+  color: white;
+  padding: 1rem;
+}
+
+footer div {
+  margin-left: 30%;
+  margin-right: 30%;
+}
+.map {
+}
+/************************************hover menu****************************/
+.test.alternative {
+  background-color: var(--background);
+}
+
+.test.alternative:hover {
+  background-color: var(--hover-back);
+  color: var(--hover-front);
+}
+
+.test.simple {
+  background-color: var(--background);
+}
+
+.test.simple:hover {
+  background-color: var(--background-hover);
+}
+
+.test {
+  --color: var(--color4); /* off-white */
+  --color-hover: var(--color4); /* off-white */
+  --background: var(--color1); /* orange */
+  --background-hover: var(--color2); /* navy blue */
+  --hover-back: var(--color1); /* orange */
+  --hover-front: var(--color2); /* navyblue */
+  padding: 8px 28px;
+  border-radius: 20px;
+  line-height: 24px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border: none;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  color: var(--c, var(--color));
+  background: var(--b, var(--background));
+  transition: color 0.2s linear var(--c-d, 0.2s),
+    background 0.3s linear var(--b-d, 0.2s);
+  margin: 10px;
+  &:not(.simple) {
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      background: var(--pb, var(--hover-back));
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 200%;
+      border-radius: var(--br, 40%);
+      transform: translateY(var(--y, 50%));
+      /* temps animation */
+      transition: transform var(--d, 0.4s) ease-in var(--d-d, 0s),
+        border-radius 0.5s ease var(--br-d, 0.08s);
+    }
+    &:after {
+      --pb: var(--hover-front);
+      --d: 0.44s;
+    }
+  }
+  div {
+    z-index: 1;
+    position: relative;
+    display: flex;
+    span {
+      display: block;
+      backface-visibility: hidden;
+      transform: translateZ(0);
+      /* temps animation  */
+      animation: var(--name, none) 0.5s linear forwards 0.18s;
+    }
+  }
+  &.in {
+    --name: move;
+    &:not(.out) {
+      --c: var(--color-hover);
+      --b: var(--background-hover);
+      &:before,
+      &:after {
+        --y: 0;
+        --br: 5%;
+      }
+      &:after {
+        --br: 10%;
+        --d-d: 0.02s;
+      }
+    }
+    &.out {
+      --name: move-out;
+      &:before {
+        --d-d: 0.06s;
+      }
+    }
+  }
+}
+
+@keyframes move {
+  30%,
+  36% {
+    transform: translateY(calc(-6px * var(--move))) translateZ(0)
+      rotate(calc(-13deg * var(--rotate) * var(--part)));
+  }
+  50% {
+    transform: translateY(calc(3px * var(--move))) translateZ(0)
+      rotate(calc(6deg * var(--rotate) * var(--part)));
+  }
+  70% {
+    transform: translateY(calc(-2px * var(--move))) translateZ(0)
+      rotate(calc(-3deg * var(--rotate) * var(--part)));
+  }
+}
+
+@keyframes move-out {
+  30%,
+  36% {
+    transform: translateY(calc(6px * var(--move))) translateZ(0)
+      rotate(calc(13deg * var(--rotate) * var(--part)));
+  }
+  50% {
+    transform: translateY(calc(-3px * var(--move))) translateZ(0)
+      rotate(calc(-6deg * var(--rotate) * var(--part)));
+  }
+  70% {
+    transform: translateY(calc(2px * var(--move))) translateZ(0)
+      rotate(calc(3deg * var(--rotate) * var(--part)));
+  }
+}
+/************************************************************************************************************************/
+/* Style pour logos sociaux */
+.social-icons a {
+  display: inline-block;
+  font-size: 30px; 
+  margin: 0 10px;
+  transition: transform 0.3s ease;
+  color: var(--color1);
+}
+
+.social-icons a:hover {
+  transform: translateY(-10px); 
+  animation: bounce 0.6s ease-in-out;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+/* S'inscription*/
+.inscription {
+  color: white;
+  text-decoration: none;
+}
+.inscription:visited {
+  color: white;
 }
