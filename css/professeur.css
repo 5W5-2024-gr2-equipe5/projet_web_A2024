@@ -35,7 +35,7 @@ body {
         box-shadow: 1px 5px 15px #1e0e3e;
         position: relative;
         overflow: hidden;
-
+        /* IMAGES PROFS */
         &:nth-of-type(1) {
             background: url("/images/Flirty_Manon.JPG") no-repeat 50% / cover;
         }
@@ -79,7 +79,7 @@ body {
             background: url("/images/LOGOM9.png") no-repeat 50% / cover;
         }
 
-        /* CONTENU */
+        /* CONTENU avant le popup*/
         .content {
             font-size: 1.5rem;
             color: #fff;
@@ -121,7 +121,7 @@ body {
     }
 }
 
-/* CSS for the popup */
+/* CSS for the popup professor */
 .popup {
     display: none;
     position: fixed;
@@ -146,20 +146,18 @@ body {
     transform: translateY(-50%);  
     margin: auto; 
 }
-
-
-    .popup-content h2 {
+.popup-content h2 {
     text-align: center;
     margin-bottom: 20px;
     font-size: 50px;
   }
-  .popup-content blockquote {
+.popup-content blockquote {
     font-size: 20px;
     margin-top: 30px;
     margin-bottom: 20px;
     text-align: center;
   }
-  #popup-description {
+#popup-description {
     font-size: 18px;
     margin-top: 20px;
     margin-bottom: 20px;
