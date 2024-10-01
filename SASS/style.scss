@@ -1,0 +1,24 @@
+/*
+Theme Name: tim
+Theme URI: https://wordpress.org/themes/twentytwenty/
+Author: babyW
+Author URI: https://wordpress.org/
+Description: theme de base developpé pour la refonte du tim
+Version: 1.0
+Requires PHP: 8.1.29
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: theme-name
+*/
+// https://developer.wordpress.org/themes/basics/main-stylesheet-style-css/
+
+/*/////////////////////////////////////////////////*/
+/* sections de pages                               */
+/*/////////////////////////////////////////////////*/
+@import "header";
+@import "footer";
+@import "couleurs";
+@import "front-page";
+@import "liste-cours";
+@import "projets";
+@import "vie-etudiante";

@@ -1,0 +1,39 @@
+/* **********************video*********************** */
+.video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--color5);
+  max-height: 75vh;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.video video {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Media query pour responsive video*/
+@media (max-width: 768px) {
+  .video {
+    height: 50vh;
+    max-height: 50vh;
+  }
+  /* prevenir que le sous-menu ne interact pas avec la video
+  .sous-menu li{
+    display: none;
+  } */
+}
+
+@media (max-width: 480px) {
+  .video {
+    height: 30vh;
+    max-height: 30vh;
+  }
+}
+/* ************************************************** */
+
+/************************************************************************************************************************/
