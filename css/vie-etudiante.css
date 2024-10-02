@@ -1,3 +1,10 @@
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color5);
+  color: var(--color4);
+}
+
 div {
   padding: 10rem;
 }
