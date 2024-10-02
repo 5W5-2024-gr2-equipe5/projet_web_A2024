@@ -5,6 +5,36 @@ body {
   color: var(--color4);
 }
 
+h1 {
+  width: 100%;
+  text-align: center;
+}
+
 div {
   padding: 10rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+div h2,h3{
+  width: 100%;
+}
+
+div img {
+  max-width: 35%;
+}
+
+div p{
+  max-width: 50%;
+}
+
+#event {
+  flex-direction: row-reverse;
+}
+
+#event h2,#event h3 {
+  text-align: end;
 }
