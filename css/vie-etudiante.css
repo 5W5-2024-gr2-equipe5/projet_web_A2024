@@ -27,6 +27,13 @@ h2 {
   border-radius: 40px;
 }
 
+.conteneur-event {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 div h2, div h3{
   width: 100%;
   text-align: center;
