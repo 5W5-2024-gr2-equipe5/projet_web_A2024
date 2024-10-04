@@ -1,68 +1,188 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color5);
+    font-family: "Poppins", sans-serif;
+}
+/* Container acordeon Prof */
 .container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  height: 500px;
-  gap: 10px;
-
-  > div {
-    flex: 0 0 120px;
-    border-radius: 0.5rem;
-    transition: 0.5s ease-in-out;
-    cursor: pointer;
-    box-shadow: 1px 5px 15px #1e0e3e;
-    position: relative;
-    overflow: hidden;
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover; /* Ensure the image covers the container */
-      border-radius: 0.5rem;
-      transition: transform 0.5s ease-in-out; /* Transition for scaling */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 500px;
+    gap: 10px;
+    
+    h2 {
+        font-size: 1.5rem;
+        text-align: center;
+        margin: 0; 
+        padding: 0.5rem 0; 
     }
+    /* PROFESSOR */
+    > div {
+        flex: 0 0 120px;
+        border-radius: 0.5rem;
+        transition: 0.5s ease-in-out;
+        cursor: pointer;
+        box-shadow: 1px 5px 15px #1e0e3e;
+        position: relative;
+        overflow: hidden;
+        /* IMAGES PROFS */
+        &:nth-of-type(1) {
+            background: url("/images/Flirty_Manon.JPG") no-repeat 50% / cover;
+        }
+        &:nth-of-type(2) {
+            background: url("/images/sourire_Greg.JPG") no-repeat 50% / cover;
+        }
+        &:nth-of-type(3) {
+            background: url("/images/memeWorthy_Ahmed.JPG") no-repeat 50% / cover;
+        }
+        &:nth-of-type(4) {
+            background: url("/images/sourire_Mathieu.JPG") no-repeat 50% / cover;
+        }
+        &:nth-of-type(5) {
+            background: url("/images/serious_Vincent.JPG") no-repeat 50% / cover;
+        }
+        &:nth-of-type(6) {
+            background: url("/images/memeWorthy_Eddy.JPG") no-repeat 50% / cover;
+        }
+        &:nth-of-type(7) {
+            background: url("/images/sourire_Caroline.JPG") no-repeat 50% / cover;
+        }
+        &:nth-of-type(8) {
+            background: url("/images/Heeeeyyy_Stephanie.JPG") no-repeat 50% / cover;
+        }
+        &:nth-of-type(9) {
+            background: url("/images/sourire_Denis.JPG") no-repeat 50% / cover;
+        }
+        &:nth-of-type(10) {
+            background: url("/images/memeWorthy_David.JPG") no-repeat 50% / cover;
+        }
+        &:nth-of-type(11) {
+            background: url("/images/thinkin_camille.JPG") no-repeat 50% / cover;
+        }
+        &:nth-of-type(12) {
+            background: url("/images/TryingToBeCool_Martin.JPG") no-repeat 50% / cover;
+        }
+        &:nth-of-type(13) {
+            background: url("/images/LOGOM9.png") no-repeat 50% / cover;
+        }
+        &:nth-of-type(14) {
+            background: url("/images/LOGOM9.png") no-repeat 50% / cover;
+        }
 
-    .content {
-      font-size: 1.5rem;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      padding: 15px;
-      opacity: 0;
-      flex-direction: column;
-      height: 100%;
-      justify-content: flex-end;
-      background: rgb(2, 2, 46);
-      background: linear-gradient(
-        0deg,
-        rgba(2, 2, 46, 0.675) 0%,
-        rgba(255, 255, 255, 0) 100%
-      );
-      transform: translateY(100%);
-      transition: opacity 0.5s ease-in-out, transform 0.5s 0.2s;
-      visibility: hidden;
+        /* CONTENU avant le popup*/
+        .content {
+            font-size: 1.5rem;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            opacity: 0;
+            flex-direction: column;
+            height: 100%;
+            justify-content: flex-end;
+            background: rgb(2, 2, 46);
+            background: linear-gradient(
+                0deg,
+                rgba(2, 2, 46, 0.6755077030812324) 0%,
+                rgba(255, 255, 255, 0) 100%
+            );
+            transform: translatey(100%);
+            transition: opacity 0.5s ease-in-out, transform 0.5s 0.2s;
+            visibility: hidden;
 
-      span {
-        display: block;
-        margin-top: 5px;
-        font-size: 1.2rem;
-      }
+            span {
+                display: block;
+                margin-top: 5px;
+                font-size: 1.2rem;
+            }
+        }
+
+        &:hover {
+            flex: 0 0 250px;
+            box-shadow: 1px 3px 15px #7645d8;
+            transform: translatey(-30px);
+        }
+
+        &:hover .content {
+            opacity: 1;
+            transform: translatey(0%);
+            visibility: visible;
+        }
     }
+}
 
-    &:hover {
-      flex: 0 0 250px;
-      box-shadow: 1px 3px 15px #7645d8;
-      transform: translateY(-30px);
-      
-      img {
-        transform: scale(1.1); /* Scale the image on hover */
-      }
-    }
+/* CSS for the popup professor */
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
 
-    &:hover .content {
-      opacity: 1;
-      transform: translateY(0%);
-      visibility: visible;
-    }
+.popup-content {
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    position: relative;  
+    top: 50%;  
+    transform: translateY(-50%);  
+    margin: auto; 
+}
+.popup-content h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 50px;
   }
+.popup-content blockquote {
+    font-size: 20px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+#popup-description {
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: ce;
+    line-height: 1.6;
+}
+  
+
+
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .popup-content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
