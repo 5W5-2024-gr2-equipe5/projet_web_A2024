@@ -24,7 +24,7 @@ h2 {
   justify-content: center;
   align-items: center;
   background-color: #44a5c27a;
-  border-radius: 4%;
+  border-radius: 40px;
 }
 
 div h2, div h3{
@@ -56,7 +56,6 @@ div h2, div h3{
 
   .div-vie-etudiante h2, .div-vie-etudiante h3{
     width: 100%;
-    text-align: start;
   }
 
   .div-vie-etudiante img {
@@ -67,12 +66,30 @@ div h2, div h3{
     width: 45%;
   }
 
-  #event {
+  #event .conteneur-event {
+    padding: 2rem;
+    display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #44a5c200;
+    margin-bottom: 0;
   }
 
-  #event h2,#event h3 {
-    text-align: end;
+  #event .conteneur-event:nth-of-type(2) {
+    padding: 2rem;
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #44a5c200;
+    margin-bottom: 0;
+  }
+
+  #event h2, #event h3 {
+    text-align: center;
   }
 
   #bourses {
