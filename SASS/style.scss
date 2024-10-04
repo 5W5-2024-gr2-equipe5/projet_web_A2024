@@ -22,3 +22,10 @@ Text Domain: theme-name
 @import "liste-cours";
 @import "projets";
 @import "vie-etudiante";
+
+/*/////////////////////////////////////////////////*/
+/* composants                                      */
+/*/////////////////////////////////////////////////*/
+@import "composants/boutons";
+@import "composants/search";
+@import "composants/liens";
