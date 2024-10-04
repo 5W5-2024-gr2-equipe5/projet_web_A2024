@@ -73,9 +73,13 @@ body {
             background: url("/images/TryingToBeCool_Martin.JPG") no-repeat 50% / cover;
         }
         &:nth-of-type(13) {
+            background: url("/images/crazy_Dominic.JPG") no-repeat 50% / cover;
+        }
+
+        &:nth-of-type(14) {
             background: url("/images/LOGOM9.png") no-repeat 50% / cover;
         }
-        &:nth-of-type(14) {
+        &:nth-of-type(15) {
             background: url("/images/LOGOM9.png") no-repeat 50% / cover;
         }
 
@@ -109,6 +113,7 @@ body {
 
         &:hover {
             flex: 0 0 250px;
+            /* border shadow color */
             box-shadow: 1px 3px 15px #7645d8;
             transform: translatey(-30px);
         }
@@ -135,7 +140,7 @@ body {
 }
 
 .popup-content {
-    background-color: #fefefe;
+    background-color: var(--color5);
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
@@ -150,19 +155,22 @@ body {
     text-align: center;
     margin-bottom: 20px;
     font-size: 50px;
+    color: var(--color4);
   }
 .popup-content blockquote {
     font-size: 20px;
     margin-top: 30px;
     margin-bottom: 20px;
     text-align: center;
+    color: var(--color4);
   }
 #popup-description {
     font-size: 18px;
     margin-top: 20px;
     margin-bottom: 20px;
-    text-align: ce;
+    text-align: center;
     line-height: 1.6;
+    color: var(--color4);
 }
   
 
@@ -186,3 +194,21 @@ body {
     display: block;
     margin: 0 auto;
 }
+#popup-icons-container {
+    display: flex; /* Use flexbox for alignment */
+    justify-content: flex-end; /* Align icons to the right */
+    margin-top: 20px; /* Add some space above the icons */
+}
+
+.popup-icon {
+    margin-left: 15px; /* Add spacing between icons */
+    font-size: 24px; /* Adjust the icon size as needed */
+    color: var(--color4); /* Change this to the desired color */
+    cursor: pointer; /* Change cursor on hover */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+.popup-icon:hover {
+    color: #7645d8; /* Change color on hover */
+}
+
