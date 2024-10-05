@@ -13,27 +13,22 @@ document.addEventListener('DOMContentLoaded', () => {
       const description = prof.getAttribute('data-description');
       const quote = prof.getAttribute('data-quote');
       const imageUrl = prof.getAttribute('data-image');
-      const icons = JSON.parse(prof.getAttribute('data-icons')); // Make sure this is formatted correctly
+      const icons = JSON.parse(prof.getAttribute('data-icons'));
 
       popupName.innerText = name;
       popupDescription.innerText = description;
       popupQuote.innerText = quote;
       popupImage.src = imageUrl;
 
-      // Clear previous icons
       popupIconsContainer.innerHTML = '';
 
-      // Create and append new icons
       if (Array.isArray(icons)) {
         icons.forEach(icon => {
           const iconElement = document.createElement('a');
-          iconElement.href = icon.url; // Use the URL for the link
-          iconElement.className = 'popup-icon material-icons'; // Add classes for styling
-          iconElement.textContent = icon.class; // Set the icon text
-
-          // Optionally set target attribute to open links in a new tab
+          iconElement.href = icon.url;
+          iconElement.className = 'popup-icon material-icons';
+          iconElement.textContent = icon.class;
           iconElement.target = '_blank';
-
           popupIconsContainer.appendChild(iconElement);
         });
       }
