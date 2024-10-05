@@ -13,7 +13,6 @@ body {
     font-family: "Poppins", sans-serif;
 }
 /* Container acordeon Prof */
-/* Container acordeon Prof */
 .container {
     width: 100%;
     display: flex;
@@ -38,45 +37,44 @@ body {
         overflow: hidden;
         /* IMAGES PROFS */
         &:nth-of-type(1) {
-            background: url("../images/Flirty_Manon.JPG") no-repeat 50% / cover;
+            background: url("../images/Manon.png") no-repeat 50% / cover;
         }
         &:nth-of-type(2) {
-            background: url("../images/sourire_Greg.JPG") no-repeat 50% / cover;
+            background: url("../images/Greg.png") no-repeat 50% / cover;
         }
         &:nth-of-type(3) {
-            background: url("../images/memeWorthy_Ahmed.JPG") no-repeat 50% / cover;
+            background: url("../images/Ahmed.png") no-repeat 50% / cover;
         }
         &:nth-of-type(4) {
-            background: url("../images/sourire_Mathieu.JPG") no-repeat 50% / cover;
+            background: url("../images/Mathieu.png") no-repeat 50% / cover;
         }
         &:nth-of-type(5) {
-            background: url("../images/serious_Vincent.JPG") no-repeat 50% / cover;
+            background: url("../images/Vincent.png") no-repeat 50% / cover;
         }
         &:nth-of-type(6) {
-            background: url("../images/memeWorthy_Eddy.JPG") no-repeat 50% / cover;
+            background: url("../images/Eddy.png") no-repeat 50% / cover;
         }
         &:nth-of-type(7) {
-            background: url("../images/sourire_Caroline.JPG") no-repeat 50% / cover;
+            background: url("../images/Caroline.png") no-repeat 50% / cover;
         }
         &:nth-of-type(8) {
-            background: url("../images/Heeeeyyy_Stephanie.JPG") no-repeat 50% / cover;
+            background: url("../images/Stephanie.png") no-repeat 50% / cover;
         }
         &:nth-of-type(9) {
-            background: url("../images/sourire_Denis.JPG") no-repeat 50% / cover;
+            background: url("../images/Denis.png") no-repeat 50% / cover;
         }
         &:nth-of-type(10) {
-            background: url("../images/memeWorthy_David.JPG") no-repeat 50% / cover;
+            background: url("../images/David.png") no-repeat 50% / cover;
         }
         &:nth-of-type(11) {
-            background: url("../images/thinkin_camille.JPG") no-repeat 50% / cover;
+            background: url("../images/Camille.png") no-repeat 50% / cover;
         }
         &:nth-of-type(12) {
-            background: url("../images/TryingToBeCool_Martin.JPG") no-repeat 50% / cover;
+            background: url("../images/Martin.png") no-repeat 50% / cover;
         }
         &:nth-of-type(13) {
-            background: url("../images/crazy_Dominic.JPG") no-repeat 50% / cover;
+            background: url("../images/Dominic.png") no-repeat 50% / cover;
         }
-
         &:nth-of-type(14) {
             background: url("../images/LOGOM9.png") no-repeat 50% / cover;
         }
