@@ -28,7 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
           iconElement.href = icon.url;
           iconElement.className = 'popup-icon material-icons';
           iconElement.textContent = icon.class;
-          iconElement.target = '_blank';
+          // permet de ne pas ouvrir un nouvel onglet
+          iconElement.target = '_self';
           popupIconsContainer.appendChild(iconElement);
         });
       }
@@ -39,11 +40,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
   closePopup.addEventListener('click', () => {
     popupCard.style.display = 'none';
-  });
-
-  window.addEventListener('click', (event) => {
-    if (event.target == popupCard) {
-      popupCard.style.display = 'none';
-    }
   });
 });
