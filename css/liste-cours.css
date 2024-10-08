@@ -1,35 +1,45 @@
+body {
+  min-height: 100vh;
+  background-color: var(--color5);
+  font-family: "Poppins", sans-serif;
+}
+h1 {
+  color: var(--color4);
+}
+h2 {
+  color: var(--color4);
+}
+p {
+  color: var(--color4);
+}
+
 /*********************************** tableau **************************/
 .table-c {
-  overflow-x: auto; /* Enable horizontal scrolling */
-  display: block; /* Make the container block level */
-  white-space: nowrap; /* Prevent table from breaking into multiple lines */
+  overflow-x: auto;
+  white-space: nowrap;
 }
 table {
-  width: 100%;
-  border-collapse: collapse; /* Optional: to remove gaps between cells */
-}
-tr {
+  border-collapse: collapse;
 }
 
 td,
 th {
-  padding: 8px; /*  Add some padding for better touch targets */
-  border: 1px solid #ddd; /* Add border for clarity */
-  display: inline-block; /* Show each cell as a block */
-  width: 100vw; /* Full width for each cell */
-  box-sizing: border-box; /* Include padding and border in the width */
+  padding: 8px;
+  border: 1px solid #11055c;
+  display: inline-block;
+  width: 100vw;
+  box-sizing: border-box;
+  background-color: #44a5c27f;
+}
+td:empty {
+  visibility: hidden;
 }
 
-p {
-}
 /************************ pour montrer la descr du cours ************************/
 .collapse {
   display: none;
   padding: 15px;
-  border: 1px solid #ddd;
-  margin-top: 10px;
-  width: 100%; /* Ensure the collapse section takes the full width of the cell */
-  word-wrap: break-word; /* Allow long words to wrap */
+  white-space: wrap;
 }
 
 .collapse.show {
@@ -39,7 +49,7 @@ p {
 /* le style du bouton (à changer) */
 .btn {
   cursor: pointer;
-  background-color: #007bff;
+  background-color: var(--color1);
   color: white;
   border: none;
   padding: 10px 20px;
@@ -52,7 +62,174 @@ p {
 }
 
 .btn:hover {
-  background-color: #0056b3;
+  background-color: var(--color2);
 }
 
 /************************************************/
+
+/* Style pour le banner */
+.banner .slider .item figure {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.banner .slider .item figcaption {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: var(--color2);
+  color: white;
+  text-align: center;
+  padding: 5px 0;
+  font-size: 14px;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.banner {
+  width: 100%;
+  height: 40vh;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  background-color: var(--color5);
+}
+
+.banner .slider {
+  position: absolute;
+  width: 150px;
+  height: 200px;
+  top: 10%;
+  left: calc(50% - 75px);
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+  animation: autoRun 20s linear infinite;
+  z-index: 2;
+}
+
+.banner .slider:hover {
+  animation-play-state: paused;
+}
+
+@keyframes autoRun {
+  from {
+    transform: perspective(1000px) rotateX(-16deg) rotateY(0deg);
+  }
+  to {
+    transform: perspective(1000px) rotateX(-16deg) rotateY(360deg);
+  }
+}
+
+.banner .slider .item {
+  position: absolute;
+  inset: 0 0 0 0;
+  transform: rotateY(
+      calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
+    )
+    translateZ(400px);
+}
+
+.banner .content {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(1400px, 100vw);
+  height: max-content;
+  padding-bottom: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+}
+
+/* Responsive Banner */
+
+@media screen and (max-width: 1023px) {
+  .banner .slider {
+    width: 120px;
+    height: 160px;
+    left: calc(50% - 60px);
+  }
+  .banner .slider .item {
+    transform: rotateY(
+        calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
+      )
+      translateZ(250px);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .banner .slider {
+    width: 80px;
+    height: 120px;
+    left: calc(50% - 40px);
+  }
+  .banner .slider .item {
+    transform: rotateY(
+        calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
+      )
+      translateZ(150px);
+  }
+}
+
+@media (max-width: 600px) {
+  .banner .slider .item figcaption {
+    font-size: 1px;
+    padding: 3px 0;
+  }
+  .banner {
+    height: 30vh;
+  }
+}
+
+.banner .slider .item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.banner .slider .item:hover img {
+  filter: grayscale(0%);
+}
+
+.popup-message {
+  display: none;
+  position: absolute;
+  bottom: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 250px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  letter-spacing: normal;
+  text-align: center;
+  z-index: 10;
+}
+
+.banner .slider .item:hover .popup-message {
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .popup-message {
+    width: 90%;
+    bottom: 100px;
+    font-size: 10px;
+    padding: 5px;
+    height: auto;
+  }
+  figcaption {
+    display: none;
+  }
+}
