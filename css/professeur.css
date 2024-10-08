@@ -12,6 +12,7 @@ body {
     background-color: var(--color5);
     font-family: "Poppins", sans-serif;
 }
+
 /* Container acordeon Prof */
 .container {
     width: 100%;
@@ -19,6 +20,7 @@ body {
     justify-content: center;
     height: 500px;
     gap: 10px;
+    flex-wrap: wrap;  
     
     h2 {
         font-size: 1.5rem;
@@ -26,6 +28,7 @@ body {
         margin: 0; 
         padding: 0.5rem 0; 
     }
+      
     /* PROFESSOR */
     > div {
         flex: 0 0 120px;
@@ -37,46 +40,49 @@ body {
         overflow: hidden;
         /* IMAGES PROFS */
         &:nth-of-type(1) {
-            background: url("/images/Flirty_Manon.JPG") no-repeat 50% / cover;
+            background: url("../images/Manon.png") no-repeat 50% / cover;
         }
         &:nth-of-type(2) {
-            background: url("/images/sourire_Greg.JPG") no-repeat 50% / cover;
+            background: url("../images/Greg.png") no-repeat 50% / cover;
         }
         &:nth-of-type(3) {
-            background: url("/images/memeWorthy_Ahmed.JPG") no-repeat 50% / cover;
+            background: url("../images/Ahmed.png") no-repeat 50% / cover;
         }
         &:nth-of-type(4) {
-            background: url("/images/sourire_Mathieu.JPG") no-repeat 50% / cover;
+            background: url("../images/Mathieu.png") no-repeat 50% / cover;
         }
         &:nth-of-type(5) {
-            background: url("/images/serious_Vincent.JPG") no-repeat 50% / cover;
+            background: url("../images/Vincent.png") no-repeat 50% / cover;
         }
         &:nth-of-type(6) {
-            background: url("/images/memeWorthy_Eddy.JPG") no-repeat 50% / cover;
+            background: url("../images/Eddy.png") no-repeat 50% / cover;
         }
         &:nth-of-type(7) {
-            background: url("/images/sourire_Caroline.JPG") no-repeat 50% / cover;
+            background: url("../images/Caroline.png") no-repeat 50% / cover;
         }
         &:nth-of-type(8) {
-            background: url("/images/Heeeeyyy_Stephanie.JPG") no-repeat 50% / cover;
+            background: url("../images/Stephanie.png") no-repeat 50% / cover;
         }
         &:nth-of-type(9) {
-            background: url("/images/sourire_Denis.JPG") no-repeat 50% / cover;
+            background: url("../images/Denis.png") no-repeat 50% / cover;
         }
         &:nth-of-type(10) {
-            background: url("/images/memeWorthy_David.JPG") no-repeat 50% / cover;
+            background: url("../images/David.png") no-repeat 50% / cover;
         }
         &:nth-of-type(11) {
-            background: url("/images/thinkin_camille.JPG") no-repeat 50% / cover;
+            background: url("../images/Camille.png") no-repeat 50% / cover;
         }
         &:nth-of-type(12) {
-            background: url("/images/TryingToBeCool_Martin.JPG") no-repeat 50% / cover;
+            background: url("../images/Martin.png") no-repeat 50% / cover;
         }
         &:nth-of-type(13) {
-            background: url("/images/LOGOM9.png") no-repeat 50% / cover;
+            background: url("../images/Dominic.png") no-repeat 50% / cover;
         }
         &:nth-of-type(14) {
-            background: url("/images/LOGOM9.png") no-repeat 50% / cover;
+            background: url("../images/LOGOM9.png") no-repeat 50% / cover;
+        }
+        &:nth-of-type(15) {
+            background: url("../images/LOGOM9.png") no-repeat 50% / cover;
         }
 
         /* CONTENU avant le popup*/
@@ -109,6 +115,7 @@ body {
 
         &:hover {
             flex: 0 0 250px;
+            /* border shadow color */
             box-shadow: 1px 3px 15px #7645d8;
             transform: translatey(-30px);
         }
@@ -119,6 +126,33 @@ body {
             visibility: visible;
         }
     }
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .container > div {
+        flex: 0 0 120px;
+    }
+
+    .container > div:hover {
+        flex: 0 0 120px;
+        transform: none;
+    }
+
+    .container > div:hover .content {
+        opacity: 1;
+        transform: translatey(0%);
+        visibility: visible;
+    }
+    .container h2{
+        font-size: 1rem;
+        margin-top: 20px;
+        padding: 0;
+    }
+    .container > div .content span {
+        font-size: 0.8rem;
+    }
+
 }
 
 /* CSS for the popup professor */
@@ -135,9 +169,8 @@ body {
 }
 
 .popup-content {
-    background-color: #fefefe;
+    background-color: var(--color5);
     padding: 20px;
-    border: 1px solid #888;
     width: 80%;
     max-width: 600px;
     border-radius: 10px;
@@ -150,25 +183,26 @@ body {
     text-align: center;
     margin-bottom: 20px;
     font-size: 50px;
+    color: var(--color4);
   }
 .popup-content blockquote {
     font-size: 20px;
     margin-top: 30px;
     margin-bottom: 20px;
     text-align: center;
+    color: var(--color4);
   }
 #popup-description {
     font-size: 18px;
     margin-top: 20px;
     margin-bottom: 20px;
-    text-align: ce;
+    text-align: center;
     line-height: 1.6;
+    color: var(--color4);
 }
   
-
-
   .close {
-    color: #aaa;
+    color: var(--color4);
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -176,7 +210,7 @@ body {
   
   .close:hover,
   .close:focus {
-    color: black;
+    color: var();
     text-decoration: none;
     cursor: pointer;
   }
@@ -185,4 +219,23 @@ body {
     height: auto;
     display: block;
     margin: 0 auto;
+}
+#popup-icons-container {
+    display: flex; 
+    justify-content: flex-end; 
+    margin-top: 15px; 
+}
+
+.popup-icon {
+    margin-left: 15px;
+    font-size: 30px;
+    text-decoration: none;
+    margin-bottom: 10px;
+    color: var(--color1); 
+    cursor: pointer; 
+    transition: color 0.3s;
+}
+
+.popup-icon:hover {
+    color: var(--color4); 
 }
