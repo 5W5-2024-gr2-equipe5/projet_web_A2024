@@ -20,6 +20,10 @@ h3 {
   margin: 10px 0;
 }
 
+.fond-neon {
+  display: none;
+}
+
 .div-vie-etudiante {
   padding: 1rem;
   margin-bottom: 25px;
@@ -64,6 +68,21 @@ div h3:nth-of-type(2) {
 
 @media (min-width: 769px) {
 
+  .fond-neon {
+    display: block;
+    position: absolute;
+    z-index: 12;
+    width: 12vw;
+    height: 100vh;
+    transform: translateX(-4vw);
+    background-image: url("/images/Background_plus_beau/neons_marge.png");
+    background-repeat: repeat-y;
+  }
+
+  .fond-neon:nth-of-type(2) {
+    right: -2.2vw;
+  }
+
   h3 {
     margin: auto;
   }
@@ -82,8 +101,8 @@ div h3:nth-of-type(2) {
     margin-bottom: 0;
     border-radius: 40px;
     margin-bottom: 25px;
-    margin-left: 25px;
-    margin-right: 25px;
+    margin-left: 10vw;
+    margin-right: 10vw;
   }
 
   .div-vie-etudiante h2, .div-vie-etudiante h3{
@@ -146,7 +165,4 @@ div h3:nth-of-type(2) {
     margin-left: 10vw;
     margin-right: 10vw;
   }
-
-
-
 }
