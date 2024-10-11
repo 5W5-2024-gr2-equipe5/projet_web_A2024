@@ -3,6 +3,7 @@ body {
   flex-direction: column;
   background-color: var(--color5);
   color: var(--color4);
+  padding: 0 5vw;
 }
 
 h1 {
@@ -12,6 +13,11 @@ h1 {
 
 h2 {
   font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 1.7rem;
+  margin: 10px 0;
 }
 
 .div-vie-etudiante {
@@ -39,6 +45,10 @@ div h2, div h3{
   text-align: center;
 }
 
+div h3:nth-of-type(2) {
+  margin-top: 30px;
+}
+
 .div-vie-etudiante img {
   max-width: 90%;
 }
@@ -48,7 +58,19 @@ div h2, div h3{
   text-align: justify;
 }
 
+.espace-haut {
+  margin-top: 35px;
+}
+
 @media (min-width: 769px) {
+
+  h3 {
+    margin: auto;
+  }
+
+  h2 {
+    margin: 15px 0;
+  }
 
   .div-vie-etudiante {
     padding: 2rem;
