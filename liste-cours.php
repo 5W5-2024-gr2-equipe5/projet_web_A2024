@@ -1,22 +1,22 @@
 <?php get_header() ?>
 
-    <h1>Liste des cours</h1>
+   <h1>Liste des cours</h1>
     <div class="table-c">
       <table>
         <tr>
-          <th>session 1</th>
-          <th>session 2</th>
-          <th>session 3</th>
-          <th>session 4</th>
-          <th>session 5</th>
-          <th>session 6</th>
+          <th><h2>session 1</h2></th>
+          <th><h2>session 2</h2></th>
+          <th><h2>session 3</h2></th>
+          <th><h2>session 4</h2></th>
+          <th><h2>session 5</h2></th>
+          <th><h2>session 6</h2></th>
         </tr>
         <tr>
-          <td>
+          <td id ="creation-video">
             <button class="btn" onclick="toggleCollapse('demo')">
               Création vidéo
             </button>
-            <div id="demo" class="collapse">
+            <div id="1" class="collapse">
               <p>
                 Ce cours initie l’étudiant au traitement des images en
                 mouvement, au traitement du son ainsi qu'aux bases de la
@@ -34,54 +34,120 @@
               </p>
             </div>
           </td>
-          <td>Effets spéciaux et animation</td>
-          <td>Imagerie 3D</td>
-          <td>Gestion de projets multimédias</td>
-          <td>Méthodes de recherche et préparation au marché du travail</td>
-          <td>Stage</td>
+          <td>
+            <button class="btn" onclick="toggleCollapse('5')">
+              Effets spéciaux et animation
+            </button>
+            <div id="5" class="collapse">
+              <p>
+                Ce cours initie l’étudiant au traitement des images en
+                mouvement, au traitement du son ainsi qu'aux bases de la
+                scénarisation linéaire. L’étudiant apprend à utiliser les
+                périphériques associés au traitement du son et de la vidéo et à
+                exploiter de façon créative les fonctions des logiciels de
+                traitement vidéo et sonore. Les techniques de montage (structure
+                narrative, affinage de coupe, correction de couleur, etc.) sont
+                étudiées. L’étudiant apprend à représenter ses idées et ses
+                concepts par le dessin et l’écrit, à l’aide de scénarimages, de
+                synopsis et de scénarios. Les particularités de la fonction de
+                travail liées au traitement de la vidéo, du son, ainsi qu'à la
+                scénarisation sont présentées de même que les compétences
+                techniques et comportementales associées.
+              </p>
+            </div>
+          </td>
+          <td>
+            <button class="btn" onclick="toggleCollapse('9')">
+              Imagerie 3D
+            </button>
+            <div id="9" class="collapse">
+              <p>
+                Ce cours initie l’étudiant au traitement des images en
+                mouvement, au traitement du son ainsi qu'aux bases de la
+                scénarisation linéaire. L’étudiant apprend à utiliser les
+                périphériques associés au traitement du son et de la vidéo et à
+                exploiter de façon créative les fonctions des logiciels de
+                traitement vidéo et sonore. Les techniques de montage (structure
+                narrative, affinage de coupe, correction de couleur, etc.) sont
+                étudiées. L’étudiant apprend à représenter ses idées et ses
+                concepts par le dessin et l’écrit, à l’aide de scénarimages, de
+                synopsis et de scénarios. Les particularités de la fonction de
+                travail liées au traitement de la vidéo, du son, ainsi qu'à la
+                scénarisation sont présentées de même que les compétences
+                techniques et comportementales associées.
+              </p>
+            </div>
+          </td>
+          <td>
+            <button class="btn" onclick="toggleCollapse('13')">
+              Gestion de projets multimédias
+            </button>
+            <div id="13" class="collapse">
+              <p>
+                Ce cours initie l’étudiant au traitement des images en
+                mouvement, au traitement du son ainsi qu'aux bases de la
+                scénarisation linéaire. L’étudiant apprend à utiliser les
+                périphériques associés au traitement du son et de la vidéo et à
+                exploiter de façon créative les fonctions des logiciels de
+                traitement vidéo et sonore. Les techniques de montage (structure
+                narrative, affinage de coupe, correction de couleur, etc.) sont
+                étudiées. L’étudiant apprend à représenter ses idées et ses
+                concepts par le dessin et l’écrit, à l’aide de scénarimages, de
+                synopsis et de scénarios. Les particularités de la fonction de
+                travail liées au traitement de la vidéo, du son, ainsi qu'à la
+                scénarisation sont présentées de même que les compétences
+                techniques et comportementales associées.
+              </p>
+            </div>
+          </td>
+          <td id="effets-speciaux">Effets spéciaux et animation</td>
+          <td id="imagerie-3d">Imagerie 3D</td>
+          <td id="gestion-projets">Gestion de projets multimédias</td>
+          <td id="methodes-recherche">Méthodes de recherche et préparation au marché du travail</td>
+          <td id="stage">Stage</td>
         </tr>
         <tr>
-          <td>Conception graphique et imagerie matricielle</td>
-          <td>Conception graphique et imagerie vectorielle</td>
-          <td>Design d'interactivité</td>
-          <td>Conception d'interfaces et développement web</td>
-          <td>Communication et dynamique d'une équipe de travail</td>
-          <td>Projet de fin d'études</td>
+          <td id="conception-graphique">Conception graphique et imagerie matricielle</td>
+          <td id="conception-vectorielle">Conception graphique et imagerie vectorielle</td>
+          <td id="design-interactivite">Design d'interactivité</td>
+          <td id="interfaces-web">Conception d'interfaces et développement web</td>
+          <td id="communication-equipe">Communication et dynamique d'une équipe de travail</td>
+          <td id="projet-fin-etudes">Projet de fin d'études</td>
         </tr>
         <tr>
-          <td>Mise en page web</td>
-          <td>Animation et interactivité web</td>
-          <td>Création de sites web dynamiques</td>
-          <td>Création de jeu en équipe</td>
-          <td>Projet web en équipe</td>
+          <td id="mise-en-page-web">Mise en page web</td>
+          <td id="animation-interactivite-web">Animation et interactivité web</td>
+          <td id="  ">Création de sites web dynamiques</td>
+          <td id="creation-jeu-equipe">Création de jeu en équipe</td>
+          <td id="projet-web-equipe">Projet web en équipe</td>
         </tr>
         <tr>
-          <td>Animation et interactivité en jeu</td>
-          <td>Création de jeu 2D</td>
-          <td>Création de jeu 3D</td>
-          <td>Interfaces web réactives et animées</td>
-          <td>Expérimentation en jeu - volet création</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td>Animation 3D</td>
-          <td>Expérimentation en jeu - volet programmation</td>
+          <td id="animation-interactivite-jeu">Animation et interactivité en jeu</td>
+          <td id="creation-jeu-2d">Création de jeu 2D</td>
+          <td id="creation-jeu-3d">Création de jeu 3D</td>
+          <td id="interfaces-web-reactives">Interfaces web réactives et animées</td>
+          <td id="experimentation-jeu-creation">Expérimentation en jeu - volet création</td>
         </tr>
         <tr>
           <td></td>
           <td></td>
           <td></td>
-          <td></td>
-          <td>Technologies émergentes et avancées - volet création</td>
+          <td id="animation-3d">Animation 3D</td>
+          <td id="experimentation-jeu-programmation">Expérimentation en jeu - volet programmation</td>
         </tr>
         <tr>
           <td></td>
           <td></td>
           <td></td>
           <td></td>
-          <td>Technologies émergentes et avancées - volet programmation</td>
+          <td id="technologies-emergentes-creation">Technologies émergentes et avancées - volet création</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td id="technologies-emergentes-programmation">Technologies émergentes et avancées - volet programmation</td>
         </tr>
       </table>
     </div>

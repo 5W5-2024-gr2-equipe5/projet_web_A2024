@@ -1,35 +1,45 @@
+body {
+  min-height: 100vh;
+  background-color: var(--color5);
+  font-family: "Poppins", sans-serif;
+}
+h1 {
+  color: var(--color4);
+}
+h2 {
+  color: var(--color4);
+}
+p {
+  color: var(--color4);
+}
+
 /*********************************** tableau **************************/
 .table-c {
-  overflow-x: auto; /* Enable horizontal scrolling */
-  display: block; /* Make the container block level */
-  white-space: nowrap; /* Prevent table from breaking into multiple lines */
+  overflow-x: auto;
+  white-space: nowrap;
 }
 table {
-  width: 100%;
-  border-collapse: collapse; /* Optional: to remove gaps between cells */
-}
-tr {
+  border-collapse: collapse;
 }
 
 td,
 th {
-  padding: 8px; /*  Add some padding for better touch targets */
-  border: 1px solid #ddd; /* Add border for clarity */
-  display: inline-block; /* Show each cell as a block */
-  width: 100vw; /* Full width for each cell */
-  box-sizing: border-box; /* Include padding and border in the width */
+  padding: 8px;
+  border: 1px solid #11055c;
+  display: inline-block;
+  width: 100vw;
+  box-sizing: border-box;
+  background-color: #44a5c27f;
+}
+td:empty {
+  visibility: hidden;
 }
 
-p {
-}
 /************************ pour montrer la descr du cours ************************/
 .collapse {
   display: none;
   padding: 15px;
-  border: 1px solid #ddd;
-  margin-top: 10px;
-  width: 100%; /* Ensure the collapse section takes the full width of the cell */
-  word-wrap: break-word; /* Allow long words to wrap */
+  white-space: wrap;
 }
 
 .collapse.show {
@@ -39,7 +49,7 @@ p {
 /* le style du bouton (à changer) */
 .btn {
   cursor: pointer;
-  background-color: #007bff;
+  background-color: var(--color1);
   color: white;
   border: none;
   padding: 10px 20px;
@@ -52,11 +62,12 @@ p {
 }
 
 .btn:hover {
-  background-color: #0056b3;
+  background-color: var(--color2);
 }
 
-/**************************************** BANNIERE *************************************************************/
+/************************************************/
 
+/* Style pour le banner */
 .banner .slider .item figure {
   margin: 0;
   padding: 0;
@@ -220,33 +231,5 @@ p {
   }
   figcaption {
     display: none;
-  }
-}
-
-/*BANDE ROLLE LOGOS*/
-.carousel {
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-  background: var(--color5);
-}
-.wrapper {
-  display: flex;
-  animation: scroll 15s linear infinite;
-  padding-top: 10px;
-}
-
-.wrapper img {
-  width: 100px;
-  padding: 10px;
-  margin-right: 5px;
-}
-
-@keyframes scroll {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(-100%);
   }
 }
