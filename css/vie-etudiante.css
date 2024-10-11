@@ -71,16 +71,18 @@ div h3:nth-of-type(2) {
   .fond-neon {
     display: block;
     position: absolute;
-    z-index: 12;
+    z-index: -1000;
     width: 12vw;
-    height: 100vh;
+    height: 100%;
+    background-size: contain;
     transform: translateX(-4vw);
-    background-image: url("/images/Background_plus_beau/neons_marge.png");
+    background-image: url("../images/Background_plus_beau/neons_marge.png");
     background-repeat: repeat-y;
   }
 
   .fond-neon:nth-of-type(2) {
-    right: -2.2vw;
+    right: 1.7vw;
+    transform: scaleX(-1);
   }
 
   h3 {
