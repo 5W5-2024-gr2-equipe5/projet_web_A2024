@@ -193,6 +193,7 @@ body
   z-index: 1;
   transform: 0.5s;
   color: #fff;
+  padding: 20px;
 }
 
 .container .box:hover .content
