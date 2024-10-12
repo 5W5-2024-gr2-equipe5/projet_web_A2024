@@ -33,59 +33,33 @@ body {
     > div {
         flex: 0 0 120px;
         border-radius: 0.5rem;
-        transition: 0.5s ease-in-out;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         cursor: pointer;
         box-shadow: 1px 5px 15px #1e0e3e;
         position: relative;
         overflow: hidden;
-        /* IMAGES PROFS */
-        &:nth-of-type(1) {
-            background: url("../images/Manon.png") no-repeat 50% / cover;
-        }
-        &:nth-of-type(2) {
-            background: url("../images/Greg.png") no-repeat 50% / cover;
-        }
-        &:nth-of-type(3) {
-            background: url("../images/Ahmed.png") no-repeat 50% / cover;
-        }
-        &:nth-of-type(4) {
-            background: url("../images/Mathieu.png") no-repeat 50% / cover;
-        }
-        &:nth-of-type(5) {
-            background: url("../images/Vincent.png") no-repeat 50% / cover;
-        }
-        &:nth-of-type(6) {
-            background: url("../images/Eddy.png") no-repeat 50% / cover;
-        }
-        &:nth-of-type(7) {
-            background: url("../images/Caroline.png") no-repeat 50% / cover;
-        }
-        &:nth-of-type(8) {
-            background: url("../images/Stephanie.png") no-repeat 50% / cover;
-        }
-        &:nth-of-type(9) {
-            background: url("../images/Denis.png") no-repeat 50% / cover;
-        }
-        &:nth-of-type(10) {
-            background: url("../images/David.png") no-repeat 50% / cover;
-        }
-        &:nth-of-type(11) {
-            background: url("../images/Camille.png") no-repeat 50% / cover;
-        }
-        &:nth-of-type(12) {
-            background: url("../images/Martin.png") no-repeat 50% / cover;
-        }
-        &:nth-of-type(13) {
-            background: url("../images/Dominic.png") no-repeat 50% / cover;
-        }
-        &:nth-of-type(14) {
-            background: url("../images/LOGOM9.png") no-repeat 50% / cover;
-        }
-        &:nth-of-type(15) {
-            background: url("../images/LOGOM9.png") no-repeat 50% / cover;
-        }
+        height: 100%; /* Fixed height to prevent shifting */
+        background-size: cover; 
+        background-position: center;
 
-        /* CONTENU avant le popup*/
+        /* IMAGES PROFS */
+        &:nth-of-type(1) { background-image: url("../images/Manon.png"); }
+        &:nth-of-type(2) { background-image: url("../images/Greg.png"); }
+        &:nth-of-type(3) { background-image: url("../images/Ahmed.png"); }
+        &:nth-of-type(4) { background-image: url("../images/Mathieu.png"); }
+        &:nth-of-type(5) { background-image: url("../images/Vincent.png"); }
+        &:nth-of-type(6) { background-image: url("../images/Eddy.png"); }
+        &:nth-of-type(7) { background-image: url("../images/Caroline.png"); }
+        &:nth-of-type(8) { background-image: url("../images/Stephanie.png"); }
+        &:nth-of-type(9) { background-image: url("../images/Denis.png"); }
+        &:nth-of-type(10) { background-image: url("../images/David.png"); }
+        &:nth-of-type(11) { background-image: url("../images/Camille.png"); }
+        &:nth-of-type(12) { background-image: url("../images/Martin.png"); }
+        &:nth-of-type(13) { background-image: url("../images/Dominic.png"); }
+        &:nth-of-type(14) { background-image: url("../images/LOGOM9.png"); }
+        &:nth-of-type(15) { background-image: url("../images/LOGOM9.png"); }
+
+        /* CONTENU avant le popup */
         .content {
             font-size: 1.5rem;
             color: #fff;
@@ -102,7 +76,7 @@ body {
                 rgba(2, 2, 46, 0.6755077030812324) 0%,
                 rgba(255, 255, 255, 0) 100%
             );
-            transform: translatey(100%);
+            transform: translateY(100%);
             transition: opacity 0.5s ease-in-out, transform 0.5s 0.2s;
             visibility: hidden;
 
@@ -114,15 +88,13 @@ body {
         }
 
         &:hover {
-            flex: 0 0 250px;
-            /* border shadow color */
-            box-shadow: 1px 3px 15px #7645d8;
-            transform: translatey(-30px);
+            transform: scale(1.1); /* Scale for smooth hover effect */
+            box-shadow: 1px 5px 15px #7645d8;
         }
 
         &:hover .content {
             opacity: 1;
-            transform: translatey(0%);
+            transform: translateY(0%);
             visibility: visible;
         }
     }
@@ -132,28 +104,31 @@ body {
 @media (max-width: 768px) {
     .container > div {
         flex: 0 0 120px;
+        margin: 10px;
     }
 
     .container > div:hover {
-        flex: 0 0 120px;
+        flex: 0 0 150px;
         transform: none;
     }
 
     .container > div:hover .content {
         opacity: 1;
-        transform: translatey(0%);
+        transform: translateY(0%);
         visibility: visible;
     }
-    .container h2{
+
+    .container h2 {
         font-size: 1rem;
         margin-top: 20px;
         padding: 0;
     }
+
     .container > div .content span {
         font-size: 0.8rem;
     }
-
 }
+/* ****************************************** */
 
 /* CSS for the popup professor */
 .popup {
@@ -174,24 +149,27 @@ body {
     width: 80%;
     max-width: 600px;
     border-radius: 10px;
-    position: relative;  
-    top: 50%;  
-    transform: translateY(-50%);  
-    margin: auto; 
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: auto;
 }
+
 .popup-content h2 {
     text-align: center;
     margin-bottom: 20px;
     font-size: 50px;
     color: var(--color4);
-  }
+}
+
 .popup-content blockquote {
     font-size: 20px;
     margin-top: 30px;
     margin-bottom: 20px;
     text-align: center;
     color: var(--color4);
-  }
+}
+
 #popup-description {
     font-size: 18px;
     margin-top: 20px;
@@ -200,30 +178,32 @@ body {
     line-height: 1.6;
     color: var(--color4);
 }
-  
-  .close {
+
+.close {
     color: var(--color4);
     float: right;
     font-size: 28px;
     font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
+}
+
+.close:hover,
+.close:focus {
     color: var();
     text-decoration: none;
     cursor: pointer;
-  }
-  .popup-content img {
+}
+
+.popup-content img {
     max-width: 100%;
     height: auto;
     display: block;
     margin: 0 auto;
 }
+
 #popup-icons-container {
-    display: flex; 
-    justify-content: flex-end; 
-    margin-top: 15px; 
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 15px;
 }
 
 .popup-icon {
@@ -231,11 +211,46 @@ body {
     font-size: 30px;
     text-decoration: none;
     margin-bottom: 10px;
-    color: var(--color1); 
-    cursor: pointer; 
+    color: var(--color1);
+    cursor: pointer;
     transition: color 0.3s;
 }
-
 .popup-icon:hover {
-    color: var(--color4); 
+    color: var(--color4);
+}
+/* ******************************** */
+/* Initial state des cards */
+.container > div {
+    flex: 0 0 120px;
+    border-radius: 0.5rem;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, opacity 0.3s ease, filter 0.3s ease;
+    cursor: pointer;
+    box-shadow: 1px 5px 15px #1e0e3e;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(100%) blur(2px);
+    opacity: 0.7; 
+}
+
+/* Hover state des cards  */
+.container > div:hover {
+    opacity: 1; 
+    filter: grayscale(0%) blur(0); 
+    transform: scale(1.1);
+    box-shadow: 1px 5px 15px #7645d8;
+}
+
+/* Applique le grayscale et blur a tout les elements non-hovered  */
+.container:hover > div {
+    opacity: 0.7; 
+    filter: grayscale(100%) blur(2px); 
+}
+
+/* Assurer que  hovered element est out */
+.container > div:hover {
+    opacity: 1; /* Full opacity */
+    filter: grayscale(0%) blur(0); 
 }
