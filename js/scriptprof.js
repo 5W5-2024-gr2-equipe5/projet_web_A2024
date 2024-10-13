@@ -1,3 +1,4 @@
+// Fonctionalité: Script pour la page professeurs
 document.addEventListener('DOMContentLoaded', () => {
   const popupCard = document.getElementById('popup-card');
   const popupName = document.getElementById('popup-name');

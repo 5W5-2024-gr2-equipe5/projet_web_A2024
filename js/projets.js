@@ -1,4 +1,4 @@
-// Add this JavaScript to handle the modal functionality
+// Fonctionnalité: Gestion de l'affichage des modales de projets
 document.addEventListener('DOMContentLoaded', (event) => {
   const modal = document.getElementById("projectModal");
   const modalTitle = document.getElementById("modalTitle");

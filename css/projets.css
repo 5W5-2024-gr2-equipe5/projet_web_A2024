@@ -23,6 +23,7 @@ body {
   box-sizing: border-box;
 }
 
+/* Container card */
 .container {
   display: flex;
   justify-content: center;
@@ -71,6 +72,8 @@ body {
   width: calc(100% - 90px);
 }
 
+/* Animation BG carte  */
+
 @keyframes gradientAnimation {
   0% {
     background-position: 0% 50%;
@@ -95,6 +98,7 @@ body {
   background-size: 200% 200%;
   animation: gradientAnimation 5s ease infinite;
 }
+/* ********************************************* */
 
 .container .box span {
   display: block;
@@ -193,6 +197,7 @@ body {
   background: var(--color1);
   box-shadow: 0 1px 15px rgba(1, 1, 1, 0.2);
 }
+/* ******************************************** */
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -222,8 +227,10 @@ body {
     font-size: 1rem;
   }
 }
+/* *********************************** */
+
 /* page pop up */
-/* Add this CSS to style the modal */
+/* Carte modal */
 .modal {
   display: none;
   position: fixed;
@@ -279,3 +286,4 @@ body {
   text-decoration: none;
   cursor: pointer;
 }
+/* ****************************** */

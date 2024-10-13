@@ -88,7 +88,7 @@ body {
         }
 
         &:hover {
-            transform: scale(1.1); /* Scale for smooth hover effect */
+            transform: scale(1.1);
             box-shadow: 1px 5px 15px #7645d8;
         }
 
@@ -100,7 +100,7 @@ body {
     }
 }
 
-/* Media query for smaller screens */
+/* Media query pour ecran plus petit */
 @media (max-width: 768px) {
     .container > div {
         flex: 0 0 120px;
