@@ -500,7 +500,6 @@ footer div {
     transform: translateY(-10px);
   }
 }
-/* S'inscription*/
 /* MENU de bas ver le haut seulement en Mobile */
 @media (max-width: 768px) {
   @keyframes slideUp {
