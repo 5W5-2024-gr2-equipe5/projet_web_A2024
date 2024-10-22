@@ -1,0 +1,53 @@
+:root{
+  --marge-petite-avenir: 25px; /* plus petite marge */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color5);
+    color: var(--color4);
+  }
+
+body div{
+  margin: var(--marge-petite-avenir);
+
+} 
+/* style des texte */
+h1,h2,h3{
+  text-align: center;
+}
+h1 {
+    margin-top: 50px;
+  }
+  
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  h3{
+    font-size: 1.7rem;
+  }
+/* style des image */
+  img{
+    width: 100%;
+  }
+/* style de la vidéo */
+  div.contenantVideo{
+    margin: auto;
+    height: 45vw;
+  }
+  iframe.video{
+    width: 100%;
+    height: 100%;
+}
+
+/* style des div */
+.div-perspective{
+  /* background-color: var(--color2); */
+}
+
+/* page responsive */
+/*/@media screen and (min-width: 767px) {
+
+  }*/
