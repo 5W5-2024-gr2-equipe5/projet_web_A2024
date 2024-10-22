@@ -10,8 +10,13 @@
   </head>
   <body>
     <h1>Liste des cours</h1>
+    <div class="navigation">
+      <button id="prev" onclick="changeSession(-1)">&#10094;</button>
+      <button id="next" onclick="changeSession(1)">&#10095;</button>
+    </div>
     <div class="table-c">
-      <table>
+      <table id="course-table">
+        <thead>
         <tr>
           <th><h2>session 1</h2></th>
           <th><h2>session 2</h2></th>
@@ -20,6 +25,8 @@
           <th><h2>session 5</h2></th>
           <th><h2>session 6</h2></th>
         </tr>
+      </thead>
+      <tbody id="courseRows">
         <tr>
           <td id="creation-video">
             <button class="btn" onclick="toggleCollapse('1')">
@@ -179,6 +186,7 @@
             Technologies émergentes et avancées - volet programmation
           </td>
         </tr>
+      </tbody>
       </table>
     </div>
     <!-- Section BANNER 3d -->
