@@ -20,23 +20,24 @@ header {
 /* Burger Menu Styles */
 .burger {
   cursor: pointer;
-  width: 25px;
-  margin: 25px auto;
+  width: 35px; 
+  margin: 35px auto; 
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 5px;
+  right: 27px;
 }
 
 .burger span {
   display: block;
-  width: 25px;
-  height: 2.5px;
-  margin-bottom: 5px;
+  width: 35px; 
+  height: 4px; 
+  margin-bottom: 7px; 
   border-radius: 5px;
-  background-color: #fff;
+  background-color: var(--color1);
   position: relative;
   top: 0;
   transition: all 0.3s ease-in-out;
+  
 }
 
 .burger.open span:nth-child(2) {
@@ -45,12 +46,12 @@ header {
 
 .burger.open span:nth-child(1) {
   transform: rotate(45deg);
-  top: 7.5px;
+  top: 11px; 
 }
 
 .burger.open span:nth-child(3) {
   transform: rotate(-45deg);
-  top: -7.5px;
+  top: -11px;
 }
 /********************************/
 
@@ -60,7 +61,8 @@ body {
   margin: 0;
   padding: 0;
   width: 100%;
-  overflow-x: hidden; /* Prevent horizontal scroll */
+  overflow-x: hidden;
+  background-color: var(--color5);
 }
 @media (max-width: 600px) {
   .container {
@@ -68,8 +70,8 @@ body {
     padding: 0;
   }
 }
-
 /* Menu Styles */
+
 /* Mobile Menu */
 .menu {
   display: none;
@@ -77,6 +79,8 @@ body {
   align-items: center;
   background-color: var(--color4);
   width: 100%;
+  position: relative;
+  z-index: 1;
 }
 
 .menu.active {
@@ -91,6 +95,7 @@ body {
 
 .menu > ul > li {
   width: 100%;
+  position: relative;
 }
 
 .menu > ul > li > a {
@@ -103,6 +108,7 @@ body {
 
 .menu > ul > li:hover > .sous-menu {
   display: block;
+  display: none;
 }
 
 .sous-menu {
@@ -111,6 +117,11 @@ body {
   list-style: none;
   margin: 0;
   padding: 0;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  border-radius: 5px; 
 }
 
 .sous-menu li a {
@@ -133,10 +144,11 @@ body {
   top: 10px;
   right: 10px;
 }
+
 /********************************/
 
 /* Desktop Styles */
-@media (min-width: 769px) {
+@media (min-width: 872px) {
   header {
     flex-direction: row;
     justify-content: space-between;
@@ -195,36 +207,6 @@ body {
   }
 }
 
-/* **********************video*********************** */
-.video {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #000000;
-  max-height: 65vh;
-  overflow: hidden;
-  z-index: 1;
-}
-.video video {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-}
-
-/* ******************************Footer **************************/
-.footer {
-  background-color: var(--color5);
-  color: white;
-  padding: 1rem;
-}
-
-.footer div {
-  margin-left: 30%;
-  margin-right: 30%;
-}
-.map {
-}
 /************************************hover menu****************************/
 .test.alternative {
   background-color: var(--background);
@@ -244,12 +226,12 @@ body {
 }
 
 .test {
-  --color: var(--color4); /* off-white */
-  --color-hover: var(--color4); /* off-white */
-  --background: var(--color1); /* orange */
-  --background-hover: var(--color2); /* navy blue */
-  --hover-back: var(--color1); /* orange */
-  --hover-front: var(--color2); /* navyblue */
+  --color: var(--color4);
+  --color-hover: var(--color4);
+  --background: var(--color1);
+  --background-hover: var(--color2);
+  --hover-back: var(--color1);
+  --hover-front: var(--color2);
   padding: 8px 28px;
   border-radius: 20px;
   line-height: 24px;
@@ -357,65 +339,3 @@ body {
       rotate(calc(3deg * var(--rotate) * var(--part)));
   }
 }
-/************************************************************************************************************************/
-/* Style pour logos sociaux */
-.social-icons a {
-  display: inline-block;
-  font-size: 30px;
-  margin: 0 10px;
-  transition: transform 0.3s ease;
-  color: var(--color1);
-}
-
-.social-icons a:hover {
-  transform: translateY(-10px);
-  animation: bounce 0.6s ease-in-out;
-}
-
-@keyframes bounce {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-/* S'inscription*/
-.inscription {
-  color: white;
-  text-decoration: none;
-}
-.inscription:visited {
-  color: white;
-}
-
-/*BANDE ROLLE LOGOS*/
-.carousel {
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-  background: var(--color5);
-}
-
-.wrapper {
-  display: flex;
-  animation: scroll 15s linear infinite;
-  padding-top: 10px;
-}
-
-.wrapper img {
-  width: 100px;
-  padding: 10px;
-  margin-right: 5px;
-}
-
-@keyframes scroll {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-/*  */

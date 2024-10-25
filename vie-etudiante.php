@@ -1,5 +1,4 @@
-<?php get_header() ?>
-     <div class="fond-neon"></div>
+<div class="fond-neon"></div>
     <div class="fond-neon"></div>
     <h1>Vie étudiante</h1>
     <div class="div-vie-etudiante" id="comite">
@@ -66,4 +65,4 @@
       </p>
       <img src="images/VieEtudiante/etudiants_groupe_2.jpg" alt="Heureuse Surprise!">
     </div>
-    <?php get_footer() ?>
+    <script src="js/marge-neon.js"></script>

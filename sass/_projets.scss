@@ -10,61 +10,61 @@ body {
   align-items: center;
   min-height: 100vh;
   background: var(--color5);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+/* Container card */
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  padding: 40px 0;
+  width: 100%;
+  gap: 20px;
+
 }
 
 .container .box {
   position: relative;
-  width: 320px;
-  height: 400px;
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  aspect-ratio: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 40px 30px;
+  margin: 20px 0;
   transition: 0.5s;
 }
 
-.container .box::before {
-  content: " ";
+.container .box::before,
+.container .box::after {
+  content: '';
   position: absolute;
   top: 0;
   left: 50px;
   width: 50%;
   height: 100%;
-  text-decoration: none;
   background: #fff;
   border-radius: 8px;
   transform: skewX(15deg);
   transition: 0.5s;
 }
 
-.container .box::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 50;
-  width: 50%;
-  height: 100%;
-  background: #fff;
-  border-radius: 8px;
-  transform: skewX(15deg);
-  transition: 0.5s;
+.container .box::before {
   filter: blur(30px);
 }
 
-.container .box:hover:before,
-.container .box:hover:after {
+.container .box:hover::before,
+.container .box:hover::after {
   transform: skewX(0deg);
   left: 20px;
   width: calc(100% - 90px);
 }
+
+/* Animation BG carte  */
 
 @keyframes gradientAnimation {
   0% {
@@ -83,11 +83,14 @@ body {
 .container .box:nth-child(2):before,
 .container .box:nth-child(2):after,
 .container .box:nth-child(3):before,
-.container .box:nth-child(3):after {
+.container .box:nth-child(3):after,
+.container .box:nth-child(4):before,
+.container .box:nth-child(4):after{
   background: linear-gradient(315deg, var(--color1), var(--color2));
   background-size: 200% 200%;
   animation: gradientAnimation 5s ease infinite;
 }
+/* ********************************************* */
 
 .container .box span {
   display: block;
@@ -100,48 +103,26 @@ body {
   pointer-events: none;
 }
 
-.container .box span::before {
-  content: "";
+.container .box span::before,
+.container .box span::after {
+  content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 0;
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   opacity: 0;
   transition: 0.1s;
-  animation: animate 2s ease-in-out infinite;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
 }
 
 .container .box:hover span::before {
-  top: -110px;
-  left: -50px;
+  top: -50px;
+  left: -60px;
   width: 100px;
   height: 100px;
   opacity: 1;
 }
 
-.container .box span::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  opacity: 0;
-  transition: 0.5s;
-  animation: animate 2s ease-in-out infinite;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-  animation-delay: -1s;
-}
-
-.container .box:hover span:after {
+.container .box:hover span::after {
   bottom: -50px;
   right: 5px;
   width: 100px;
@@ -149,29 +130,15 @@ body {
   opacity: 1;
 }
 
-@keyframes animate {
-  0%,
-  100% {
-    transform: translateY(10px);
-  }
-
-  50% {
-    transform: translate(-10px);
-  }
-}
-
 .container .box .content {
   position: relative;
-  left: 0;
   padding: 20px 40px;
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   z-index: 1;
-  transform: 0.5s;
   color: #fff;
-  padding: 20px;
 }
 
 .container .box:hover .content {
@@ -181,33 +148,34 @@ body {
 
 .container .box .content img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
   border-radius: 8px;
   margin-bottom: 10px;
 }
 
 .container .box .content h1 {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   color: var(--color1);
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 }
 
 .container .box .content h2 {
   font-size: 1.5rem;
   color: var(--color4);
   margin-bottom: 10px;
+  letter-spacing: 1.5px;
 }
 
 .container .box .content p {
-  font-size: 1.1em;
+  font-size: 1rem;
   margin-bottom: 10px;
   line-height: 1.4em;
 }
 
 .container .box .content a {
   display: inline-block;
-  font-size: 1.1em;
+  font-size: 1rem;
   color: #111;
   background: var(--color4);
   padding: 10px;
@@ -219,6 +187,95 @@ body {
 
 .container .box .content a:hover {
   background: var(--color1);
-  border-radius: 5px;
   box-shadow: 0 1px 15px rgba(1, 1, 1, 0.2);
 }
+/* ******************************************** */
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+  
+  .container .box {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+  }
+
+  .container .box .content {
+    padding: 20px;
+  }
+  
+  .container .box .content h1 {
+    font-size: 1.5rem;
+  }
+
+  .container .box .content h2 {
+    font-size: 1.3rem;
+  }
+
+  .container .box .content p {
+    font-size: 1rem;
+  }
+}
+/* *********************************** */
+
+/* page pop up */
+/* Carte modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: var(--color5);
+  padding: 20px;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 10px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: auto;
+}
+
+.modal-content h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 50px;
+  color: var(--color4);
+}
+.modal-content h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 50px;
+  color: var(--color1);
+}
+.modal-content p{
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 20px;
+  color: var(--color4);
+}
+.close {
+  color: var(--color4);
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: var(--color1);
+  text-decoration: none;
+  cursor: pointer;
+}
+/* ****************************** */

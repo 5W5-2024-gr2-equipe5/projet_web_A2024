@@ -50,5 +50,10 @@
       </div>
     </div>
   </footer>
+  <script src="<?php echo get_template_directory_uri()?>/js/menu.js"></script>
+  <script src="<?php echo get_template_directory_uri()?>/js/marge-neon.js"></script>
+  <script src="<?php echo get_template_directory_uri()?>/js/liste-cours.js"></script>
+  <script src="<?php echo get_template_directory_uri()?>/js/scriptprof.js"></script>
+  <?php wp_footer(); ?>
 </body>
 </html>

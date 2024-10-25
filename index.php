@@ -8,10 +8,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
-    <link rel="stylesheet" href="/normalize.css" />
-    <link rel="stylesheet" href="./css/index.css" />
-    <link rel="stylesheet" href="./css/h.css" />
-    <link rel="stylesheet" href="./css/couleurs.css" />
+    <link rel="stylesheet" href=" <?php echo get_template_directory_uri() . '/normalize.css'; ?> ">
+    <link rel="stylesheet" href=" <?php echo get_template_directory_uri() . '/style.css'; ?> ">
   </head>
   <body>
     <header>
@@ -27,7 +25,7 @@
             <li>
               <a href="futur.htm" class="test">Perspectives d'avenir</a>
               <ul class="sous-menu">
-                <li><a href="futur.htm#stages">Stages</a></li>
+                <li><a href="futur.htmstages">Stages</a></li>
                 <li><a href="futur.htm#emplois">Emplois futurs</a></li>
                 <li><a href="futur.htm#sup">Études supérieures</a></li>
               </ul>
@@ -65,7 +63,6 @@
         </a>
       </div>
     </header>
-    <script src="./js/menu.js"></script>
     <!-- Section Video -->
     <div class="video">
       <video autoplay loop muted>
@@ -93,19 +90,14 @@
 
         <!-- Inscription & Logo -->
         <div class="inscription-logo">
-          <p>
-            <a class="inscription" href="https://admission.sram.qc.ca/"
-              >S'inscrire</a
-            >
-          </p>
-          <a
-            href="https://www.cmaisonneuve.qc.ca/programme/integration-multimedia/"
-          >
-            <img
-              class="logoM9"
-              src="./images/LOGOM9.png"
-              alt="logo de collège Maisonneuve"
-            />
+          <p>Programme offert à Maisonneuve</p>
+          <a href="https://www.cmaisonneuve.qc.ca/programme/integration-multimedia/">
+            <img class="logoM9" src="./images/LOGOM9.png" alt="logo de collège Maisonneuve" />
+          </a>
+                  
+          <p>S'inscrire avec le SRAM</p>
+          <a href="https://admission.sram.qc.ca/">
+            <img class="sram" src="./picto/sram_icon.png" alt="logo de SRAM" />
           </a>
         </div>
 
@@ -126,5 +118,7 @@
         </div>
       </div>
     </footer>
+    <!-- JS POUR MENU -->
+    <script src="/js/menu.js"></script>
   </body>
 </html>

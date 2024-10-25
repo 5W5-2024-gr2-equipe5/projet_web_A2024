@@ -1,30 +1,30 @@
-  document.addEventListener('DOMContentLoaded', function() {
-    const cards = document.querySelectorAll('.card');
-    const modal = document.getElementById('modal');
-    const modalImg = document.getElementById('modal-img');
-    const captionText = document.getElementById('caption');
+// Fonctionnalité: Gestion de l'affichage des modales de projets
+document.addEventListener('DOMContentLoaded', (event) => {
+  const modal = document.getElementById("projectModal");
+  const modalTitle = document.getElementById("modalTitle");
+  const modalTeam = document.getElementById("modalTeam");
+  const modalImage = document.getElementById("modalImage");
+  const modalDescription = document.getElementById("modalDescription");
+  const span = document.getElementsByClassName("close")[0];
 
-    cards.forEach(card => {
-      card.addEventListener('click', function() {
-        const description = this.getAttribute('data-description');
-        const imgSrc = this.querySelector('img').src;
-        modal.style.display = 'block';
-        modalImg.src = imgSrc;
-        captionText.innerHTML = description;
-      });
-    });
-
-    document.querySelector('.close').addEventListener('click', function() {
-      modal.style.display = 'none';
+  document.querySelectorAll('.more-info').forEach(item => {
+    item.addEventListener('click', event => {
+      event.preventDefault();
+      modalTitle.textContent = item.getAttribute('data-title');
+      modalTeam.textContent = item.getAttribute('data-team');
+      modalImage.src = item.getAttribute('data-image');
+      modalDescription.textContent = item.getAttribute('data-description');
+      modal.style.display = "block";
     });
   });
-// BURGER MENU
-  document.addEventListener('DOMContentLoaded', function() {
-    const burger = document.getElementById('openBtn');
-    const menu = document.querySelector('.menu');
-  
-    burger.addEventListener('click', function() {
-      menu.classList.toggle('active');
-      burger.classList.toggle('open');
-    });
-  });
+
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
+
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+});

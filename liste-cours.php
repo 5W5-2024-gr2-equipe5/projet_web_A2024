@@ -1,19 +1,31 @@
-<?php get_header() ?>
-
-   <h1>Liste des cours</h1>
+<h1>Liste des cours</h1>
+    <div class="navigation">
+    </div>
     <div class="table-c">
-      <table>
+      <table id="course-table">
+        <thead>
         <tr>
-          <th><h2>session 1</h2></th>
-          <th><h2>session 2</h2></th>
-          <th><h2>session 3</h2></th>
-          <th><h2>session 4</h2></th>
-          <th><h2>session 5</h2></th>
-          <th><h2>session 6</h2></th>
+          <th>
+            <button id="prev" class="nav-arrow" onclick="changeSession(-1)">&#10094;</button>
+            <h2>Session 1</h2><button id="next" class="nav-arrow" onclick="changeSession(1)">&#10095;</button>
+        </th>
+          <th>
+            <button id="prev" class="nav-arrow" onclick="changeSession(-1)">&#10094;</button>
+              <h2>Session 2</h2><button id="next" class="nav-arrow" onclick="changeSession(1)">&#10095;</button></th>
+          <th><button id="prev" class="nav-arrow" onclick="changeSession(-1)">&#10094;</button>
+            <h2>Session 3</h2><button id="next" class="nav-arrow" onclick="changeSession(1)">&#10095;</button></th>
+          <th><button id="prev" class="nav-arrow" onclick="changeSession(-1)">&#10094;</button>
+            <h2>Session 4</h2><button id="next" class="nav-arrow" onclick="changeSession(1)">&#10095;</button></th>
+          <th><button id="prev" class="nav-arrow" onclick="changeSession(-1)">&#10094;</button>
+            <h2>Session 5</h2><button id="next" class="nav-arrow" onclick="changeSession(1)">&#10095;</button></th>
+          <th><button id="prev" class="nav-arrow" onclick="changeSession(-1)">&#10094;</button>
+            <h2>Session 6</h2><button id="next" class="nav-arrow" onclick="changeSession(1)">&#10095;</button></th>
         </tr>
+      </thead>
+      <tbody id="courseRows">
         <tr>
-          <td id ="creation-video">
-            <button class="btn" onclick="toggleCollapse('demo')">
+          <td id="creation-video">
+            <button class="btn" onclick="toggleCollapse('1')">
               Création vidéo
             </button>
             <div id="1" class="collapse">
@@ -34,7 +46,7 @@
               </p>
             </div>
           </td>
-          <td>
+          <td id="effets-speciaux">
             <button class="btn" onclick="toggleCollapse('5')">
               Effets spéciaux et animation
             </button>
@@ -56,7 +68,7 @@
               </p>
             </div>
           </td>
-          <td>
+          <td id="imagerie-3d">
             <button class="btn" onclick="toggleCollapse('9')">
               Imagerie 3D
             </button>
@@ -78,7 +90,7 @@
               </p>
             </div>
           </td>
-          <td>
+          <td id="gestion-projets">
             <button class="btn" onclick="toggleCollapse('13')">
               Gestion de projets multimédias
             </button>
@@ -100,58 +112,82 @@
               </p>
             </div>
           </td>
-          <td id="effets-speciaux">Effets spéciaux et animation</td>
-          <td id="imagerie-3d">Imagerie 3D</td>
-          <td id="gestion-projets">Gestion de projets multimédias</td>
-          <td id="methodes-recherche">Méthodes de recherche et préparation au marché du travail</td>
+          <td id="methodes-recherche">
+            Méthodes de recherche et préparation au marché du travail
+          </td>
           <td id="stage">Stage</td>
         </tr>
         <tr>
-          <td id="conception-graphique">Conception graphique et imagerie matricielle</td>
-          <td id="conception-vectorielle">Conception graphique et imagerie vectorielle</td>
+          <td id="conception-graphique">
+            Conception graphique et imagerie matricielle
+          </td>
+          <td id="conception-vectorielle">
+            Conception graphique et imagerie vectorielle
+          </td>
           <td id="design-interactivite">Design d'interactivité</td>
-          <td id="interfaces-web">Conception d'interfaces et développement web</td>
-          <td id="communication-equipe">Communication et dynamique d'une équipe de travail</td>
+          <td id="interfaces-web">
+            Conception d'interfaces et développement web
+          </td>
+          <td id="communication-equipe">
+            Communication et dynamique d'une équipe de travail
+          </td>
           <td id="projet-fin-etudes">Projet de fin d'études</td>
         </tr>
         <tr>
           <td id="mise-en-page-web">Mise en page web</td>
-          <td id="animation-interactivite-web">Animation et interactivité web</td>
+          <td id="animation-interactivite-web">
+            Animation et interactivité web
+          </td>
           <td id="  ">Création de sites web dynamiques</td>
           <td id="creation-jeu-equipe">Création de jeu en équipe</td>
           <td id="projet-web-equipe">Projet web en équipe</td>
         </tr>
         <tr>
-          <td id="animation-interactivite-jeu">Animation et interactivité en jeu</td>
+          <td id="animation-interactivite-jeu">
+            Animation et interactivité en jeu
+          </td>
           <td id="creation-jeu-2d">Création de jeu 2D</td>
           <td id="creation-jeu-3d">Création de jeu 3D</td>
-          <td id="interfaces-web-reactives">Interfaces web réactives et animées</td>
-          <td id="experimentation-jeu-creation">Expérimentation en jeu - volet création</td>
+          <td id="interfaces-web-reactives">
+            Interfaces web réactives et animées
+          </td>
+          <td id="experimentation-jeu-creation">
+            Expérimentation en jeu - volet création
+          </td>
         </tr>
         <tr>
           <td></td>
           <td></td>
           <td></td>
           <td id="animation-3d">Animation 3D</td>
-          <td id="experimentation-jeu-programmation">Expérimentation en jeu - volet programmation</td>
+          <td id="experimentation-jeu-programmation">
+            Expérimentation en jeu - volet programmation
+          </td>
         </tr>
         <tr>
           <td></td>
           <td></td>
           <td></td>
           <td></td>
-          <td id="technologies-emergentes-creation">Technologies émergentes et avancées - volet création</td>
+          <td id="technologies-emergentes-creation">
+            Technologies émergentes et avancées - volet création
+          </td>
         </tr>
         <tr>
           <td></td>
           <td></td>
           <td></td>
           <td></td>
-          <td id="technologies-emergentes-programmation">Technologies émergentes et avancées - volet programmation</td>
+          <td id="technologies-emergentes-programmation">
+            Technologies émergentes et avancées - volet programmation
+          </td>
         </tr>
+      </tbody>
       </table>
     </div>
     <!-- Section BANNER 3d -->
+    <h1>Les Logiciels</h1>
+
     <div class="banner">
       <div class="slider" style="--quantity: 11">
         <div class="item" style="--position: 1">
@@ -256,4 +292,3 @@
       </div>
     </div>
     <script src="./js/liste-cours.js"></script>
-    <?php get_footer() ?>
