@@ -14,6 +14,9 @@ p {
 }
 
 /*********************************** tableau **************************/
+#next {
+  margin-right: 30px; /* Adjust this value as needed */
+}
 .table-c {
   overflow-x: auto;
   white-space: nowrap;
@@ -33,6 +36,56 @@ th {
 }
 td:empty {
   visibility: hidden;
+}
+th{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Navigation Button Styles */
+.nav-arrow {
+  background-color: var(--color1); 
+  color: white; 
+  border: none; 
+  padding: 10px 20px; 
+  cursor: pointer; 
+  font-size: 20px; 
+  transition-duration: 0.4s; 
+  margin: 4px 2px; 
+  display: inline-block; 
+}
+
+.nav-arrow:hover {
+  background-color: var(--color2);
+}
+
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 50px;
+  width: 100%; 
+}
+
+#session-content {
+  width: 300px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc;
+  margin: 0 20px;
+}
+
+.session {
+  display: none;
+}
+
+.session.active {
+  display: block;
 }
 
 /************************ pour montrer la descr du cours ************************/
