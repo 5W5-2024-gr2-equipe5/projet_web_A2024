@@ -148,7 +148,7 @@ body {
 /********************************/
 
 /* Desktop Styles */
-@media (min-width: 769px) {
+@media (min-width: 872px) {
   header {
     flex-direction: row;
     justify-content: space-between;
