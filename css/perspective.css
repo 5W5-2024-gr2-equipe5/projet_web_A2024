@@ -1,18 +1,10 @@
-:root{
-  --marge-petite-avenir: 25px; /* plus petite marge */
-}
-
 body {
     display: flex;
     flex-direction: column;
     background-color: var(--color5);
     color: var(--color4);
+    padding: 0 5vw;
   }
-
-body div{
-  margin: var(--marge-petite-avenir);
-
-} 
 /* style des texte */
 h1,h2,h3{
   text-align: center;
@@ -35,19 +27,65 @@ h1 {
 /* style de la vidéo */
   div.contenantVideo{
     margin: auto;
-    height: 45vw;
+    height: 35vw;
+    width: 100%;
   }
   iframe.video{
     width: 100%;
     height: 100%;
 }
-
+.fond-neon {
+  display: none;
+}
 /* style des div */
 .div-perspective{
   /* background-color: var(--color2); */
+    padding: 1rem;
+    margin-bottom: 25px;
+    margin-left: 25px;
+    margin-right: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #44a5c27a;
+    border-radius: 40px;
 }
 
 /* page responsive */
 /*/@media screen and (min-width: 767px) {
 
   }*/
+  @media (min-width: 769px) {
+
+    .fond-neon {
+      display: block;
+      position: absolute;
+      z-index: -1000;
+      width: 12vw;
+      height: 100vh;
+      background-attachment: scroll;
+      background-size: contain;
+      transform: translateX(-4vw);
+      background-image: url("../images/Background_plus_beau/neons_marge.png");
+      background-repeat: repeat-y;
+      overflow: hidden;
+    }
+  
+    .fond-neon:nth-of-type(2) {
+      right: 1.7vw;
+      transform: scaleX(-1);
+    }
+    .div-perspective{
+      padding: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0;
+      border-radius: 40px;
+      margin-bottom: 25px;
+      margin-left: 10vw;
+      margin-right: 10vw;
+    }
+  }
