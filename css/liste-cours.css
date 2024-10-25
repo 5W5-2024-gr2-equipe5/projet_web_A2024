@@ -14,15 +14,13 @@ p {
 }
 
 /*********************************** tableau **************************/
-#next {
-  margin-right: 30px; /* Adjust this value as needed */
-}
 .table-c {
   overflow-x: auto;
   white-space: nowrap;
 }
 table {
-  border-collapse: collapse;
+  margin: 0 auto;
+  width: 50%; /* Adjust the width as needed */
 }
 
 td,
@@ -30,14 +28,16 @@ th {
   padding: 8px;
   border: 1px solid #11055c;
   display: inline-block;
-  width: 100vw;
+  width: 50vw;
   box-sizing: border-box;
   background-color: #44a5c27f;
 }
+
 td:empty {
   visibility: hidden;
 }
-th{
+
+th {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -46,8 +46,8 @@ th{
 
 /* Navigation Button Styles */
 .nav-arrow {
-  background-color: var(--color1); 
-  color: white; 
+  background-color: var(--color1); /* Match the banner background color */
+  color: white;
   border: none; 
   padding: 10px 20px; 
   cursor: pointer; 
@@ -112,10 +112,38 @@ th{
   font-size: 16px;
   margin: 4px 2px;
   transition-duration: 0.4s;
+  box-sizing: border-box;
+  max-width: 100%;
 }
 
 .btn:hover {
   background-color: var(--color2);
+}
+@media (max-width: 768px) {
+  .btn {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .collapse p {
+    font-size: 14px;
+    line-height: 1.5;
+    padding: 10px;
+  }
+
+}
+
+@media (max-width: 480px) {
+  .btn {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  .collapse p {
+    font-size: 12px;
+    line-height: 1.4;
+    padding: 8px;
+  }
 }
 
 /************************************************/
@@ -285,4 +313,10 @@ th{
   figcaption {
     display: none;
   }
+}
+/*  */
+h1{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
