@@ -10,12 +10,7 @@
 }
 @font-face {
   font-family: "Harlow";
-  src: url("../fonts/HARLOWSI_1.ttf") format("truetype");
-  font-weight: normal;
-}
-@font-face {
-  font-family: "Notted";
-  src: url("../fonts/Notted.ttf") format("truetype");
+  src: url("../fonts/HARLOWSI_1.TTF") format("truetype");
   font-weight: normal;
 }
 
