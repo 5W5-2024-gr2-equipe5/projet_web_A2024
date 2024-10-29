@@ -24,6 +24,19 @@ h3 {
   display: none;
 }
 
+.fond-peinture {
+  position: absolute;
+  z-index: -1001;
+  height: 100vh;
+  width: 100%;
+  background-image: url("../images/Background_plus_beau/peinture_fond.png");
+  background-repeat: repeat;
+  background-attachment: scroll;
+  background-size: 1920px 1080px;
+  overflow-x: hidden;
+  left: 0;
+}
+
 .div-vie-etudiante {
   padding: 1rem;
   margin-bottom: 25px;
