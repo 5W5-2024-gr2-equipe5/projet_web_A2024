@@ -29,6 +29,7 @@ h3 {
   z-index: -1001;
   height: 100vh;
   width: 100%;
+  opacity: 75%;
   background-image: url("../images/Background_plus_beau/peinture_fond.png");
   background-repeat: repeat;
   background-attachment: scroll;
@@ -46,8 +47,9 @@ h3 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #44a5c27a;
+  background-color: #30798fd2;
   border-radius: 40px;
+  box-shadow: 1px 8px 25px -1px rgba(0,0,0,0.75);;
 }
 
 .conteneur-event {
