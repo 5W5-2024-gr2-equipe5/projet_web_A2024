@@ -24,7 +24,7 @@ header {
     top: 5px;
     right: 27px;
 
-    span {
+    .menu-item a {
       display: block;
       width: 35px;
       height: 4px;
@@ -110,7 +110,7 @@ body {
     }
   }
 
-  > ul > .menu-item:hover > .sub-menu {
+  ul > .menu-item:hover > .sub-menu {
     display: block;
   }
 
@@ -179,7 +179,7 @@ body {
           position: relative;
           display: inline-block;
 
-          > a {
+          a {
             padding: 0.5rem 1rem;
           }
 
@@ -281,7 +281,7 @@ body {
     position: relative;
     display: flex;
 
-    span {
+    .menu-item a {
       display: block;
       backface-visibility: hidden;
       transform: translateZ(0);

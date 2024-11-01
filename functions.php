@@ -1,4 +1,5 @@
-<?php add_theme_support('menus');
+<?php 
+add_theme_support('menus');
 add_theme_support('custom-logo');
 add_theme_support('post-thumbnails');
 
@@ -18,3 +19,11 @@ function _5w5_requete($query)
   }
 }
 add_action('pre_get_posts', '_5w5_requete');
+
+/**
+ * Enqueue custom JavaScript file
+ */
+function my_custom_scripts() {
+    wp_enqueue_script('custom-js', get_template_directory_uri() . '/js/menu.js', array(), null, true);
+}
+add_action('wp_enqueue_scripts', 'my_custom_scripts');

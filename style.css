@@ -39,7 +39,7 @@ header .burger {
   top: 5px;
   right: 27px;
 }
-header .burger span {
+header .burger .menu-item a {
   display: block;
   width: 35px;
   height: 4px;
@@ -50,14 +50,14 @@ header .burger span {
   top: 0;
   transition: all 0.3s ease-in-out;
 }
-header .burger span:nth-child(2).open {
+header .burger .menu-item a:nth-child(2).open {
   opacity: 0;
 }
-header .burger span:nth-child(1).open {
+header .burger .menu-item a:nth-child(1).open {
   transform: rotate(45deg);
   top: 11px;
 }
-header .burger span:nth-child(3).open {
+header .burger .menu-item a:nth-child(3).open {
   transform: rotate(-45deg);
   top: -11px;
 }
@@ -108,7 +108,7 @@ body {
   display: block;
   text-align: center;
 }
-.menu-principal-container > ul > .menu-item:hover > .sub-menu {
+.menu-principal-container ul > .menu-item:hover > .sub-menu {
   display: block;
 }
 .menu-principal-container .sub-menu {
@@ -170,7 +170,7 @@ body {
     position: relative;
     display: inline-block;
   }
-  header .menu-principal-container ul .menu-item > a {
+  header .menu-principal-container ul .menu-item a {
     padding: 0.5rem 1rem;
   }
   header .menu-principal-container ul .menu-item ul.sub-menu {
@@ -254,7 +254,7 @@ body {
   position: relative;
   display: flex;
 }
-.test div span {
+.test div .menu-item a {
   display: block;
   backface-visibility: hidden;
   transform: translateZ(0);
