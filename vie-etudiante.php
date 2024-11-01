@@ -2,7 +2,7 @@
 
 <?php
 /*
-Template Name: Vie Etudiante
+Template Name: Page_Vie_Etudiante
 */
 
 get_header(); // Include the WordPress header
