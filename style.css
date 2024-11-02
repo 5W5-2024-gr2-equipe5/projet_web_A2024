@@ -26,15 +26,12 @@ header {
   padding: 2rem;
   background: var(--color5);
   color: white;
+  /* Burger Menu Styles */
 }
-
-.logo img {
+header .logo img {
   height: 40px;
-  /* margin-bottom: 1rem; */
 }
-
-/* Burger Menu Styles */
-.burger {
+header .burger {
   cursor: pointer;
   width: 35px;
   margin: 35px auto;
@@ -42,8 +39,7 @@ header {
   top: 5px;
   right: 27px;
 }
-
-.burger span {
+header .burger .menu-item a {
   display: block;
   width: 35px;
   height: 4px;
@@ -54,23 +50,20 @@ header {
   top: 0;
   transition: all 0.3s ease-in-out;
 }
-
-.burger.open span:nth-child(2) {
+header .burger .menu-item a:nth-child(2).open {
   opacity: 0;
 }
-
-.burger.open span:nth-child(1) {
+header .burger .menu-item a:nth-child(1).open {
   transform: rotate(45deg);
   top: 11px;
 }
-
-.burger.open span:nth-child(3) {
+header .burger .menu-item a:nth-child(3).open {
   transform: rotate(-45deg);
   top: -11px;
 }
 
 /********************************/
-/* previent avoir du blanc */
+/* Prevent white spaces */
 html,
 body {
   margin: 0;
@@ -87,8 +80,7 @@ body {
   }
 }
 /* Menu Styles */
-/* Mobile Menu */
-.menu {
+.menu-principal-container {
   display: none;
   flex-direction: column;
   align-items: center;
@@ -97,36 +89,29 @@ body {
   position: relative;
   z-index: 1;
 }
-
-.menu.active {
+.menu-principal-container.active {
   display: flex;
 }
-
-.menu ul {
+.menu-principal-container ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-
-.menu > ul > li {
+.menu-principal-container .menu-item {
   width: 100%;
   position: relative;
 }
-
-.menu > ul > li > a {
+.menu-principal-container .menu-item a {
   color: var(--color4);
   text-decoration: none;
   padding: 1rem;
   display: block;
   text-align: center;
 }
-
-.menu > ul > li:hover > .sous-menu {
+.menu-principal-container ul > .menu-item:hover > .sub-menu {
   display: block;
-  display: none;
 }
-
-.sous-menu {
+.menu-principal-container .sub-menu {
   display: none;
   background-color: var(--color4);
   list-style: none;
@@ -138,15 +123,13 @@ body {
   width: 100%;
   border-radius: 5px;
 }
-
-.sous-menu li a {
+.menu-principal-container .sub-menu .menu-item a {
   padding: 1rem;
   color: var(--color5);
   text-decoration: none;
   display: block;
 }
-
-.sous-menu li a:hover {
+.menu-principal-container .sub-menu .menu-item a:hover {
   background-color: var(--color2);
 }
 
@@ -169,35 +152,28 @@ body {
     align-items: center;
     padding: 1rem 2rem;
   }
-  .menu {
+  header .menu-principal-container {
     display: flex;
     flex-direction: row;
     position: static;
     background-color: transparent;
     width: auto;
   }
-  .menu ul {
+  header .menu-principal-container ul {
     display: flex;
     flex-direction: row;
     list-style-type: none;
     padding: 0;
     margin: 0;
   }
-  .menu ul li {
+  header .menu-principal-container ul .menu-item {
     position: relative;
     display: inline-block;
   }
-  .menu > ul > li > a {
+  header .menu-principal-container ul .menu-item a {
     padding: 0.5rem 1rem;
   }
-  #closeBtn {
-    display: none;
-  }
-  .burger {
-    display: none;
-  }
-  /* Fixe pour le menu/sousmenu pour desktop*/
-  .menu ul li ul.sous-menu {
+  header .menu-principal-container ul .menu-item ul.sub-menu {
     display: none;
     position: absolute;
     top: 100%;
@@ -205,18 +181,20 @@ body {
     background-color: var(--color4);
     z-index: 10;
   }
-  .menu ul li:hover ul.sous-menu {
+  header .menu-principal-container ul .menu-item ul.sub-menu:hover {
     display: block;
   }
-  .menu ul li ul.sous-menu li {
-    display: block;
+  header #closeBtn {
+    display: none;
+  }
+  header .burger {
+    display: none;
   }
 }
 /************************************hover menu****************************/
 .test.alternative {
   background-color: var(--background);
 }
-
 .test.alternative:hover {
   background-color: var(--hover-back);
   color: var(--hover-front);
@@ -225,7 +203,6 @@ body {
 .test.simple {
   background-color: var(--background);
 }
-
 .test.simple:hover {
   background-color: var(--background-hover);
 }
@@ -266,7 +243,6 @@ body {
   height: 200%;
   border-radius: var(--br, 40%);
   transform: translateY(var(--y, 50%));
-  /* temps animation */
   transition: transform var(--d, 0.4s) ease-in var(--d-d, 0s), border-radius 0.5s ease var(--br-d, 0.08s);
 }
 .test:not(.simple):after {
@@ -278,11 +254,10 @@ body {
   position: relative;
   display: flex;
 }
-.test div span {
+.test div .menu-item a {
   display: block;
   backface-visibility: hidden;
   transform: translateZ(0);
-  /* temps animation  */
   animation: var(--name, none) 0.5s linear forwards 0.18s;
 }
 .test.in {
