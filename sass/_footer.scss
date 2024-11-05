@@ -10,12 +10,13 @@
   text-align: center;
 }
 
-.h2 {
+h2 {
   margin-bottom: 15px;
   color: white;
   font-size: 25px;
   font-weight: 500;
   font-kerning: auto;
+  font-family: 'Harlow Solid', sans-serif;
 }
 
 .map-info iframe {
@@ -28,6 +29,15 @@ p {
   text-align: center;
   white-space: nowrap;
   font-size: 20px;
+}
+
+
+div.map-info p{
+  margin-top: 20px;
+} 
+
+div.inscription-logo p{
+  margin-top: 20px;
 }
 
 .inscription {
