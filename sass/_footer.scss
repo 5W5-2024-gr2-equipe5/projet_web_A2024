@@ -10,6 +10,12 @@
   text-align: center;
 }
 
+@media (min-width: 1024px) {
+  .footer-content {
+    gap: 100px; // Adjust the gap value as needed for desktop
+  }
+}
+
 h2 {
   margin-bottom: 15px;
   color: white;

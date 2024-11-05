@@ -225,6 +225,11 @@ body {
   text-align: center;
 }
 
+@media (min-width: 1024px) {
+  .footer-content {
+    gap: 100px;
+  }
+}
 h2 {
   margin-bottom: 15px;
   color: white;
