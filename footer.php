@@ -21,24 +21,18 @@
 
     <!-- Inscription & Logo -->
     <div class="inscription-logo">
-  <!-- First Inscription Link and Logo -->
-  <p>
-    <a class="inscription" href="<?php echo esc_url(get_theme_mod('inscription_url')); ?>" target="_blank">Programme offert à Maisonneuve
-</a>
-  </p>
-  <a href="<?php echo esc_url(get_theme_mod('inscription_url')); ?>" target="_blank">
-    <img class="logoM9" src="<?php echo esc_url(get_theme_mod('inscription_logo')); ?>" alt="logo de collège Maisonneuve" />
-  </a>
+      <!-- First Inscription Link and Logo -->
+      <p>Programme offert à Maisonneuve</p>
+      <a href="<?php echo esc_url(get_theme_mod('inscription_url')); ?>" target="_blank">
+        <img class="logoM9" src="<?php echo esc_url(get_theme_mod('inscription_logo')); ?>" alt="logo de collège Maisonneuve" />
+      </a>
 
-  <!-- Second Inscription Link and SRAM Logo -->
-  <p>
-    <a class="inscription" href="<?php echo esc_url(get_theme_mod('sram_url')); ?>" target="_blank">S'inscrire avec le SRAM</a>
-  </p>
-  <a href="<?php echo esc_url(get_theme_mod('sram_url')); ?>" target="_blank">
-    <img class="logoSRAM" src="<?php echo esc_url(get_theme_mod('sram_logo')); ?>" alt="logo de SRAM" />
-  </a>
-</div>
-
+      <!-- Second Inscription Link and SRAM Logo -->
+      <p>S'inscrire avec le SRAM</p>
+      <a href="<?php echo esc_url(get_theme_mod('sram_url')); ?>" target="_blank">
+        <img class="logoSRAM" src="<?php echo esc_url(get_theme_mod('sram_logo')); ?>" alt="logo de SRAM" />
+      </a>
+    </div>
 
     <!-- Section Sociaux HARD CODED -->
     <div class="sociaux">
