@@ -55,7 +55,7 @@
             </li>
           </ul>
         </div>
-        <!-- Burger Icon -->
+
         <a href="#" id="openBtn" class="burger">
           <span></span>
           <span></span>

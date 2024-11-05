@@ -1,12 +1,3 @@
-/* ******************************Footer **************************/
-
-footer div {
-  margin-left: 20%;
-  margin-right: 20%;
-}
-.map {
-}
-
 .footer {
   background-color: var(--color5);
   padding: 20px;
@@ -17,31 +8,44 @@ footer div {
   flex-direction: column;
   gap: 20px;
   text-align: center;
-  
 }
 
-.footer h2 {
+@media (min-width: 1024px) {
+  .footer-content {
+    gap: 100px; // Adjust the gap value as needed for desktop
+  }
+}
+
+h2 {
   margin-bottom: 15px;
   color: white;
   font-size: 25px;
   font-weight: 500;
   font-kerning: auto;
-  ;
+  font-family: 'Harlow Solid', sans-serif;
 }
 
 .map-info iframe {
   max-width: 500px;
   border: 0;
-  
 }
-.footer p {
+
+p {
   color: white;
   text-align: center;
   white-space: nowrap;
   font-size: 20px;
-  }
+}
 
-/* S'inscription*/
+
+div.map-info p{
+  margin-top: 20px;
+} 
+
+div.inscription-logo p{
+  margin-top: 20px;
+}
+
 .inscription {
   color: white;
   text-decoration: none;
@@ -50,7 +54,6 @@ footer div {
   color: white;
 }
 
-/*(mobile-first style) */
 .inscription-logo,
 .sociaux,
 .map-info {
@@ -64,19 +67,18 @@ footer div {
   width: 100px;
   margin-top: 10px;
 }
+
 .social-icons a {
   margin: 0 10px;
   font-size: 24px;
 }
 
-/* Media query pour ecran plus large */
 @media screen and (min-width: 768px) {
   .footer-content {
     flex-direction: row;
     justify-content: space-between;
     text-align: left;
     align-items: flex-start;
-    
   }
 
   .map-info,
@@ -91,11 +93,10 @@ footer div {
   }
 
   .map-info img {
-    width: 100px; 
+    width: 100px;
   }
 }
 
-/* Style pour logos sociaux */
 .social-icons a {
   display: inline-block;
   font-size: 30px;
@@ -111,73 +112,10 @@ footer div {
 }
 
 @keyframes bounce {
-  0%,
-  100% {
+  0%, 100% {
     transform: translateY(0);
   }
   50% {
     transform: translateY(-10px);
   }
-}
-/* MENU de bas ver le haut seulement en Mobile */
-@media (max-width: 768px) {
-  @keyframes slideUp {
-    0% {
-      transform: translateY(100%);
-      opacity: 0;
-    }
-    100% {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-  .menu {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 85vh;
-    background-color: var(--color5);
-    transform: translateY(100%);
-    opacity: 0;
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-    z-index: 1000;
-  }
-
-  .menu.active {
-    animation: slideUp 0.3s forwards;
-  }
-}
-
-/************************************************************************************************************************/
-/* Style pour logos sociaux */
-.social-icons a {
-  display: inline-block;
-  font-size: 30px;
-  margin: 0 10px;
-  transition: transform 0.3s ease;
-  color: var(--color1);
-}
-
-.social-icons a:hover {
-  transform: translateY(-10px);
-  animation: bounce 0.6s ease-in-out;
-}
-
-@keyframes bounce {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-/* S'inscription*/
-.inscription {
-  color: white;
-  text-decoration: none;
-}
-.inscription:visited {
-  color: white;
 }
