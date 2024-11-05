@@ -52,5 +52,18 @@ wp_reset_postdata();
 //get_footer(); // Inclut le footer du thème
 ?>
 
+
+<!-- Popup-card pour les profs -->
+<div id="popup-card" class="popup">
+  <div class="popup-content">
+    <span id="close-popup" class="close">&times;</span>
+    <h2 id="popup-name"></h2>
+    <p id="popup-description"></p>
+    <div id="popup-icons-container"></div>
+    <img id="popup-image" src="" alt="Popup Image" />
+    <blockquote id="popup-quote"></blockquote>
+  </div>
+</div>
+
 <!-- JS page prof -->
 <script src="<?php echo get_template_directory_uri() . '/js/scriptprof.js' ;?>"> </script>
