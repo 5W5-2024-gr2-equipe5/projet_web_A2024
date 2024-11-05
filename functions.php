@@ -21,8 +21,16 @@ function custom_theme_scripts() {
 
     // Enqueue le style du thème
     wp_enqueue_style('custom-style', get_template_directory_uri() . '/style.css');
+    
 }
 add_action('wp_enqueue_scripts', 'custom_theme_scripts');
+
+
+// Performance video
+function enqueue_video_scripts() {
+    wp_enqueue_script('video-js', 'https://vjs.zencdn.net/7.11.4/video.min.js', array(), null, true);
+}
+add_action('wp_enqueue_scripts', 'enqueue_video_scripts');
 
 
 
