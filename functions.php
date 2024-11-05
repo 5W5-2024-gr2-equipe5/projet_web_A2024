@@ -25,14 +25,16 @@ function custom_theme_scripts() {
 add_action('wp_enqueue_scripts', 'custom_theme_scripts');
 
 
+
+//Section dans Wordpress ou on peut ajouter des images et des liens
 function mytheme_customize_register($wp_customize) {
-  // Existing Inscription Section
+    // Section Inscription / Programme Offert
   $wp_customize->add_section('inscription_section', array(
       'title' => __('Inscription Settings', 'mytheme'),
       'priority' => 30,
   ));
 
-  // First Inscription URL and Logo
+  // Section Maisonneuve URL and Logo
   $wp_customize->add_setting('inscription_url', array(
       'default' => 'https://www.cmaisonneuve.qc.ca/programme/integration-multimedia/',
       'sanitize_callback' => 'esc_url_raw',
