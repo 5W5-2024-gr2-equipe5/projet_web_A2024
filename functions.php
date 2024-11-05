@@ -15,7 +15,8 @@ function _5w5_requete($query) {
 add_action('pre_get_posts', '_5w5_requete');
 
 // Enqueue les styles et les scripts
-function custom_theme_scripts() {
+function custom_theme_scripts()
+ {
     // Enqueue FontAwesome
     wp_enqueue_style('fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css', array(), '5.15.4');
 
@@ -26,7 +27,7 @@ function custom_theme_scripts() {
 add_action('wp_enqueue_scripts', 'custom_theme_scripts');
 
 
-// Performance video
+// Script de Performance pour la video
 function enqueue_video_scripts() {
     wp_enqueue_script('video-js', 'https://vjs.zencdn.net/7.11.4/video.min.js', array(), null, true);
 }
