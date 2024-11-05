@@ -86,3 +86,16 @@ function mytheme_customize_register($wp_customize) {
   )));
 }
 add_action('customize_register', 'mytheme_customize_register');
+
+
+//Script pour la barre de recherche
+
+function search_by_title_only($query) {
+    if (!is_admin() && $query->is_search && $query->is_main_query()) {
+        $query->set('post_type', 'post'); // Ensures only posts are searched
+        $query->set('s', $query->get('s'));
+        $query->set('posts_per_page', -1); // Show all matching posts (optional)
+        $query->set('title_like', '%' . $query->get('s') . '%'); // Search within titles
+    }
+}
+add_action('pre_get_posts', 'search_by_title_only');
