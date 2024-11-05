@@ -31,7 +31,7 @@ if ($query->have_posts()) : ?>
         <?php while ($query->have_posts()) : $query->the_post(); ?>
             <div class="professeur"  style = 'background-image : url("<?= get_the_post_thumbnail_url(); ?>")' >
                 <div class="content" 
-                     data-description="<?php the_content(); ?>" 
+                     data-description="<?= strip_tags(get_the_content()); ?>" 
                      data-quote="Quote for <?php the_title(); ?>"
                      data-image="<?= get_the_post_thumbnail_url(); ?>" 
                      data-icons='[{"class":"brush","url":"./liste-cours.htm#conception-graphique"},
