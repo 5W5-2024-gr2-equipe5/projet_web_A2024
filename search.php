@@ -19,11 +19,11 @@ Template Name: Custom Search Results
 get_header(); ?>
 
 <div class="search-results-container">
-    <header class="page-header">
+    <div class="page-header">
         <h1 class="page-title">
-            <?php printf(__('Search Results for: %s', 'textdomain'), '<span>' . get_search_query() . '</span>'); ?>
+            <?php printf(__('Résultat de recherche pour : %s ', 'textdomain'), '<span class="espace-gauche">' . get_search_query() . '</span>'); ?>
         </h1>
-    </header><!-- .page-header -->
+    </div><!-- .page-header -->
 
     <div class="search-results-content">
         <?php if (have_posts()) : ?>
@@ -52,7 +52,7 @@ get_header(); ?>
             </div>
         <?php else : ?>
             <p class="no-results">
-                <?php _e('Sorry, no results were found for your search. Please try using different keywords.', 'textdomain'); ?>
+                <?php _e("Désolé, nous n'avons rien trouvé pour votre recherche, essayez un mot clé différent.", 'textdomain'); ?>
             </p>
         <?php endif; ?>
     </div><!-- .search-results-content -->
