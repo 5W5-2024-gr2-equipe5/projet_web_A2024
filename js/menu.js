@@ -1,12 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Burger icon functionality
-  const burger = document.getElementById("openBtn");
-  const menu = document.querySelector(".menu-principal-container");
+  const burger = document.getElementById("chk_burger");
+  const menu = document.querySelector("nav.menu-principal-container"); // Adjusted to target the nav element
 
-  burger.addEventListener("click", function () {
-    menu.classList.toggle("active");
-    burger.classList.toggle("open");
-  });
+  if (burger && menu) {
+    // Ensures both elements are found
+    burger.addEventListener("click", function () {
+      menu.classList.toggle("active");
+      burger.classList.toggle("open");
+    });
+  }
 
   // Functionality for elements with class "test"
   document.querySelectorAll(".test").forEach((button) => {
