@@ -80,11 +80,11 @@ div h3:nth-of-type(2) {
     background-image: url("../images/Background_plus_beau/neons_marge.png");
     background-repeat: repeat-y;
     overflow: hidden;
-  }
 
-  .fond-neon:nth-of-type(2) {
-    right: 1.7vw;
-    transform: scaleX(-1);
+    &:nth-of-type(2) {
+      right: 1.7vw;
+      transform: scaleX(-1);
+    }
   }
 
   h3 {
@@ -130,17 +130,17 @@ div h3:nth-of-type(2) {
     justify-content: space-between;
     background-color: #44a5c200;
     margin-bottom: 0;
-  }
-
-  #event .conteneur-event:nth-of-type(2) {
-    padding: 2rem;
-    display: flex;
-    flex-direction: row-reverse;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #44a5c200;
-    margin-bottom: 0;
+    
+    &:nth-of-type(2) {
+      padding: 2rem;
+      display: flex;
+      flex-direction: row-reverse;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #44a5c200;
+      margin-bottom: 0;
+    }
   }
 
   #event h2, #event h3 {

@@ -3,32 +3,35 @@
   src: url("../fonts/Poppins-Regular.ttf") format("truetype");
   font-weight: normal;
 }
+
+@font-face {
+  font-family: "Poppins-Black";
+  src: url("../fonts/Poppins-Black.ttf") format("truetype");
+  font-weight: bolder;
+}
+
+/*
+  Belle font mais pas adaptée et difficile de lecture parfois (a revérifier)
+
 @font-face {
   font-family: "DeLatto";
   src: url("../fonts/DeLatto.ttf") format("truetype");
   font-weight: normal;
-}
+}*/
+
 @font-face {
   font-family: "Harlow";
   src: url("../fonts/HARLOWSI_1.ttf") format("truetype");
   font-weight: normal;
 }
-@font-face {
-  font-family: "Notted";
-  src: url("../fonts/Notted.ttf") format("truetype");
-  font-weight: normal;
-}
 
-h1 {
-  font-family: "DeLatto";
-}
-
-h2 {
+h1, h2 {
   font-family: "Harlow";
 }
 
 h3 {
-  font-family: "Notted";
+  font-family: "Poppins-Black";
+  font-weight: bolder;
 }
 
 body {

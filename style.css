@@ -14,20 +14,205 @@ Text Domain: tim
 /*/////////////////////////////////////////////////*/
 /* sections de pages                               */
 /*/////////////////////////////////////////////////*/
+* {
+  scroll-behavior: smooth;
+}
+
 header {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 2rem;
+  background: var(--color5);
+  color: white;
 }
 
-/* ******************************Footer **************************/
-footer div {
-  margin-left: 20%;
-  margin-right: 20%;
+.logo img {
+  height: 40px;
+  /* margin-bottom: 1rem; */
 }
 
+/* Burger Menu Styles */
+.burger {
+  cursor: pointer;
+  width: 35px;
+  margin: 35px auto;
+  position: absolute;
+  top: 5px;
+  right: 27px;
+}
+
+.burger span {
+  display: block;
+  width: 35px;
+  height: 4px;
+  margin-bottom: 7px;
+  border-radius: 5px;
+  background-color: var(--color1);
+  position: relative;
+  top: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.burger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.open span:nth-child(1) {
+  transform: rotate(45deg);
+  top: 11px;
+}
+
+.burger.open span:nth-child(3) {
+  transform: rotate(-45deg);
+  top: -11px;
+}
+
+/********************************/
+/* previent avoir du blanc */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  background-color: var(--color5);
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: 100%;
+    padding: 0;
+  }
+}
+/* Menu Styles */
+/* Mobile Menu */
+.menu {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--color4);
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.menu.active {
+  display: flex;
+}
+
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu > ul > li {
+  width: 100%;
+  position: relative;
+}
+
+.menu > ul > li > a {
+  color: var(--color4);
+  text-decoration: none;
+  padding: 1rem;
+  display: block;
+  text-align: center;
+}
+
+.menu > ul > li:hover > .sous-menu {
+  display: block;
+  display: none;
+}
+
+.sous-menu {
+  display: none;
+  background-color: var(--color4);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.sous-menu li a {
+  padding: 1rem;
+  color: var(--color5);
+  text-decoration: none;
+  display: block;
+}
+
+.sous-menu li a:hover {
+  background-color: var(--color2);
+}
+
+#closeBtn {
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/********************************/
+/* Desktop Styles */
+@media (min-width: 872px) {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+  }
+  .menu {
+    display: flex;
+    flex-direction: row;
+    position: static;
+    background-color: transparent;
+    width: auto;
+  }
+  .menu ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  .menu ul li {
+    position: relative;
+    display: inline-block;
+  }
+  .menu > ul > li > a {
+    padding: 0.5rem 1rem;
+  }
+  #closeBtn {
+    display: none;
+  }
+  .burger {
+    display: none;
+  }
+  /* Fixe pour le menu/sousmenu pour desktop*/
+  .menu ul li ul.sous-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--color4);
+    z-index: 10;
+  }
+  .menu ul li:hover ul.sous-menu {
+    display: block;
+  }
+  .menu ul li ul.sous-menu li {
+    display: block;
+  }
+}
+/************************************hover menu****************************/
 .footer {
   background-color: var(--color5);
   padding: 20px;
@@ -40,12 +225,18 @@ footer div {
   text-align: center;
 }
 
-.footer h2 {
+@media (min-width: 1024px) {
+  .footer-content {
+    gap: 100px;
+  }
+}
+h2 {
   margin-bottom: 15px;
   color: white;
   font-size: 25px;
   font-weight: 500;
   font-kerning: auto;
+  font-family: "Harlow Solid", sans-serif;
 }
 
 .map-info iframe {
@@ -53,14 +244,21 @@ footer div {
   border: 0;
 }
 
-.footer p {
+p {
   color: white;
   text-align: center;
   white-space: nowrap;
   font-size: 20px;
 }
 
-/* S'inscription*/
+div.map-info p {
+  margin-top: 20px;
+}
+
+div.inscription-logo p {
+  margin-top: 20px;
+}
+
 .inscription {
   color: white;
   text-decoration: none;
@@ -70,7 +268,6 @@ footer div {
   color: white;
 }
 
-/*(mobile-first style) */
 .inscription-logo,
 .sociaux,
 .map-info {
@@ -90,7 +287,6 @@ footer div {
   font-size: 24px;
 }
 
-/* Media query pour ecran plus large */
 @media screen and (min-width: 768px) {
   .footer-content {
     flex-direction: row;
@@ -111,7 +307,6 @@ footer div {
     width: 100px;
   }
 }
-/* Style pour logos sociaux */
 .social-icons a {
   display: inline-block;
   font-size: 30px;
@@ -134,70 +329,9 @@ footer div {
     transform: translateY(-10px);
   }
 }
-/* MENU de bas ver le haut seulement en Mobile */
-@media (max-width: 768px) {
-  @keyframes slideUp {
-    0% {
-      transform: translateY(100%);
-      opacity: 0;
-    }
-    100% {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-  .menu {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 85vh;
-    background-color: var(--color5);
-    transform: translateY(100%);
-    opacity: 0;
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-    z-index: 1000;
-  }
-  .menu.active {
-    animation: slideUp 0.3s forwards;
-  }
-}
-/************************************************************************************************************************/
-/* Style pour logos sociaux */
-.social-icons a {
-  display: inline-block;
-  font-size: 30px;
-  margin: 0 10px;
-  transition: transform 0.3s ease;
-  color: var(--color1);
-}
-
-.social-icons a:hover {
-  transform: translateY(-10px);
-  animation: bounce 0.6s ease-in-out;
-}
-
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-/* S'inscription*/
-.inscription {
-  color: white;
-  text-decoration: none;
-}
-
-.inscription:visited {
-  color: white;
-}
-
 :root {
-  --color1: #fb00ff; /* orange */
-  --color2: #59b4d0; /* turquoise */
+  --color1: #Da1d8e; /* rose */
+  --color2: #44a5c2; /* turquoise */
   --color3: #ece639; /* yellow */
   --color4: #f0f0c2; /* beige */
   --color5: #0a023b; /* navy blue */
@@ -242,18 +376,6 @@ body {
   min-height: 100vh;
   background-color: var(--color5);
   font-family: "Poppins", sans-serif;
-}
-
-h1 {
-  color: var(--color4);
-}
-
-h2 {
-  color: var(--color4);
-}
-
-p {
-  color: var(--color4);
 }
 
 /*********************************** tableau **************************/
@@ -1260,105 +1382,5 @@ body {
 
 .recherche__input {
   background-color: rgba(0, 0, 0, 0.3);
-}
-
-#burger {
-  cursor: pointer;
-  width: 35px;
-  margin: 35px auto;
-  position: absolute;
-  top: 5px;
-  right: 27px;
-}
-
-#chk_burger {
-  display: none;
-}
-
-.menu-principal-container {
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  position: relative;
-  z-index: 1;
-}
-.menu-principal-container ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.menu-principal-container .menu-item {
-  width: 100%;
-  position: relative;
-}
-.menu-principal-container .menu-item a {
-  color: var(--color4);
-  text-decoration: none;
-  padding: 1rem;
-  display: block;
-  text-align: center;
-}
-.menu-principal-container .sub-menu {
-  display: none;
-}
-
-svg path {
-  fill: var(--color1);
-}
-
-#chk_burger:checked ~ .menu-principal-container {
-  display: flex;
-}
-
-@media (min-width: 872px) {
-  header {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-  }
-  header svg {
-    display: none;
-  }
-  header .menu-principal-container {
-    display: flex;
-    position: static;
-    width: auto;
-  }
-  header .menu-principal-container ul {
-    display: flex;
-    flex-direction: row;
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-  header .menu-principal-container ul .menu-item {
-    position: relative;
-    display: flex;
-  }
-  header .menu-principal-container ul .menu-item a {
-    padding: 0.5rem 1rem;
-  }
-  header .menu-principal-container ul .menu-item .sub-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: var(--color4);
-    color: var(--color5);
-    z-index: 10;
-  }
-  header .menu-principal-container ul .menu-item:hover .sub-menu {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-self: center;
-    width: 100%;
-  }
-  header .menu-principal-container ul .menu-item:hover .sub-menu li {
-    color: var(--color5);
-  }
-  header .menu-principal-container ul .menu-item:hover .sub-menu li:hover {
-    background-color: var(--color2);
-  }
-}
+  color: --color4;
+}/*# sourceMappingURL=style.css.map */
