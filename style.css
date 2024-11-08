@@ -20,6 +20,9 @@ header {
   justify-content: center;
   align-items: center;
   padding: 2rem;
+  background: var(--color5);
+  color: white;
+  z-index: 10;
 }
 
 body {
@@ -30,6 +33,7 @@ body {
 .footer {
   background-color: var(--color5);
   padding: 20px;
+  z-index: 10;
 }
 
 .footer-content {
@@ -186,11 +190,6 @@ div.inscription-logo p {
     max-height: 30vh;
   }
 }
-body {
-  min-height: 100vh;
-  background-color: var(--color5);
-}
-
 /*********************************** tableau **************************/
 .table-c {
   overflow-x: auto;
@@ -485,7 +484,7 @@ h1 {
   src: url("fonts/Poppins-Regular.ttf") format("truetype");
   font-weight: normal;
 }
-body {
+.projets {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -781,6 +780,20 @@ h3 {
   display: none;
 }
 
+#fond-peinture {
+  position: absolute;
+  z-index: -1;
+  height: 100vh;
+  width: 100%;
+  opacity: 75%;
+  background-image: url("http://tim2.local/wp-content/uploads/2024/11/peinture_fond.png");
+  background-repeat: repeat;
+  background-attachment: scroll;
+  background-size: 1920px 1080px;
+  overflow-x: hidden;
+  left: 0;
+}
+
 .div-vie-etudiante {
   padding: 1rem;
   margin-bottom: 25px;
@@ -827,7 +840,6 @@ div h3:nth-of-type(2) {
   .fond-neon {
     display: block;
     position: absolute;
-    z-index: -1000;
     width: 12vw;
     height: 100vh;
     background-attachment: scroll;
@@ -836,6 +848,8 @@ div h3:nth-of-type(2) {
     background-image: url("http://tim2.local/wp-content/uploads/2024/11/neons_marge.png");
     background-repeat: repeat-y;
     overflow: hidden;
+    top: 0;
+    z-index: -1;
   }
   .fond-neon:nth-of-type(2) {
     right: 1.7vw;
@@ -917,7 +931,7 @@ div h3:nth-of-type(2) {
   box-sizing: border-box;
 }
 
-body {
+#professors-container {
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -1461,4 +1475,4 @@ svg path {
   70% {
     transform: translateY(calc(2px * var(--move))) translateZ(0) rotate(calc(3deg * var(--rotate) * var(--part)));
   }
-}
+}/*# sourceMappingURL=style.css.map */
