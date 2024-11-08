@@ -12,8 +12,9 @@
   </head>
 
 <?php
+
 /* 
-Template Name: Custom Search Results 
+                                    Template Name: Custom Search Results 
 */
 
 get_header(); ?>
