@@ -7,7 +7,7 @@ Template Name: Page_Vie_Etudiante
 
 get_header(); // Include the WordPress header
 ?>
-<body>
+  <div class="container-vie-etudiante">
     <div class="fond-peinture"></div>
     <div class="fond-neon"></div>
     <div class="fond-neon"></div>
@@ -85,8 +85,7 @@ get_header(); // Include the WordPress header
 
     <script src="<?php echo get_template_directory_uri(); ?>/js/marge-neon.js"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/js/fond-peinture.js"></script>
-</body>
-
+  </div>
 <?php
 get_footer(); // Include WordPress footer
 ?>
