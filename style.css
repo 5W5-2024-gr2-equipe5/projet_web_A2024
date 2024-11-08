@@ -942,7 +942,7 @@ body {
 }
 
 /* ****************************** */
-body {
+.container-vie-etudiante {
   display: flex;
   flex-direction: column;
   background-color: var(--color5);
@@ -1020,7 +1020,7 @@ div h3:nth-of-type(2) {
     background-attachment: scroll;
     background-size: contain;
     transform: translateX(-4vw);
-    background-image: url("../images/Background_plus_beau/neons_marge.png");
+    background-image: url("http://tim2.local/wp-content/uploads/2024/11/neons_marge.png");
     background-repeat: repeat-y;
     overflow: hidden;
   }
@@ -1369,6 +1369,40 @@ body {
 .container > div:hover {
   opacity: 1; /* Full opacity */
   filter: grayscale(0%) blur(0);
+}
+
+.search-results-div {
+  display: flex;
+  height: 50vh;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.search-results-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.search-result-item {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+}
+
+.search-result-title {
+  font-size: 1.5em;
+  margin: 0;
+}
+
+.search-result-excerpt {
+  font-size: 1em;
+  color: #555;
+}
+
+.pagination {
+  margin-top: 20px;
+  text-align: center;
 }
 
 /*/////////////////////////////////////////////////*/
