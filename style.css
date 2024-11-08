@@ -20,12 +20,9 @@ header {
   justify-content: center;
   align-items: center;
   padding: 2rem;
-<<<<<<< Updated upstream
-=======
   background: var(--color5);
   color: white;
   z-index: 10;
->>>>>>> Stashed changes
 }
 
 .footer {
@@ -1230,8 +1227,11 @@ body {
 
 .recherche__input {
   background-color: rgba(0, 0, 0, 0.3);
+  color: #f0f0c2;
+}
 
-  color: --color4;
+.espace-gauche {
+  margin-left: 8px;
 }
 
 #burger {
@@ -1346,5 +1346,4 @@ svg path {
     text-align: center;
     width: 100%;
   }
-}
-
+}/*# sourceMappingURL=style.css.map */
