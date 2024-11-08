@@ -93,6 +93,8 @@ div h3:nth-of-type(2) {
     background-image: url("http://tim2.local/wp-content/uploads/2024/11/neons_marge.png");
     background-repeat: repeat-y;
     overflow: hidden;
+    top: 0;
+    z-index: -1;
 
     &:nth-of-type(2) {
       right: 1.7vw;
