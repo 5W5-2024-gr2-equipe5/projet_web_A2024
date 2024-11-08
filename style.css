@@ -14,205 +14,14 @@ Text Domain: tim
 /*/////////////////////////////////////////////////*/
 /* sections de pages                               */
 /*/////////////////////////////////////////////////*/
-* {
-  scroll-behavior: smooth;
-}
-
 header {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 2rem;
-  background: var(--color5);
-  color: white;
 }
 
-.logo img {
-  height: 40px;
-  /* margin-bottom: 1rem; */
-}
-
-/* Burger Menu Styles */
-.burger {
-  cursor: pointer;
-  width: 35px;
-  margin: 35px auto;
-  position: absolute;
-  top: 5px;
-  right: 27px;
-}
-
-.burger span {
-  display: block;
-  width: 35px;
-  height: 4px;
-  margin-bottom: 7px;
-  border-radius: 5px;
-  background-color: var(--color1);
-  position: relative;
-  top: 0;
-  transition: all 0.3s ease-in-out;
-}
-
-.burger.open span:nth-child(2) {
-  opacity: 0;
-}
-
-.burger.open span:nth-child(1) {
-  transform: rotate(45deg);
-  top: 11px;
-}
-
-.burger.open span:nth-child(3) {
-  transform: rotate(-45deg);
-  top: -11px;
-}
-
-/********************************/
-/* previent avoir du blanc */
-html,
-body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  overflow-x: hidden;
-  background-color: var(--color5);
-}
-
-@media (max-width: 600px) {
-  .container {
-    width: 100%;
-    padding: 0;
-  }
-}
-/* Menu Styles */
-/* Mobile Menu */
-.menu {
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  background-color: var(--color4);
-  width: 100%;
-  position: relative;
-  z-index: 1;
-}
-
-.menu.active {
-  display: flex;
-}
-
-.menu ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.menu > ul > li {
-  width: 100%;
-  position: relative;
-}
-
-.menu > ul > li > a {
-  color: var(--color4);
-  text-decoration: none;
-  padding: 1rem;
-  display: block;
-  text-align: center;
-}
-
-.menu > ul > li:hover > .sous-menu {
-  display: block;
-  display: none;
-}
-
-.sous-menu {
-  display: none;
-  background-color: var(--color4);
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  position: absolute;
-  left: 0;
-  top: 100%;
-  width: 100%;
-  border-radius: 5px;
-}
-
-.sous-menu li a {
-  padding: 1rem;
-  color: var(--color5);
-  text-decoration: none;
-  display: block;
-}
-
-.sous-menu li a:hover {
-  background-color: var(--color2);
-}
-
-#closeBtn {
-  color: white;
-  text-decoration: none;
-  font-size: 24px;
-  cursor: pointer;
-  position: absolute;
-  top: 10px;
-  right: 10px;
-}
-
-/********************************/
-/* Desktop Styles */
-@media (min-width: 872px) {
-  header {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-  }
-  .menu {
-    display: flex;
-    flex-direction: row;
-    position: static;
-    background-color: transparent;
-    width: auto;
-  }
-  .menu ul {
-    display: flex;
-    flex-direction: row;
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-  .menu ul li {
-    position: relative;
-    display: inline-block;
-  }
-  .menu > ul > li > a {
-    padding: 0.5rem 1rem;
-  }
-  #closeBtn {
-    display: none;
-  }
-  .burger {
-    display: none;
-  }
-  /* Fixe pour le menu/sousmenu pour desktop*/
-  .menu ul li ul.sous-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: var(--color4);
-    z-index: 10;
-  }
-  .menu ul li:hover ul.sous-menu {
-    display: block;
-  }
-  .menu ul li ul.sous-menu li {
-    display: block;
-  }
-}
-/************************************hover menu****************************/
 .footer {
   background-color: var(--color5);
   padding: 20px;
@@ -375,7 +184,6 @@ div.inscription-logo p {
 body {
   min-height: 100vh;
   background-color: var(--color5);
-  font-family: "Poppins", sans-serif;
 }
 
 /*********************************** tableau **************************/
@@ -1416,9 +1224,121 @@ body {
 
 .recherche__input {
   background-color: rgba(0, 0, 0, 0.3);
-  color: #f0f0c2;
+
+  color: --color4;
 }
 
-.espace-gauche {
-  margin-left: 8px;
-}/*# sourceMappingURL=style.css.map */
+#burger {
+  cursor: pointer;
+  width: 35px;
+  margin: 35px auto;
+  position: absolute;
+  top: 5px;
+  right: 27px;
+}
+
+#chk_burger {
+  display: none;
+}
+
+.menu-principal-container {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  white-space: nowrap;
+}
+.menu-principal-container ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.menu-principal-container .menu-item {
+  width: 100%;
+  position: relative;
+  flex: 1;
+  box-sizing: border-box;
+}
+.menu-principal-container .menu-item a {
+  color: var(--color4);
+  text-decoration: none;
+  padding: 1rem;
+  display: block;
+  text-align: center;
+}
+.menu-principal-container .sub-menu {
+  display: none;
+}
+
+svg path {
+  fill: var(--color1);
+}
+
+#chk_burger:checked ~ .menu-principal-container {
+  display: flex;
+}
+
+@media (min-width: 872px) {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+  }
+  header svg {
+    display: none;
+  }
+  header .menu-principal-container {
+    display: flex;
+    position: static;
+    width: auto;
+  }
+  header .menu-principal-container ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    flex: 1;
+    width: 100%;
+  }
+  header .menu-principal-container ul .menu-item {
+    position: relative;
+    display: flex;
+  }
+  header .menu-principal-container ul .menu-item a {
+    padding: 0.5rem 1rem;
+    flex-wrap: nowrap;
+  }
+  header .menu-principal-container ul .menu-item .sub-menu {
+    position: absolute;
+    top: 100%;
+    background-color: var(--color4);
+    color: var(--color5);
+    z-index: 10;
+    width: 100%; /* Make the sub-menu match the width of the parent item */
+    box-sizing: border-box;
+  }
+  header .menu-principal-container ul .menu-item:hover .sub-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  header .menu-principal-container ul .menu-item:hover .sub-menu li {
+    width: 100%;
+    color: var(--color5);
+  }
+  header .menu-principal-container ul .menu-item:hover .sub-menu li:hover {
+    background-color: var(--color2);
+  }
+  header .menu-principal-container ul .menu-item:hover .sub-menu li a {
+    color: var(--color5);
+    text-align: center;
+    width: 100%;
+  }
+}
+
