@@ -4,7 +4,14 @@
     box-sizing: border-box;
 }
 
-
+#professors-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color5);
+    font-family: "Poppins", sans-serif;
+}
 
 /* Container acordeon Prof */
 .container {
@@ -20,7 +27,7 @@
         text-align: center;
         margin: 0; 
         padding: 0.5rem 0; 
-    }
+    } 
       
     /* PROFESSOR */
     > div {
