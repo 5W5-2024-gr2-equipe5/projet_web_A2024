@@ -24,9 +24,9 @@ h3 {
   display: none;
 }
 
-.fond-peinture {
+#fond-peinture {
   position: absolute;
-  z-index: -1001;
+  z-index: -1;
   height: 100vh;
   width: 100%;
   opacity: 75%;
