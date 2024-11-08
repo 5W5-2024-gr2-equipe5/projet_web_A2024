@@ -917,7 +917,7 @@ div h3:nth-of-type(2) {
   box-sizing: border-box;
 }
 
-body {
+#professors-container {
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -1461,4 +1461,39 @@ svg path {
   70% {
     transform: translateY(calc(2px * var(--move))) translateZ(0) rotate(calc(3deg * var(--rotate) * var(--part)));
   }
+}
+@font-face {
+  font-family: "Poppins-Regular";
+  src: url("../fonts/Poppins-Regular.ttf") format("truetype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Poppins-Black";
+  src: url("../fonts/Poppins-Black.ttf") format("truetype");
+  font-weight: bolder;
+}
+/*
+  Belle font mais pas adaptée et difficile de lecture parfois (a revérifier)
+
+@font-face {
+  font-family: "DeLatto";
+  src: url("../fonts/DeLatto.ttf") format("truetype");
+  font-weight: normal;
+}*/
+@font-face {
+  font-family: "Harlow";
+  src: url("../fonts/HARLOWSI_1.ttf") format("truetype");
+  font-weight: normal;
+}
+h1, h2 {
+  font-family: "Harlow";
+}
+
+h3 {
+  font-family: "Poppins-Black";
+  font-weight: bolder;
+}
+
+body {
+  font-family: "Poppins-Regular", sans-serif;
 }
