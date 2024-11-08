@@ -1,4 +1,9 @@
-<?php get_header() ?>
+<?php 
+/*
+Template Name: Page_Futur
+*/
+
+get_header() ?>
 
     <h1>Perspectives d'avenir</h1>
     <div id="stages">
