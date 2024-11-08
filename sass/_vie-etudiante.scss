@@ -1,4 +1,4 @@
-body {
+.container-vie-etudiante {
   display: flex;
   flex-direction: column;
   background-color: var(--color5);
@@ -77,7 +77,7 @@ div h3:nth-of-type(2) {
     background-attachment: scroll;
     background-size: contain;
     transform: translateX(-4vw);
-    background-image: url("../images/Background_plus_beau/neons_marge.png");
+    background-image: url("http://tim2.local/wp-content/uploads/2024/11/neons_marge.png");
     background-repeat: repeat-y;
     overflow: hidden;
 
