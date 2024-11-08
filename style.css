@@ -20,11 +20,18 @@ header {
   justify-content: center;
   align-items: center;
   padding: 2rem;
+<<<<<<< Updated upstream
+=======
+  background: var(--color5);
+  color: white;
+  z-index: 10;
+>>>>>>> Stashed changes
 }
 
 .footer {
   background-color: var(--color5);
   padding: 20px;
+  z-index: 10;
 }
 
 .footer-content {
@@ -480,7 +487,7 @@ h1 {
   src: url("fonts/Poppins-Regular.ttf") format("truetype");
   font-weight: normal;
 }
-body {
+.projets {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -822,7 +829,6 @@ div h3:nth-of-type(2) {
   .fond-neon {
     display: block;
     position: absolute;
-    z-index: -1000;
     width: 12vw;
     height: 100vh;
     background-attachment: scroll;
