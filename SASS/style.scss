@@ -23,6 +23,7 @@ Text Domain: tim
 @import "projets";
 @import "vie-etudiante";
 @import "professeur";
+@import "search-results";
 
 /*/////////////////////////////////////////////////*/
 /* composants                                      */
@@ -30,3 +31,4 @@ Text Domain: tim
 @import "composants/boutons";
 @import "composants/search";
 @import "composants/liens";
+@import "composants/menu";

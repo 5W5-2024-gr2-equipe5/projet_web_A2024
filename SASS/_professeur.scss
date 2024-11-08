@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-body {
+#professors-container {
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -27,7 +27,7 @@ body {
         text-align: center;
         margin: 0; 
         padding: 0.5rem 0; 
-    }
+    } 
       
     /* PROFESSOR */
     > div {
