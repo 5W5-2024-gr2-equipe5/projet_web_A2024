@@ -8,7 +8,7 @@ Template Name: Page_Vie_Etudiante
 get_header(); // Include the WordPress header
 ?>
   <div class="container-vie-etudiante">
-    <div class="fond-peinture"></div>
+    <div id="fond-peinture"></div>
     <div class="fond-neon"></div>
     <div class="fond-neon"></div>
     <h1>Vie étudiante</h1>
