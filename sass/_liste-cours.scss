@@ -1,16 +1,6 @@
 body {
   min-height: 100vh;
   background-color: var(--color5);
-  font-family: "Poppins", sans-serif;
-}
-h1 {
-  color: var(--color4);
-}
-h2 {
-  color: var(--color4);
-}
-p {
-  color: var(--color4);
 }
 
 /*********************************** tableau **************************/
@@ -48,26 +38,25 @@ th {
 .nav-arrow {
   background-color: var(--color1); /* Match the banner background color */
   color: white;
-  border: none; 
-  padding: 10px 20px; 
-  cursor: pointer; 
-  font-size: 20px; 
-  transition-duration: 0.4s; 
-  margin: 4px 2px; 
-  display: inline-block; 
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 20px;
+  transition-duration: 0.4s;
+  margin: 4px 2px;
+  display: inline-block;
 }
 
 .nav-arrow:hover {
   background-color: var(--color2);
 }
 
-
 .navigation {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-top: 50px;
-  width: 100%; 
+  width: 100%;
 }
 
 #session-content {
@@ -130,7 +119,6 @@ th {
     line-height: 1.5;
     padding: 10px;
   }
-
 }
 
 @media (max-width: 480px) {
@@ -315,7 +303,7 @@ th {
   }
 }
 /*  */
-h1{
+h1 {
   display: flex;
   flex-direction: row;
   justify-content: center;

@@ -1,4 +1,7 @@
-<h1>Liste des cours</h1>
+<?php
+get_header();
+?>
+<!-- <h1>Liste des cours</h1>
     <div class="navigation">
     </div>
     <div class="table-c">
@@ -186,7 +189,7 @@
       </table>
     </div>
     <!-- Section BANNER 3d -->
-    <h1>Les Logiciels</h1>
+   <!--  <h1>Les Logiciels</h1>
 
     <div class="banner">
       <div class="slider" style="--quantity: 11">
@@ -290,5 +293,89 @@
           </div>
         </div>
       </div>
+    </div> -->
+
+    <div class="content">
+  <h1>Liste des cours</h1>
+
+  <div class="navigation">
+  </div>
+
+  <div class="table-c">
+    <table id="course-table">
+      <thead>
+        <tr>
+          <?php 
+          for ($i = 1; $i <= 6; $i++) : ?>
+            <th>
+              <button id="prev-<?php echo $i; ?>" class="nav-arrow" onclick="changeSession(-1)">&#10094;</button>
+              <h2>Session <?php echo $i; ?></h2>
+              <button id="next-<?php echo $i; ?>" class="nav-arrow" onclick="changeSession(1)">&#10095;</button>
+            </th>
+          <?php endfor; ?>
+        </tr>
+      </thead>
+      <tbody id="courseRows">
+        <tr>
+          <?php
+          $courses = new WP_Query([
+            'post_type' => 'course', // Replace 'course' with your custom post type or category
+            'posts_per_page' => -1, 
+          ]);
+
+          if ($courses->have_posts()) :
+            while ($courses->have_posts()) : $courses->the_post(); ?>
+              <td id="<?php echo sanitize_title(get_the_title()); ?>">
+                <button class="btn" onclick="toggleCollapse('<?php the_ID(); ?>')">
+                  <?php the_title(); ?>
+                </button>
+                <div id="<?php the_ID(); ?>" class="collapse">
+                  <p><?php the_content(); ?></p>
+                </div>
+              </td>
+          <?php
+            endwhile;
+            wp_reset_postdata(); // Reset the global post data
+          else :
+            echo '<td>' . __('aucun cours', 'text-domain') . '</td>';
+          endif;
+          ?>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h1><?php _e('Les Logiciels', 'text-domain'); ?></h1>
+
+  <div class="banner">
+    <div class="slider" style="--quantity: 11">
+      <?php
+      // Example array for software items
+      $software_items = [
+        ['src' => 'adobe_icon.png', 'caption' => 'Adobe', 'description' => 'Utilisé pour la création et l\'édition de contenu multimédia.'],
+        ['src' => 'arduino_icon.png', 'caption' => 'Arduino', 'description' => 'Utilisé pour la création de projets électroniques interactifs.'],
+        ['src' => 'github_icon.png', 'caption' => 'GitHub', 'description' => 'Utilisé pour le contrôle de version et la collaboration sur le code.'],
+        // Add more items as needed
+      ];
+
+      foreach ($software_items as $index => $item) : ?>
+        <div class="item" style="--position: <?php echo $index + 1; ?>">
+          <figure>
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/picto/' . $item['src']); ?>" alt="" />
+            <figcaption><?php echo esc_html($item['caption']); ?></figcaption>
+          </figure>
+          <div class="popup-message">
+            <?php echo esc_html($item['description']); ?>
+          </div>
+        </div>
+      <?php endforeach; ?>
     </div>
-    <script src="./js/liste-cours.js"></script>
+  </div>
+</div>
+
+
+
+5
+ <?php   wp_enqueue_script('custom-script', get_stylesheet_directory_uri() . '/js/liste-cours.js', array('jquery'), null, true);
+
+ get_footer(); ?>
