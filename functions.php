@@ -121,3 +121,19 @@ function search_by_title_or_category($query) {
     }
 }
 add_action('pre_get_posts', 'search_by_title_or_category');
+
+
+// Ajouter un menu
+// Enqueue custom JavaScript
+function theme_enqueue_scripts() {
+    // Enqueue main JavaScript file
+    wp_enqueue_script(
+        'custom-menu-script', // Handle for the script
+        get_template_directory_uri() . '/js/menu.js', // Path to your JavaScript file
+        array('jquery'), // Dependencies (if any, e.g., 'jquery')
+        null, // Version number (null if you don't want to specify)
+        true // Load script in the footer
+    );
+}
+add_action('wp_enqueue_scripts', 'theme_enqueue_scripts');
+?>

@@ -5,3 +5,7 @@ header {
   align-items: center;
   padding: 2rem;
 }
+body {
+  display: flex;
+  flex-direction: column;
+}

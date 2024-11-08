@@ -15,6 +15,7 @@
 
   <body>
     <header>
+
       <div class="logo">
         <?php echo get_custom_logo(); ?>
       </div>
@@ -32,6 +33,7 @@
       ));
       get_search_form()
       ?>
-     
+
+      <script src="<?php echo get_template_directory_uri() . '/js/menu.js' ;?>"> </script>
+
     </header>
-    <script src="/js/menu.js"></script>
