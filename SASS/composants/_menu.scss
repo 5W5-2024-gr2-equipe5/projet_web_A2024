@@ -43,6 +43,18 @@
   top: 10px;
 }
 
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 .menu-principal-container {
   display: none;
   flex-direction: column;
@@ -51,6 +63,8 @@
   position: relative;
   z-index: 1;
   white-space: nowrap;
+
+
 
   ul {
     list-style: none;
@@ -84,12 +98,10 @@ svg path {
 #chk_burger:checked ~ .menu-principal-container {
   display: flex;
 }
-
 @media (min-width: 872px) {
   #burger {
     display: none;
   }
-  
   header {
     flex-direction: row;
     justify-content: space-between;
@@ -98,10 +110,12 @@ svg path {
     svg {
       display: none;
     }
+    // BOUT DE CODE POUR LE MENU PRINCIPAL POUR QUE CA RESTE HORIZONTAL TOUCHE PAS
     .menu-principal-container {
       display: flex;
       position: static;
       width: auto;
+      
 
       ul {
         display: flex;
@@ -127,7 +141,8 @@ svg path {
             color: var(--color5);
             z-index: 10;
             width: auto; /* Permet le sub-menu d'etre prendre le width baser sur contenu */
-              box-sizing: border-box;
+            box-sizing: border-box;
+            border-radius: 5px;
             font-family: 'Poppins', sans-serif;
           }
           &:hover {
@@ -149,9 +164,6 @@ svg path {
                   text-align: center;
                   width: 100%;
                   white-space: normal;
-
-
-
                 }
               }
             }
@@ -161,3 +173,39 @@ svg path {
     }
   }
 }
+
+
+// PEUT ETRE ENLEVER SI PAS BESOIN (ou marche pas)
+// CE BOUT DE CODE CEST POUR L"ANIMATION DU MENU BURGER 
+@media (max-width: 872px) {
+  .menu-principal-container {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    white-space: nowrap;
+    transition: all 0.5s ease-out;
+  }
+
+  /* Slide up animation translate et opacite */
+  @keyframes slideUp {
+    0% {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  /*  slide-up animation quand le burger menu est checked */
+  #chk_burger:checked ~ .menu-principal-container {
+    display: flex;
+    animation: slideUp 0.5s ease-out forwards;
+  }
+}
+
