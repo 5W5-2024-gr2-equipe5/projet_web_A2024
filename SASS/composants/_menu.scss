@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
 
+// BURGER
 #burger {
   cursor: pointer;
   width: 35px;
@@ -42,19 +43,9 @@
   position: absolute;
   top: 10px;
 }
+// JUSQUA ICI
 
-
-@keyframes slideUp {
-  0% {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
+// MENU PRINCIPAL **IMPORTANT** TRAVAIL DE EMILY DONT TOUCH (ou toucher avec precaution)
 .menu-principal-container {
   display: none;
   flex-direction: column;
@@ -63,8 +54,6 @@
   position: relative;
   z-index: 1;
   white-space: nowrap;
-
-
 
   ul {
     list-style: none;
@@ -110,7 +99,7 @@ svg path {
     svg {
       display: none;
     }
-    // BOUT DE CODE POUR LE MENU PRINCIPAL POUR QUE CA RESTE HORIZONTAL TOUCHE PAS
+    // BOUT DE CODE POUR LE MENU PRINCIPAL POUR QUE CA RESTE HORIZONTAL TOUCHE PAS (ON A BESOIN DE CA)
     .menu-principal-container {
       display: flex;
       position: static;
@@ -173,6 +162,7 @@ svg path {
     }
   }
 }
+//  FAIRE ATTENTION A CE BOUT DE CODE LA
 
 
 // PEUT ETRE ENLEVER SI PAS BESOIN (ou marche pas)
