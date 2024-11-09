@@ -11,7 +11,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  height: 24px;
+  height: 30px; // Hauteur des barres du burger
   z-index: 2;
 
   span {
@@ -21,6 +21,8 @@
     background: var(--color1);
     border-radius: 2px;
     transition: all 0.3s ease-in-out;
+    // Ajout de margin pour separer les barres du burger
+    margin: 3px 0; 
   }
 }
 
@@ -56,8 +58,6 @@
   z-index: 1;
   white-space: nowrap;
 
-
-
   ul {
     list-style: none;
     margin: 0;
@@ -68,7 +68,7 @@
     position: relative;
     flex: 1;
     box-sizing: border-box;
-
+    
     a {
       color: var(--color4);
       text-decoration: none;
@@ -76,6 +76,8 @@
       display: block;
       text-align: center;
       font-family: 'Poppins', sans-serif;
+
+      
     }
   }
   .sub-menu {
@@ -94,6 +96,7 @@ svg path {
   #burger {
     display: none;
   }
+  
   header {
     flex-direction: row;
     justify-content: space-between;
@@ -107,6 +110,7 @@ svg path {
       display: flex;
       position: static;
       width: auto;
+
       
 
       ul {
@@ -136,6 +140,7 @@ svg path {
             box-sizing: border-box;
             border-radius: 5px;
             font-family: 'Poppins', sans-serif;
+
           }
           &:hover {
             .sub-menu {
@@ -182,23 +187,33 @@ svg path {
     transition: all 0.5s ease-out;
   }
 
-  /* Slide up animation translate et opacite */
+  /* Jello-like slide up animation */
   @keyframes slideUp {
     0% {
-      transform: translateY(100%);
+      transform: translateY(100%) scaleY(1.3);
       opacity: 0;
     }
-
-    100% {
-      transform: translateY(0);
+    30% {
+      transform: translateY(-20%) scaleY(0.9);
       opacity: 1;
+    }
+    50% {
+      transform: translateY(10%) scaleY(1.1);
+    }
+    70% {
+      transform: translateY(-10%) scaleY(0.95);
+    }
+    100% {
+      transform: translateY(0) scaleY(1);
     }
   }
 
   /*  slide-up animation quand le burger menu est checked */
   #chk_burger:checked ~ .menu-principal-container {
     display: flex;
-    animation: slideUp 0.5s ease-out forwards;
+    animation: slideUp 0.7s ease-out forwards;
   }
 }
+
+
 

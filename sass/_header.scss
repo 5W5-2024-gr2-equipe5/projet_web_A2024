@@ -5,3 +5,17 @@ header {
   align-items: center;
   padding: 2rem;
 }
+
+// Push the menu to the right
+.logo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    width: 100%;
+    max-width: 200px;
+  }
+}
+
+
