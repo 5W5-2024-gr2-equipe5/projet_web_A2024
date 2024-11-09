@@ -15,6 +15,7 @@ Text Domain: tim
 /* sections de pages                               */
 /*/////////////////////////////////////////////////*/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap");
 header {
   display: flex;
   flex-direction: column;
@@ -1262,6 +1263,7 @@ div h3:nth-of-type(2) {
   padding: 1rem;
   display: block;
   text-align: center;
+  font-family: "Poppins", sans-serif;
 }
 .menu-principal-container .sub-menu {
   display: none;
@@ -1313,19 +1315,21 @@ svg path {
     background-color: var(--color4);
     color: var(--color5);
     z-index: 10;
-    width: 100%; /* Make the sub-menu match the width of the parent item */
+    width: auto; /* Permet le sub-menu d'etre prendre le width baser sur contenu */
     box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
   }
   header .menu-principal-container ul .menu-item:hover .sub-menu {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: auto;
   }
   header .menu-principal-container ul .menu-item:hover .sub-menu li {
     width: 100%;
     color: var(--color5);
+    font-size: 1rem;
   }
   header .menu-principal-container ul .menu-item:hover .sub-menu li:hover {
     background-color: var(--color2);
@@ -1334,5 +1338,6 @@ svg path {
     color: var(--color5);
     text-align: center;
     width: 100%;
+    white-space: normal;
   }
 }

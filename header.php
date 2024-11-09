@@ -14,24 +14,26 @@
   </head>
 
   <body>
-    <header>
-      <div class="logo">
-        <?php echo get_custom_logo(); ?>
-      </div>
-      <!-- MENU -->
-      <label id="burger" for="chk_burger">
-        <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" color="#000">
-          <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 5a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1zm0 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
-        </svg>
-      </label>
-      <input id="chk_burger" type="checkbox">
-      <?php echo
-      wp_nav_menu(array(
-        "menu" => "principal",
-        "container" => "nav"
-      ));
-      get_search_form()
-      ?>
-     
-    </header>
-    <script src="/js/menu.js"></script>
+  <header>
+  <div class="logo">
+    <?php echo get_custom_logo(); ?>
+  </div>
+  <!-- MENU -->
+  <label id="burger" for="chk_burger">
+    <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" color="#000">
+      <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 5a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1zm0 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+    </svg>
+  </label>
+  <input id="chk_burger" type="checkbox">
+  <?php echo
+  wp_nav_menu(array(
+    "menu" => "principal",
+    "container" => "nav",
+    "container_class" => "menu-principal-container"
+  ));
+  get_search_form()
+  ?>
+</header>
+<script src="<?php echo get_template_directory_uri() . '/js/menu.js'; ?>"></script>
+</body>
+</html>
