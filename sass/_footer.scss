@@ -1,3 +1,15 @@
+// Commentaire pour les autres membres de l'équipe de développement
+// Lire pour comprendre le sass du footer
+
+// FORCER A METTRE LES REGLES DE STYLE POUR H2 et P
+// Maniere que j'ai trouver pour forcer les regles de style pour h2 et p dans le footer
+
+// DIV INFO-MAP = Contient la carte et les informations de contact
+// DIV INSCRIPTION-LOGO = Contient le logo Maisonneuve et SRAM avec lien cliquable vers les sites appropriés
+// DIV SOCIAUX = Contient les liens vers les réseaux sociaux de Maisonneuve instagram, facebook et YouTube
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+  
 .footer {
   background-color: var(--color5);
   padding: 20px;
@@ -12,7 +24,7 @@
 
 @media (min-width: 1024px) {
   .footer-content {
-    gap: 100px; // Adjust the gap value as needed for desktop
+    gap: 100px; 
   }
 }
 
@@ -22,7 +34,6 @@ footer h2 {
   font-size: 25px;
   font-weight: 500;
   font-kerning: auto;
-  font-family: 'Harlow Solid', sans-serif;
 }
 
 .map-info iframe {
@@ -37,13 +48,16 @@ footer p {
   font-size: 20px;
 }
 
-
-div.map-info p{
+div.map-info p,h2{
   margin-top: 20px;
+  font-family: 'Poppins', sans-serif;
+
 } 
 
 div.inscription-logo p{
   margin-top: 20px;
+  font-family: 'Poppins', sans-serif;
+
 }
 
 .inscription {

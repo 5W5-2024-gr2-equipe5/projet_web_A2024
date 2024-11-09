@@ -14,6 +14,7 @@ Text Domain: tim
 /*/////////////////////////////////////////////////*/
 /* sections de pages                               */
 /*/////////////////////////////////////////////////*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap");
 header {
   display: flex;
   flex-direction: column;
@@ -45,7 +46,6 @@ footer h2 {
   font-size: 25px;
   font-weight: 500;
   font-kerning: auto;
-  font-family: "Harlow Solid", sans-serif;
 }
 
 .map-info iframe {
@@ -60,12 +60,14 @@ footer p {
   font-size: 20px;
 }
 
-div.map-info p {
+div.map-info p, h2 {
   margin-top: 20px;
+  font-family: "Poppins", sans-serif;
 }
 
 div.inscription-logo p {
   margin-top: 20px;
+  font-family: "Poppins", sans-serif;
 }
 
 .inscription {
