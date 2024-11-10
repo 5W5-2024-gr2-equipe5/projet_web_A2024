@@ -1362,7 +1362,7 @@ svg path {
     background-color: var(--color4);
     color: var(--color5);
     z-index: 10;
-    width: auto; /* Permet le sub-menu d'etre prendre le width baser sur contenu */
+    width: auto; /* Permet le sub-menu de prendre le width baser sur contenu */
     box-sizing: border-box;
     border-radius: 5px;
     font-family: "Poppins", sans-serif;

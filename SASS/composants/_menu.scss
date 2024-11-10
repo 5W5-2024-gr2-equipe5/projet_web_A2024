@@ -1,6 +1,7 @@
+//Force les fonts a uploader (hardcoded) sur le local
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
 
-// BURGER
+// Fonctionnalite du CHECK BURGER / MENU BURGER
 #burger {
   cursor: pointer;
   width: 35px;
@@ -140,7 +141,7 @@ svg path {
             background-color: var(--color4);
             color: var(--color5);
             z-index: 10;
-            width: auto; /* Permet le sub-menu d'etre prendre le width baser sur contenu */
+            width: auto; /* Permet le sub-menu de prendre le width baser sur contenu */
             box-sizing: border-box;
             border-radius: 5px;
             font-family: 'Poppins', sans-serif;
@@ -174,6 +175,7 @@ svg path {
     }
   }
 }
+// FIN DU BOUT DE CODE DE EMILY ET MOI (modifier avec precaution)
 
 
 
