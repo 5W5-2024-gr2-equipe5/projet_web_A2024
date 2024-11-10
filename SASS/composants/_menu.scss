@@ -111,8 +111,6 @@ svg path {
       position: static;
       width: auto;
 
-      
-
       ul {
         display: flex;
         flex-direction: row;
@@ -121,6 +119,12 @@ svg path {
         margin: 0;
         flex: 1;
         width: 100%;
+        // PARTI ICI
+        background-color: var(--color1);
+        border-radius: 5px;
+        border:2px solid var(--color2);
+        // JUSQUA ICI peut etre modifier
+       
         .menu-item {
           position: relative;
           display: flex;
@@ -214,6 +218,9 @@ svg path {
     animation: slideUp 0.7s ease-out forwards;
   }
 }
+
+
+
 
 
 
