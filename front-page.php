@@ -1,4 +1,4 @@
-<?php get_header() ?>
+<?php get_header(); ?>
 
 <!-- Section Video -->
 <div class="video">
@@ -7,5 +7,13 @@
     Your browser does not support the video tag.
   </video>
 </div>
+
+
+<!-- POUR TESTER LE SHORTCUT -->
+<!-- Icon Banner Slider -->
+<div class="icon-banner-slider">
+  <?php echo do_shortcode('[icon_banner_slider]'); ?>
+</div>
+<!--  -->
 
 <?php get_footer(); ?>
