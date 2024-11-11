@@ -498,6 +498,23 @@ h1 {
   src: url("fonts/Poppins-Regular.ttf") format("truetype");
   font-weight: normal;
 }
+@font-face {
+  font-family: "Harlow";
+  src: url("fonts/HARLOWSI_1.ttf") format("truetype");
+  font-weight: normal;
+}
+h1 {
+  font-family: "Harlow";
+}
+
+a.more-info {
+  font-family: "Poppins";
+}
+
+p#modalDescription {
+  font-family: "Poppins";
+}
+
 /* Container card */
 .container-projet {
   display: flex;

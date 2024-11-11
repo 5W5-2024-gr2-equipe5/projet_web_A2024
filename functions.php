@@ -26,6 +26,15 @@ function custom_theme_scripts()
 }
 add_action('wp_enqueue_scripts', 'custom_theme_scripts');
 
+// Enqueue les styles et les scripts pour les projets
+function enqueue_project_styles_scripts() {
+    wp_enqueue_style('normalize', get_template_directory_uri() . '/normalize.css');
+    wp_enqueue_style('style', get_template_directory_uri() . '/style.css');
+    wp_enqueue_script('projets-js', get_template_directory_uri() . '/js/projets.js', array('jquery'), null, true);
+}
+add_action('wp_enqueue_scripts', 'enqueue_project_styles_scripts');
+
+
 
 // Script de Performance pour la video
 function enqueue_video_scripts() {
@@ -121,3 +130,34 @@ function search_by_title_or_category($query) {
     }
 }
 add_action('pre_get_posts', 'search_by_title_or_category');
+
+
+// Ajouter custom post type Project (NE PAS TOUCHER IMPORTANT)
+// NOTE POUR LES AUTRES MEMBRES DE L'EQUIPE: NE PAS TOUCHER CE CODE
+// CE CODE EST NECESSAIRE POUR QUE LES PROJETS SOIENT AFFICHES SUR LA PAGE PROJETS ÉTUDIANTS
+// PS : DOWNLOAD ACF PLUGIN pour WordPress (AVOIR LES MÊMES CHAMPS QUE MOI)
+// TEAM_NAME (text), PROJECT_DESCRIPTION (text), PROJECT_IMAGE (image) PROJECT LINK (bonus si on le lien)*pas tester pour les liens
+function register_project_post_type() {
+    $labels = array(
+        'name' => _x('Projects', 'Post Type General Name', 'text_domain'),
+        'singular_name' => _x('Project', 'Post Type Singular Name', 'text_domain'),
+        // Other labels...
+    );
+    $args = array(
+        'label' => __('Project', 'text_domain'),
+        'supports' => array('title', 'editor', 'thumbnail'),
+        'public' => true,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'menu_position' => 5,
+        'show_in_admin_bar' => true,
+        'show_in_nav_menus' => true,
+        'can_export' => true,
+        'has_archive' => true,
+        'exclude_from_search' => false,
+        'publicly_queryable' => true,
+        'capability_type' => 'post',
+    );
+    register_post_type('project', $args);
+}
+add_action('init', 'register_project_post_type', 0);

@@ -4,6 +4,25 @@
   font-weight: normal;
 }
 
+@font-face {
+  font-family: "Harlow";
+  src: url("fonts/HARLOWSI_1.ttf") format("truetype"); // Update the path if necessary
+  font-weight: normal;
+}
+
+// MANIERE DE BYPASSER LE PROBLEME DE POLICE DE CARACTERE
+h1 {
+  font-family: "Harlow";
+}
+
+a.more-info {
+  font-family: "Poppins";
+}
+
+p#modalDescription {
+  font-family: "Poppins";
+}
+// FIN DE BYPASSER LE PROBLEME DE POLICE DE CARACTERE
 
 /* Container card */
 .container-projet {
@@ -164,6 +183,7 @@
   font-size: 1rem;
   margin-bottom: 10px;
   line-height: 1.4em;
+  
 }
 
 .container-projet .box .content a {
@@ -251,6 +271,7 @@
   margin-bottom: 20px;
   font-size: 50px;
   color: var(--color1);
+  
   
 }
 .modal-content p{
