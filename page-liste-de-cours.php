@@ -350,59 +350,13 @@ Template Name: liste-de-cours
 
   <h1><?php _e('Les Logiciels', 'text-domain'); ?></h1>
 
-  <div class="banner">
-    <div class="slider" style="--quantity: 11">
-      <?php
-      // Example array for software items
-      $software_items = [
-        ['src' => 'adobe_icon.png', 'caption' => 'Adobe', 'description' => 'Utilisé pour la création et l\'édition de contenu multimédia.'],
-        ['src' => 'arduino_icon.png', 'caption' => 'Arduino', 'description' => 'Utilisé pour la création de projets électroniques interactifs.'],
-        ['src' => 'github_icon.png', 'caption' => 'GitHub', 'description' => 'Utilisé pour le contrôle de version et la collaboration sur le code.'],
-        ['src' => 'html_css_js_v3_icon.png', 'caption' => 'HTML/CSS/JS', 'description' => 'Utilisé pour le développement web front-end.'],
-        ['src' => 'maya_icon.png', 'caption' => 'Maya', 'description' => 'Utilisé pour la modélisation 3D et l\'animation.'],
-        ['src' => 'react_icon.png', 
-        'caption' => 'React', 
-        'description' => 'Utilisé pour le développement d\'interfaces utilisateur.'],
-        [
-          'src' => 'resolume_icon.png',
-          'caption' => 'Resolume',
-          'description' => 'Utilisé pour les performances audiovisuelles en temps réel.'],
-      [
-          'src' => 'touchdesigner_icon.png',
-          'caption' => 'TouchDesigner',
-          'description' => 'Utilisé pour la création de contenu interactif et visuel.'
-      ],
-      [
-          'src' => 'unity_icon.png',
-          'caption' => 'Unity',
-          'description' => 'Utilisé pour le développement de jeux et d\'applications 3D.'
-      ],
-      [
-          'src' => 'vscode_icon.png',
-          'caption' => 'VS Code',
-          'description' => 'Utilisé pour l\'édition de code et le développement logiciel.'
-      ],
-      [
-          'src' => 'wordpress_icon.png',
-          'caption' => 'WordPress',
-          'description' => 'Utilisé pour la création et la gestion de sites web.'
-      ]
-      ];
-
-      foreach ($software_items as $index => $item) : ?>
-        <div class="item" style="--position: <?php echo $index + 1; ?>">
-          <figure>
-            <img src="<?php echo esc_url(get_template_directory_uri() . '/picto/' . $item['src']); ?>" alt="" />
-            <figcaption><?php echo esc_html($item['caption']); ?></figcaption>
-          </figure>
-          <div class="popup-message">
-            <?php echo esc_html($item['description']); ?>
-          </div>
-        </div>
-      <?php endforeach; ?>
-    </div>
-  </div>
+<!-- POUR TESTER LE SHORTCUT -->
+<!-- Icon Banner Slider -->
+ <!-- LE PLUGIN EST IMPLEMENTER SUR LA PAGE LISTE DE COURS -->
+<div class="icon-banner-slider">
+  <?php echo do_shortcode('[icon_banner_slider]'); ?>
 </div>
+<!--  -->
  <?php   wp_enqueue_script('custom-script', get_stylesheet_directory_uri() . '/js/liste-cours.js', array('jquery'), null, true);
 
  get_footer(); ?>

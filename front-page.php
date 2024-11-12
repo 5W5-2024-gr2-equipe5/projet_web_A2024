@@ -1,4 +1,4 @@
-<?php get_header() ?>
+<?php get_header(); ?>
 
 <!-- Section Video -->
 <div class="video">
@@ -7,5 +7,4 @@
     Your browser does not support the video tag.
   </video>
 </div>
-
 <?php get_footer(); ?>

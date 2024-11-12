@@ -10,15 +10,6 @@
   font-weight: bolder;
 }
 
-/*
-  Belle font mais pas adaptée et difficile de lecture parfois (a revérifier)
-
-@font-face {
-  font-family: "DeLatto";
-  src: url("../fonts/DeLatto.ttf") format("truetype");
-  font-weight: normal;
-}*/
-
 @font-face {
   font-family: "Harlow";
   src: url("../fonts/HARLOWSI_1.ttf") format("truetype");
@@ -34,3 +25,6 @@ h3 {
   font-weight: bolder;
 }
 
+body {
+  font-family: "Poppins-Regular", sans-serif;
+}
