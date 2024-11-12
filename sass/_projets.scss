@@ -4,29 +4,39 @@
   font-weight: normal;
 }
 
-.projets {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background: var(--color5);
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@font-face {
+  font-family: "Harlow";
+  src: url("fonts/HARLOWSI_1.ttf") format("truetype"); // Update the path if necessary
+  font-weight: normal;
 }
 
+// MANIERE DE BYPASSER LE PROBLEME DE POLICE DE CARACTERE
+h1 {
+  font-family: "Harlow";
+}
+
+a.more-info {
+  font-family: "Poppins";
+}
+
+p#modalDescription {
+  font-family: "Poppins";
+}
+// FIN DE BYPASSER LE PROBLEME DE POLICE DE CARACTERE
+
 /* Container card */
-.container {
+.container-projet {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   width: 100%;
-  gap: 20px;
+  height: 100%;
+  gap: 80px;
 
 }
 
-.container .box {
+.container-projet .box {
   position: relative;
   width: 100%;
   max-width: 450px;
@@ -37,10 +47,11 @@
   align-items: center;
   margin: 20px 0;
   transition: 0.5s;
+  margin-top: 150px;
 }
 
-.container .box::before,
-.container .box::after {
+.container-projet .box::before,
+.container-projet .box::after {
   content: '';
   position: absolute;
   top: 0;
@@ -53,12 +64,12 @@
   transition: 0.5s;
 }
 
-.container .box::before {
+.container-projet .box::before {
   filter: blur(30px);
 }
 
-.container .box:hover::before,
-.container .box:hover::after {
+.container-projet .box:hover::before,
+.container-projet .box:hover::after {
   transform: skewX(0deg);
   left: 20px;
   width: calc(100% - 90px);
@@ -78,21 +89,21 @@
   }
 }
 
-.container .box:nth-child(1):before,
-.container .box:nth-child(1):after,
-.container .box:nth-child(2):before,
-.container .box:nth-child(2):after,
-.container .box:nth-child(3):before,
-.container .box:nth-child(3):after,
-.container .box:nth-child(4):before,
-.container .box:nth-child(4):after{
+.container-projet .box:nth-child(1):before,
+.container-projet .box:nth-child(1):after,
+.container-projet .box:nth-child(2):before,
+.container-projet .box:nth-child(2):after,
+.container-projet .box:nth-child(3):before,
+.container-projet .box:nth-child(3):after,
+.container-projet .box:nth-child(4):before,
+.container-projet .box:nth-child(4):after{
   background: linear-gradient(315deg, var(--color1), var(--color2));
   background-size: 200% 200%;
   animation: gradientAnimation 5s ease infinite;
 }
 /* ********************************************* */
 
-.container .box span {
+.container-projet .box span {
   display: block;
   position: absolute;
   top: 0;
@@ -103,8 +114,8 @@
   pointer-events: none;
 }
 
-.container .box span::before,
-.container .box span::after {
+.container-projet .box span::before,
+.container-projet .box span::after {
   content: '';
   position: absolute;
   border-radius: 8px;
@@ -114,7 +125,7 @@
   transition: 0.1s;
 }
 
-.container .box:hover span::before {
+.container-projet .box:hover span::before {
   top: -50px;
   left: -60px;
   width: 100px;
@@ -122,7 +133,7 @@
   opacity: 1;
 }
 
-.container .box:hover span::after {
+.container-projet .box:hover span::after {
   bottom: -50px;
   right: 5px;
   width: 100px;
@@ -130,7 +141,7 @@
   opacity: 1;
 }
 
-.container .box .content {
+.container-projet .box .content {
   position: relative;
   padding: 20px 40px;
   background: rgba(255, 255, 255, 0.05);
@@ -141,12 +152,12 @@
   color: #fff;
 }
 
-.container .box:hover .content {
+.container-projet .box:hover .content {
   left: -25px;
   padding: 60px 40px;
 }
 
-.container .box .content img {
+.container-projet .box .content img {
   width: 100%;
   height: auto;
   object-fit: contain;
@@ -154,26 +165,29 @@
   margin-bottom: 10px;
 }
 
-.container .box .content h1 {
+.container-projet .box .content h1 {
   font-size: 1.8rem;
   color: var(--color1);
   margin-bottom: 30px;
+ 
+
 }
 
-.container .box .content h2 {
+.container-projet .box .content h2 {
   font-size: 1.5rem;
   color: var(--color4);
   margin-bottom: 10px;
   letter-spacing: 1.5px;
 }
 
-.container .box .content p {
+.container-projet .box .content p {
   font-size: 1rem;
   margin-bottom: 10px;
   line-height: 1.4em;
+  
 }
 
-.container .box .content a {
+.container-projet .box .content a {
   display: inline-block;
   font-size: 1rem;
   color: #111;
@@ -185,7 +199,7 @@
   margin-top: 5px;
 }
 
-.container .box .content a:hover {
+.container-projet .box .content a:hover {
   background: var(--color1);
   box-shadow: 0 1px 15px rgba(1, 1, 1, 0.2);
 }
@@ -193,29 +207,29 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .container {
+  .container-projet {
     padding: 20px;
   }
   
-  .container .box {
+  .container-projet .box {
     width: 100%;
     max-width: 350px;
     height: auto;
   }
 
-  .container .box .content {
+  .container-projet .box .content {
     padding: 20px;
   }
   
-  .container .box .content h1 {
+  .container-projet .box .content h1 {
     font-size: 1.5rem;
   }
 
-  .container .box .content h2 {
+  .container-projet .box .content h2 {
     font-size: 1.3rem;
   }
 
-  .container .box .content p {
+  .container-projet .box .content p {
     font-size: 1rem;
   }
 }
@@ -258,6 +272,8 @@
   margin-bottom: 20px;
   font-size: 50px;
   color: var(--color1);
+  
+  
 }
 .modal-content p{
   text-align: center;
