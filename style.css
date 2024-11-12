@@ -962,6 +962,7 @@ div h3:nth-of-type(2) {
 }
 
 #professors-container {
+  /* min-height: 100vh; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -969,7 +970,7 @@ div h3:nth-of-type(2) {
   font-family: "Poppins", sans-serif;
 }
 
-/* Container acordeon Prof */
+/* Container for Professors */
 .container {
   width: 100%;
   display: flex;
@@ -977,7 +978,7 @@ div h3:nth-of-type(2) {
   height: 500px;
   gap: 10px;
   flex-wrap: wrap;
-  /* PROFESSOR */
+  /* PROFESSOR CARD */
 }
 .container h2 {
   font-size: 1.5rem;
@@ -988,16 +989,19 @@ div h3:nth-of-type(2) {
 .container > div {
   flex: 0 0 120px;
   border-radius: 0.5rem;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, filter 0.3s ease, opacity 0.3s ease;
   cursor: pointer;
   box-shadow: 1px 5px 15px #1e0e3e;
   position: relative;
   overflow: hidden;
-  height: 100%; /* Fixed height to prevent shifting */
+  height: 100%; /* Fixed height */
   background-size: cover;
   background-position: center;
-  /* IMAGES PROFS */
-  /* CONTENU avant le popup */
+  /* Image backgrounds */
+  /* Content style before popup */
+  /* Default state: grayscale and blur */
+  filter: grayscale(100%) blur(2px);
+  opacity: 0.7;
 }
 .container > div:nth-of-type(1) {
   background-image: url("../images/Manon.png");
@@ -1075,21 +1079,40 @@ div h3:nth-of-type(2) {
   visibility: visible;
 }
 
-/* Media query pour ecran plus petit */
+/* Mobile responsive layout */
 @media (max-width: 768px) {
+  /* Container */
+  .container {
+    height: auto; /* Adjust height for mobile */
+    display: grid; /* Use grid layout for smaller screens */
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Responsive columns */
+    gap: 10px; /* Space between items */
+  }
+  /* Professor Cards */
   .container > div {
-    flex: 0 0 120px;
-    margin: 10px;
+    flex: 0 0 auto; /* Remove fixed width */
+    height: 200px; /* Adjust height for mobile */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, opacity 0.3s ease, filter 0.3s ease;
+    filter: grayscale(100%) blur(2px);
+    opacity: 0.7;
+  }
+  /* Hover state on mobile */
+  .container > div:hover {
+    transform: scale(1.05); /* Slight scale for hover */
+    opacity: 1; /* Full opacity */
+    filter: grayscale(0%) blur(0); /* Remove blur on hover */
+    box-shadow: 1px 5px 15px #7645d8; /* Keep box-shadow */
+  }
+  /* Ensure non-hovered items are faded and blurred */
+  .container:hover > div {
+    opacity: 0.7;
+    filter: grayscale(100%) blur(2px);
   }
   .container > div:hover {
-    flex: 0 0 150px;
-    transform: none;
+    opacity: 1; /* Full opacity for hovered card */
+    filter: grayscale(0%) blur(0); /* Remove blur for hovered card */
   }
-  .container > div:hover .content {
-    opacity: 1;
-    transform: translateY(0%);
-    visibility: visible;
-  }
+  /* Smaller font size for the professor's name */
   .container h2 {
     font-size: 1rem;
     margin-top: 20px;
@@ -1099,8 +1122,7 @@ div h3:nth-of-type(2) {
     font-size: 0.8rem;
   }
 }
-/* ****************************************** */
-/* CSS for the popup professor */
+/* Popup CSS */
 .popup {
   display: none;
   position: fixed;
@@ -1188,43 +1210,6 @@ div h3:nth-of-type(2) {
 
 .popup-icon:hover {
   color: var(--color4);
-}
-
-/* ******************************** */
-/* Initial state des cards */
-.container > div {
-  flex: 0 0 120px;
-  border-radius: 0.5rem;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, opacity 0.3s ease, filter 0.3s ease;
-  cursor: pointer;
-  box-shadow: 1px 5px 15px #1e0e3e;
-  position: relative;
-  overflow: hidden;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  filter: grayscale(100%) blur(2px);
-  opacity: 0.7;
-}
-
-/* Hover state des cards  */
-.container > div:hover {
-  opacity: 1;
-  filter: grayscale(0%) blur(0);
-  transform: scale(1.1);
-  box-shadow: 1px 5px 15px #7645d8;
-}
-
-/* Applique le grayscale et blur a tout les elements non-hovered  */
-.container:hover > div {
-  opacity: 0.7;
-  filter: grayscale(100%) blur(2px);
-}
-
-/* Assurer que  hovered element est out */
-.container > div:hover {
-  opacity: 1; /* Full opacity */
-  filter: grayscale(0%) blur(0);
 }
 
 .search-results-div {
