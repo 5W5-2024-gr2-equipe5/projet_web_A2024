@@ -11,6 +11,9 @@ header {
 body {
   display: flex;
   flex-direction: column;
+  background-color: var(--color5);
+  justify-content: space-between;
+  min-height: 100vh;
 }
 
 // Push the menu to the right
