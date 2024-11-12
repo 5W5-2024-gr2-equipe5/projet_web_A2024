@@ -157,6 +157,7 @@ function register_project_post_type() {
         'exclude_from_search' => false,
         'publicly_queryable' => true,
         'capability_type' => 'post',
+        'taxonomies' => array('category'), // Add the 'category' taxonomy here
     );
     register_post_type('project', $args);
 }
