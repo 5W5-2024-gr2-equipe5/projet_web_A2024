@@ -7,15 +7,15 @@ header {
 }
 
 // Push the menu to the right
+// Push the logo to the very left of the screen
 .logo {
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   img {
-    width: 100%;
-    max-width: 200px;
+    width: auto;
+    max-width: 100px; // Adjusted max-width to maintain aspect ratio
+    max-height: 50px; // Set max-height to make the logo smaller in height
   }
 }
-
-
