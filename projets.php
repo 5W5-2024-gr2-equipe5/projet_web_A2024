@@ -10,7 +10,7 @@ get_header();
         // Query custom post type 'project'
         $projects = new WP_Query(array(
           
-          'post_type' => 'post',
+          'post_type' => 'project',
           'posts_per_page' => -1,
         ));
 

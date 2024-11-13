@@ -50,17 +50,26 @@ footer p {
   font-size: 20px;
 }
 
-div.map-info p,h2{
+// FIX LE FOOTER STYLE
+div.map-info h2{
   margin-top: 20px;
   font-family: 'Poppins', sans-serif;
+}
 
-} 
+div.sociaux h2{
+  font-family: 'Poppins', sans-serif;
+}
+
+div.map-info p{
+  margin-top: 20px;
+}
 
 div.inscription-logo p{
   margin-top: 20px;
   font-family: 'Poppins', sans-serif;
-
 }
+// FIN FIX LE FOOTER STYLE
+
 
 .inscription {
   color: white;
