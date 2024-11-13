@@ -1087,6 +1087,23 @@ div h3:nth-of-type(2) {
   visibility: visible;
 }
 
+.container > div {
+  filter: grayscale(100%) blur(2px);
+  opacity: 0.7;
+  transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out, opacity 0.5s ease, filter 0.5s ease;
+}
+.container > div:hover {
+  transform: scale(1.1);
+  box-shadow: 1px 5px 15px #7645d8;
+  filter: grayscale(0%) blur(0); /* Remove grayscale and blur on hover */
+  opacity: 1; /* Full opacity */
+}
+.container > div:hover .content {
+  opacity: 1;
+  transform: translateY(0%);
+  visibility: visible;
+}
+
 /* Mobile responsive layout */
 @media (max-width: 768px) {
   /* Container */
