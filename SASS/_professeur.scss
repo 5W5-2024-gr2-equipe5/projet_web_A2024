@@ -100,7 +100,7 @@
     }
 }
 
-
+// FIX LE TRUC DE CARD BLUR AU HOVER EN DESKTOP
 .container > div {
     filter: grayscale(100%) blur(2px);
     opacity: 0.7;
@@ -109,8 +109,8 @@
     &:hover {
         transform: scale(1.1);
         box-shadow: 1px 5px 15px #7645d8;
-        filter: grayscale(0%) blur(0); /* Remove grayscale and blur on hover */
-        opacity: 1; /* Full opacity */
+        filter: grayscale(0%) blur(0);
+        opacity: 1;
     }
 
     &:hover .content {
@@ -120,46 +120,45 @@
     }
 }
 
-
+// RESPONSIVE sur MOBILE PAS TOUCHER SVP !IMPORTANT si vous voulez changer avec précaution
 /* Mobile responsive layout */
 @media (max-width: 768px) {
     /* Container */
     .container {
-        height: auto; /* Adjust height for mobile */
-        display: grid; /* Use grid layout for smaller screens */
-        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Responsive columns */
+        height: auto; 
+        display: grid; 
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); 
         gap: 10px; /* Space between items */
     }
 
     /* Professor Cards */
     .container > div {
-        flex: 0 0 auto; /* Remove fixed width */
-        height: 200px; /* Adjust height for mobile */
+        flex: 0 0 auto; 
+        height: 200px;
         transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, opacity 0.3s ease, filter 0.3s ease;
         filter: grayscale(100%) blur(2px);
         opacity: 0.7;
     }
 
-    /* Hover state on mobile */
+    /* Hover state en mobile */
     .container > div:hover {
-        transform: scale(1.05); /* Slight scale for hover */
-        opacity: 1; /* Full opacity */
-        filter: grayscale(0%) blur(0); /* Remove blur on hover */
-        box-shadow: 1px 5px 15px #7645d8; /* Keep box-shadow */
+        transform: scale(1.05);
+        opacity: 1;
+        filter: grayscale(0%) blur(0);
+        box-shadow: 1px 5px 15px #7645d8; 
     }
 
-    /* Ensure non-hovered items are faded and blurred */
+    
     .container:hover > div {
         opacity: 0.7;
         filter: grayscale(100%) blur(2px);
     }
 
     .container > div:hover {
-        opacity: 1; /* Full opacity for hovered card */
-        filter: grayscale(0%) blur(0); /* Remove blur for hovered card */
+        opacity: 1; 
+        filter: grayscale(0%) blur(0); 
     }
 
-    /* Smaller font size for the professor's name */
     .container h2 {
         font-size: 1rem;
         margin-top: 20px;
@@ -191,7 +190,7 @@
     max-width: 600px;
     border-radius: 10px;
     position: relative;
-    top: 50%;
+    top: 43%;
     transform: translateY(-50%);
     margin: auto;
 }
@@ -259,4 +258,8 @@
 
 .popup-icon:hover {
     color: var(--color4);
+}
+// VOIR SI FIXE LES FONT SUR WHC
+h2#popup-name{
+    font-family: "Harlow";
 }

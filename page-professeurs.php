@@ -1,3 +1,6 @@
+    <link rel="stylesheet" href=" <?php echo get_template_directory_uri() . '/normalize.css'; ?> ">
+    <link rel="stylesheet" href=" <?php echo get_template_directory_uri() . '/style.css'; ?> ">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
     <?php
 
   get_header(); // Inclut le header du thème
