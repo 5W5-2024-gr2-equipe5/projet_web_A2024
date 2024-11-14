@@ -548,15 +548,6 @@ h2#modalTeam {
   font-family: "Poppins";
 }
 
-/* Ensure all project images have the same size */
-img#modalImage,
-.content img {
-  width: 100%;
-  max-width: 300px; /* Adjust the max-width as needed */
-  height: auto; /* Maintain aspect ratio */
-  object-fit: cover; /* Ensure the image covers the entire area */
-}
-
 /* Container card */
 .container-projet {
   display: flex;
