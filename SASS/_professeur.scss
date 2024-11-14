@@ -1,3 +1,11 @@
+// FORCER LE FONT SUR WHC
+@font-face {
+    font-family: 'HarlowSolid';
+    src: url('../fonts/HARLOWSI_1.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -28,6 +36,10 @@
         margin: 0; 
         padding: 0.5rem 0; 
     } 
+    // Voir si on peut changer le font-family sur whc
+    h2#popup-name {
+        font-family: 'HarlowSolid', sans-serif;
+    }
 
     /* PROFESSOR CARD */
     > div {
@@ -259,7 +271,4 @@
 .popup-icon:hover {
     color: var(--color4);
 }
-// VOIR SI FIXE LES FONT SUR WHC
-h2#popup-name{
-    font-family: "Harlow";
-}
+
