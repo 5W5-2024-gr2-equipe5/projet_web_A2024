@@ -47,7 +47,7 @@ p#modalDescription {
   align-items: center;
   margin: 20px 0;
   transition: 0.5s;
-  margin-top: 150px;
+  // margin-top: 150px;
 }
 
 .container-projet .box::before,
@@ -88,7 +88,7 @@ p#modalDescription {
     background-position: 0% 50%;
   }
 }
-
+// NOTES IMPORTANT A RETENIR COMBIEN DE PROJET MAX (Pour que je puisse ajouter POUR LES AUTRES QUI NONT PAS DE COULEURS)
 .container-projet .box:nth-child(1):before,
 .container-projet .box:nth-child(1):after,
 .container-projet .box:nth-child(2):before,
