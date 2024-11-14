@@ -1,28 +1,9 @@
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Professeurs</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
-    <link rel="stylesheet" href=" <?php echo get_template_directory_uri() . '/normalize.css'; ?> ">
-    <link rel="stylesheet" href=" <?php echo get_template_directory_uri() . '/style.css'; ?> ">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-  </head>
-
 <div id="professors-container" class="container">
-  
 
-  
-    <?php
-
-  
-    ?>
   <?php
 
 /* Template Name: Professeurs */
-//get_header(); // Inclut le header du thème
+get_header(); // Inclut le header du thème
 
 
 // Requête pour récupérer les articles de la catégorie "Professeurs"
@@ -80,10 +61,7 @@ endif;
 
 wp_reset_postdata();
 
-
-//get_footer(); // Inclut le footer du thème
 ?>
-
 
 <!-- Popup-card pour les profs -->
 <div id="popup-card" class="popup">
@@ -104,3 +82,4 @@ wp_reset_postdata();
 
 <!-- JS page prof -->
 <script src="<?php echo get_template_directory_uri() . '/js/scriptprof.js' ;?>"> </script>
+<?php  get_footer(); // Inclut le footer du thème ?>
