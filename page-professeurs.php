@@ -55,7 +55,7 @@ endif;
                       <?php endforeach ?>
                       ]'>
                     <h2><?php the_title(); ?></h2>
-                    <span>Prof</span>
+                    <!-- <span>Prof</span> -->
                     <span>
 
 
