@@ -532,6 +532,31 @@ p#modalDescription {
   font-family: "Poppins";
 }
 
+div.content h1 {
+  font-family: "Harlow";
+}
+
+div.content h2 {
+  font-family: "Poppins";
+}
+
+h1#modalTitle {
+  font-family: "Harlow";
+}
+
+h2#modalTeam {
+  font-family: "Poppins";
+}
+
+/* Ensure all project images have the same size */
+img#modalImage,
+.content img {
+  width: 100%;
+  max-width: 300px; /* Adjust the max-width as needed */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Ensure the image covers the entire area */
+}
+
 /* Container card */
 .container-projet {
   display: flex;
@@ -593,14 +618,8 @@ p#modalDescription {
     background-position: 0% 50%;
   }
 }
-.container-projet .box:nth-child(1):before,
-.container-projet .box:nth-child(1):after,
-.container-projet .box:nth-child(2):before,
-.container-projet .box:nth-child(2):after,
-.container-projet .box:nth-child(3):before,
-.container-projet .box:nth-child(3):after,
-.container-projet .box:nth-child(4):before,
-.container-projet .box:nth-child(4):after {
+.container-projet .box:before,
+.container-projet .box:after {
   background: linear-gradient(315deg, var(--color1), var(--color2));
   background-size: 200% 200%;
   animation: gradientAnimation 5s ease infinite;
@@ -963,6 +982,12 @@ div h3:nth-of-type(2) {
     margin-right: 10vw;
   }
 }
+@font-face {
+  font-family: "HarlowSolid";
+  src: url("../fonts/HARLOWSI_1.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 * {
   margin: 0;
   padding: 0;
@@ -993,6 +1018,9 @@ div h3:nth-of-type(2) {
   text-align: center;
   margin: 0;
   padding: 0.5rem 0;
+}
+.container h2#popup-name {
+  font-family: "HarlowSolid", sans-serif;
 }
 .container > div {
   flex: 0 0 120px;
@@ -1233,10 +1261,6 @@ div h3:nth-of-type(2) {
 
 .popup-icon:hover {
   color: var(--color4);
-}
-
-h2#popup-name {
-  font-family: "Harlow";
 }
 
 .search-results-div {
