@@ -1,0 +1,30 @@
+@font-face {
+  font-family: "Poppins-Regular";
+  src: url("../fonts/Poppins-Regular.ttf") format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Poppins-Black";
+  src: url("../fonts/Poppins-Black.ttf") format("truetype");
+  font-weight: bolder;
+}
+
+@font-face {
+  font-family: "Harlow";
+  src: url("../fonts/HARLOWSI_1.ttf") format("truetype");
+  font-weight: normal;
+}
+
+h1, h2 {
+  font-family: "Harlow";
+}
+
+h3 {
+  font-family: "Poppins-Black";
+  font-weight: bolder;
+}
+
+body {
+  font-family: "Poppins-Regular", sans-serif;
+}

@@ -1,0 +1,33 @@
+.search-results-div {
+    display: flex;
+    height: 50vh;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.search-results-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.search-result-item {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+.search-result-title {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.search-result-excerpt {
+    font-size: 1em;
+    color: #555; 
+}
+
+.pagination {
+    margin-top: 20px;
+    text-align: center;
+}

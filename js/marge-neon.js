@@ -5,7 +5,7 @@ var neons = document.getElementsByClassName("fond-neon");
 //let solutionDuPauvre;
 //solutionDuPauvre = setInterval(modifierHauteur, 200);
 
-//On appelle la fonction à chaque fois que la fenêtre bouge
+//On appelle la fonction à chaque fois que la fenêtre n'est 
 window.addEventListener("resize", modifierHauteur);
 
 //Appel initial de la fonction

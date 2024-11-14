@@ -1,0 +1,136 @@
+// Commentaire pour les autres membres de l'équipe de développement
+// Lire pour comprendre le sass du footer
+
+// FORCER A METTRE LES REGLES DE STYLE POUR H2 et P
+// Maniere que j'ai trouver pour forcer les regles de style pour h2 et p dans le footer
+
+// DIV INFO-MAP = Contient la carte et les informations de contact
+// DIV INSCRIPTION-LOGO = Contient le logo Maisonneuve et SRAM avec lien cliquable vers les sites appropriés
+// DIV SOCIAUX = Contient les liens vers les réseaux sociaux de Maisonneuve instagram, facebook et YouTube
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+  
+.footer {
+  background-color: var(--color5);
+  padding: 20px;
+  z-index: 10;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+}
+
+@media (min-width: 1024px) {
+  .footer-content {
+    gap: 100px; 
+  }
+}
+
+footer h2 {
+  margin-bottom: 15px;
+  color: white;
+  font-size: 25px;
+  font-weight: 500;
+  font-kerning: auto;
+}
+
+.map-info iframe {
+  max-width: 500px;
+  border: 0;
+}
+
+footer p {
+  color: white;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 20px;
+}
+
+div.map-info p,h2{
+  margin-top: 20px;
+  font-family: 'Poppins', sans-serif;
+
+} 
+
+div.inscription-logo p{
+  margin-top: 20px;
+  font-family: 'Poppins', sans-serif;
+
+}
+
+.inscription {
+  color: white;
+  text-decoration: none;
+}
+.inscription:visited {
+  color: white;
+}
+
+.inscription-logo,
+.sociaux,
+.map-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inscription-logo img,
+.map-info img {
+  width: 100px;
+  margin-top: 10px;
+}
+
+.social-icons a {
+  margin: 0 10px;
+  font-size: 24px;
+}
+
+@media screen and (min-width: 768px) {
+  .footer-content {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .map-info,
+  .inscription-logo,
+  .sociaux {
+    flex: 1;
+    margin: 0 10px;
+  }
+
+  .inscription-logo img {
+    width: 100px;
+  }
+
+  .map-info img {
+    width: 100px;
+  }
+}
+
+.social-icons a {
+  display: inline-block;
+  font-size: 30px;
+  margin: 0 10px;
+  transition: transform 0.3s ease;
+  color: var(--color1);
+}
+
+.social-icons a:hover {
+  transform: translateY(-10px);
+  animation: bounce 0.6s ease-in-out;
+  color: var(--color4);
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}

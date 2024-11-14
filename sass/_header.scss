@@ -1,0 +1,28 @@
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background: var(--color5);
+  color: white;
+  z-index: 10;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+// Push the menu to the right
+// Push the logo to the very left of the screen
+.logo {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  img {
+    width: auto;
+    max-width: 100px; // Adjusted max-width to maintain aspect ratio
+    max-height: 50px; // Set max-height to make the logo smaller in height
+  }
+}
