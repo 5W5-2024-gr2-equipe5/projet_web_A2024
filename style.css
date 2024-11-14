@@ -520,43 +520,6 @@ h1 {
   src: url("fonts/HARLOWSI_1.ttf") format("truetype");
   font-weight: normal;
 }
-h1 {
-  font-family: "Harlow";
-}
-
-a.more-info {
-  font-family: "Poppins";
-}
-
-p#modalDescription {
-  font-family: "Poppins";
-}
-
-div.content h1 {
-  font-family: "Harlow";
-}
-
-div.content h2 {
-  font-family: "Poppins";
-}
-
-h1#modalTitle {
-  font-family: "Harlow";
-}
-
-h2#modalTeam {
-  font-family: "Poppins";
-}
-
-/* Ensure all project images have the same size */
-img#modalImage,
-.content img {
-  width: 100%;
-  max-width: 300px; /* Adjust the max-width as needed */
-  height: auto; /* Maintain aspect ratio */
-  object-fit: cover; /* Ensure the image covers the entire area */
-}
-
 /* Container card */
 .container-projet {
   display: flex;
@@ -982,12 +945,6 @@ div h3:nth-of-type(2) {
     margin-right: 10vw;
   }
 }
-@font-face {
-  font-family: "HarlowSolid";
-  src: url("../fonts/HARLOWSI_1.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
 * {
   margin: 0;
   padding: 0;
@@ -1018,9 +975,6 @@ div h3:nth-of-type(2) {
   text-align: center;
   margin: 0;
   padding: 0.5rem 0;
-}
-.container h2#popup-name {
-  font-family: "HarlowSolid", sans-serif;
 }
 .container > div {
   flex: 0 0 120px;

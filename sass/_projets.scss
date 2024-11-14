@@ -10,44 +10,10 @@
   font-weight: normal;
 }
 
-// MANIERE DE BYPASSER LE PROBLEME DE POLICE DE CARACTERE !IMPORTANT bout de modification pour whc (pas sur que ca marche)
-h1 {
-  font-family: "Harlow";
-}
+// MANIERE DE BYPASSER LE PROBLEME DE POLICE DE CARACTERE
 
-a.more-info {
-  font-family: "Poppins";
-}
 
-p#modalDescription {
-  font-family: "Poppins";
-}
-
-div.content h1{
-  font-family: "Harlow";
-}
-
-div.content h2{
-  font-family: "Poppins";
-}
-
-h1#modalTitle {
-  font-family: "Harlow";
-}
-h2#modalTeam {
-  font-family: "Poppins";
-}
-
-/* Ensure all project images have the same size */
-img#modalImage,
-.content img {
-  width: 100%;
-  max-width: 300px; /* Adjust the max-width as needed */
-  height: auto; /* Maintain aspect ratio */
-  object-fit: cover; /* Ensure the image covers the entire area */
-}
-
-// FIN DE BYPASSER LE PROBLEME DE POLICE DE CARACTERE !IMPORTANT
+// FIN DE BYPASSER LE PROBLEME DE POLICE DE CARACTERE
 
 /* Container card */
 .container-projet {
