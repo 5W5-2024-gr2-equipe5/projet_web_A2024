@@ -512,12 +512,12 @@ h1 {
 
 @font-face {
   font-family: "Poppins-Regular";
-  src: url("fonts/Poppins-Regular.ttf") format("truetype");
+  src: url("../fonts/Poppins-Regular.ttf") format("truetype");
   font-weight: normal;
 }
 @font-face {
   font-family: "Harlow";
-  src: url("fonts/HARLOWSI_1.ttf") format("truetype");
+  src: url("../fonts/HARLOWSI_1.ttf") format("truetype");
   font-weight: normal;
 }
 h1 {
@@ -533,7 +533,7 @@ p#modalDescription {
 }
 
 div.content h1 {
-  font-family: "Harlow";
+  font-family: "Harlow", sans-serif;
 }
 
 div.content h2 {
@@ -541,7 +541,7 @@ div.content h2 {
 }
 
 h1#modalTitle {
-  font-family: "Harlow";
+  font-family: "Harlow", sans-serif;
 }
 
 h2#modalTeam {
