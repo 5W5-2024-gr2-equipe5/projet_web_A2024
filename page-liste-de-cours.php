@@ -27,13 +27,13 @@ Template Name: liste-de-cours
       <tbody id="courseRows">
         <tr>
           <?php
-           $session = 1;
+          $session = 0;
           $courses = new WP_Query([
             'post_type' => 'post', 
             'category_name' => 'liste-de-cours', 
-            'tag' => 'session' . $session,
-            'posts_per_page' => -1, 
+            'category_name' => $session, //pour chaque cours alors pt pas la
           ]);
+          
 
           if ($courses->have_posts()) :
             while ($courses->have_posts()) : $courses->the_post();
