@@ -19,14 +19,14 @@ get_header(); ?>
             <?php if (have_posts()) : ?>
                 <ul class="search-results-list">
                     <?php while (have_posts()) : the_post(); ?>
-                        <li class="search-result-item">
-                            <h2 class="search-result-title">
-                                <a class="lien-page" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                            </h2>
-                            <div class="search-result-excerpt">
-                                <?php the_excerpt(); ?>
-                            </div>
-                        </li>
+                    <li class="search-result-item">
+                        <h2 class="search-result-title">
+                            <?php the_title(); // Display the post title ?>
+                        </h2>
+                        <div class="search-result-content">
+                            <?php the_content(); // Display the full post content ?>
+                        </div>
+                    </li>
                     <?php endwhile; ?>
                 </ul>
 
