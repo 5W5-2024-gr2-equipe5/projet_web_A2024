@@ -225,7 +225,7 @@ div.inscription-logo p {
 
 table {
   margin: 0 auto;
-  width: 50%; /* Adjust the width as needed */
+  width: 50%;
 }
 
 td,
@@ -251,7 +251,7 @@ th {
 
 /* Navigation Button Styles */
 .nav-arrow {
-  background-color: var(--color1); /* Match the banner background color */
+  background-color: var(--color1);
   color: white;
   border: none;
   padding: 10px 20px;
