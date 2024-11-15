@@ -2,13 +2,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 50px;
 }
 
 .recherche__input {
   background-color: rgba(0, 0, 0, 0.3);
   color: #f0f0c2;
+  border-radius: 6px;
+  padding-left: 4px;
 }
 
-.espace-gauche {
+.recherche__bouton {
   margin-left: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 6px;
+  color: var(--color5);
+  background-color: var(--color1);
 }
