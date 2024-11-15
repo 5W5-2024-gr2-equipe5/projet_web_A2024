@@ -7,6 +7,7 @@
 get_header(); ?>
 
 <div class="search-results-div">
+    <div id="fond-peinture"></div>
     <div class="search-results-container">
         <div class="page-header">
             <h1 class="page-title">
@@ -20,7 +21,7 @@ get_header(); ?>
                     <?php while (have_posts()) : the_post(); ?>
                         <li class="search-result-item">
                             <h2 class="search-result-title">
-                                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                <a class="lien-page" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                             </h2>
                             <div class="search-result-excerpt">
                                 <?php the_excerpt(); ?>
@@ -46,6 +47,8 @@ get_header(); ?>
             <?php endif; ?>
         </div><!-- .search-results-content -->
     </div><!-- .search-results-container -->
+    <script src="<?php echo get_template_directory_uri(); ?>/js/fond-peinture.js"></script>
 </div>
+
 
 <?php get_footer(); ?>

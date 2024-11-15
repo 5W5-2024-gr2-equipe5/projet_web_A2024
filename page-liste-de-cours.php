@@ -27,28 +27,32 @@ Template Name: liste-de-cours
       <tbody id="courseRows">
         <tr>
           <?php
+           $session = 1;
           $courses = new WP_Query([
-            'post_type' => 'liste-cours', 
+            'post_type' => 'post', 
+            'category_name' => 'liste-de-cours', 
+            'tag' => 'session' . $session,
             'posts_per_page' => -1, 
           ]);
 
           if ($courses->have_posts()) :
             while ($courses->have_posts()) : $courses->the_post();
             // acf fields
-             $duree = get_field('duree');
-             $unites = get_field('unites');
-             $ponderation = get_field('ponderation');
-             $prealables = get_field('prealables');?>
+              $duree = esc_html(get_field('duree'));
+              $unites = esc_html(get_field('unites'));
+              $ponderation = esc_html(get_field('ponderation'));
+              $prealables = esc_html(get_field('prealables'));
+          ?>
               <td id="<?php echo sanitize_title(get_the_title()); ?>">
                 <button class="btn" onclick="toggleCollapse('<?php the_ID(); ?>')">
                   <?php the_title(); ?>
                 </button>
                 <div id="<?php the_ID(); ?>" class="collapse">
                   <p><?php the_content(); ?></p>
-                  <p><?php echo esc_html($duree); ?></p>
-                  <p><?php echo esc_html($unites); ?></p>
-                  <p><?php echo esc_html($ponderation); ?></p>
-                  <p><?php echo esc_html($prealables); ?></p>
+                  <p>Durée: <?php echo $duree; ?></p>
+                  <p>Unités: <?php echo $unites; ?></p>
+                  <p>Pondération: <?php echo $ponderation; ?></p>
+                  <p>Préalable(s): <?php echo $prealables; ?></p>
                 </div>
               </td>
           <?php
@@ -72,6 +76,7 @@ Template Name: liste-de-cours
   <?php echo do_shortcode('[icon_banner_slider]'); ?>
 </div>
 <!--  -->
- <?php   wp_enqueue_script('custom-script', get_stylesheet_directory_uri() . '/js/liste-cours.js', array('jquery'), null, true);
+ <?php   
+ wp_enqueue_script('custom-script', get_stylesheet_directory_uri() . '/js/liste-cours.js', array('jquery'), null, true);
 
  get_footer(); ?>

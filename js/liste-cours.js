@@ -15,7 +15,7 @@ function toggleCollapse(id) {
 }
 
 // changer de session
-let currentSession = 0;
+let currentSession = 1;
 const totalSessions = 6;
 
 function changeSession(direction) {
@@ -30,7 +30,7 @@ function changeSession(direction) {
     }
   }
 
-  // Update la session
+  // Update la session (avec un décalage de +1 pour correspondre aux sessions PHP)
   currentSession += direction;
 
   if (currentSession < 0) {
@@ -39,7 +39,7 @@ function changeSession(direction) {
     currentSession = 0;
   }
 
-// montrer les cells de la session
+  // montrer les cells de la session
   for (let i = 0; i < rows.length; i++) {
     const cells = rows[i].getElementsByTagName(i === 0 ? "th" : "td");
     if (cells[currentSession]) {

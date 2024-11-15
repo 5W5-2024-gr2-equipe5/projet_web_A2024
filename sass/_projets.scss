@@ -11,17 +11,8 @@
 }
 
 // MANIERE DE BYPASSER LE PROBLEME DE POLICE DE CARACTERE
-h1 {
-  font-family: "Harlow";
-}
 
-a.more-info {
-  font-family: "Poppins";
-}
 
-p#modalDescription {
-  font-family: "Poppins";
-}
 // FIN DE BYPASSER LE PROBLEME DE POLICE DE CARACTERE
 
 /* Container card */
@@ -47,7 +38,7 @@ p#modalDescription {
   align-items: center;
   margin: 20px 0;
   transition: 0.5s;
-  margin-top: 150px;
+  // margin-top: 150px;
 }
 
 .container-projet .box::before,
@@ -88,15 +79,22 @@ p#modalDescription {
     background-position: 0% 50%;
   }
 }
+// NOTES IMPORTANT A RETENIR COMBIEN DE PROJET MAX (Pour que je puisse ajouter POUR LES AUTRES QUI NONT PAS DE COULEURS)
+// .container-projet .box:nth-child(1):before,
+// .container-projet .box:nth-child(1):after,
+// .container-projet .box:nth-child(2):before,
+// .container-projet .box:nth-child(2):after,
+// .container-projet .box:nth-child(3):before,
+// .container-projet .box:nth-child(3):after,
+// .container-projet .box:nth-child(4):before,
+// .container-projet .box:nth-child(4):after{
+//   background: linear-gradient(315deg, var(--color1), var(--color2));
+//   background-size: 200% 200%;
+//   animation: gradientAnimation 5s ease infinite;
+// }
 
-.container-projet .box:nth-child(1):before,
-.container-projet .box:nth-child(1):after,
-.container-projet .box:nth-child(2):before,
-.container-projet .box:nth-child(2):after,
-.container-projet .box:nth-child(3):before,
-.container-projet .box:nth-child(3):after,
-.container-projet .box:nth-child(4):before,
-.container-projet .box:nth-child(4):after{
+.container-projet .box:before,
+.container-projet .box:after {
   background: linear-gradient(315deg, var(--color1), var(--color2));
   background-size: 200% 200%;
   animation: gradientAnimation 5s ease infinite;

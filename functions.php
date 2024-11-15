@@ -36,6 +36,7 @@ add_action('wp_enqueue_scripts', 'enqueue_project_styles_scripts');
 
 
 
+
 // Script de Performance pour la video
 function enqueue_video_scripts() {
     wp_enqueue_script('video-js', 'https://vjs.zencdn.net/7.11.4/video.min.js', array(), null, true);

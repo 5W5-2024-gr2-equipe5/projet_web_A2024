@@ -1,9 +1,18 @@
+    <link rel="stylesheet" href=" <?php echo get_template_directory_uri() . '/normalize.css'; ?> ">
+    <link rel="stylesheet" href=" <?php echo get_template_directory_uri() . '/style.css'; ?> ">
+    <!-- POUR QUE GOOGLE MATERIALS FONCTIONNE !IMPORTANT -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <?php
+
+  get_header(); // Inclut le header du thème
+    ?>
 <div id="professors-container" class="container">
+
 
   <?php
 
 /* Template Name: Professeurs */
-get_header(); // Inclut le header du thème
+
 
 
 // Requête pour récupérer les articles de la catégorie "Professeurs"
@@ -46,7 +55,7 @@ endif;
                       <?php endforeach ?>
                       ]'>
                     <h2><?php the_title(); ?></h2>
-                    <span>Prof</span>
+                    <!-- <span>Prof</span> -->
                     <span>
 
 
@@ -61,7 +70,10 @@ endif;
 
 wp_reset_postdata();
 
+
+
 ?>
+
 
 <!-- Popup-card pour les profs -->
 <div id="popup-card" class="popup">
@@ -80,6 +92,7 @@ wp_reset_postdata();
   </div>
 </div>
 
+<?php get_footer(); // Inclut le footer du thème?>
+
 <!-- JS page prof -->
 <script src="<?php echo get_template_directory_uri() . '/js/scriptprof.js' ;?>"> </script>
-<?php  get_footer(); // Inclut le footer du thème ?>
