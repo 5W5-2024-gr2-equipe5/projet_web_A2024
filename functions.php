@@ -102,10 +102,8 @@ add_action('customize_register', 'mytheme_customize_register');
 
 function search_by_title_or_category($query) {
     if (!is_admin() && $query->is_search && $query->is_main_query()) {
-        $query->set('post_type', 'post'); // Limit the search to posts
-
-        // Modify the query to search by title or category
-        $query->set('posts_per_page', -1); // Show all matching posts (optional)
+        $query->set('post_type', 'post'); // Limit search to posts
+        $query->set('posts_per_page', 10); // Adjust the number of posts per page
 
         // Add custom logic for searching by title or category
         add_filter('posts_where', function($where) use ($query) {
@@ -132,6 +130,32 @@ function search_by_title_or_category($query) {
 }
 add_action('pre_get_posts', 'search_by_title_or_category');
 
+// Searchbar utilise AJAX pour afficher les résultats trouvés en temps réel
+
+function live_search_handler() {
+    $query = sanitize_text_field($_GET['query'] ?? '');
+    $args = [
+        'post_type' => 'post',
+        's' => $query,
+        'posts_per_page' => 5,
+    ];
+    $search_query = new WP_Query($args);
+
+    $results = [];
+    if ($search_query->have_posts()) {
+        while ($search_query->have_posts()) {
+            $search_query->the_post();
+            $results[] = [
+                'title' => get_the_title(),
+                'excerpt' => get_the_excerpt(),
+            ];
+        }
+    }
+
+    wp_send_json(['results' => $results]);
+}
+add_action('wp_ajax_live_search', 'live_search_handler');
+add_action('wp_ajax_nopriv_live_search', 'live_search_handler');
 
 // Ajouter custom post type Project (NE PAS TOUCHER IMPORTANT)
 // NOTE POUR LES AUTRES MEMBRES DE L'EQUIPE: NE PAS TOUCHER CE CODE
@@ -163,3 +187,9 @@ function register_project_post_type() {
     register_post_type('project', $args);
 }
 add_action('init', 'register_project_post_type', 0);
+
+// Empeche la search-bar de chercher du vide
+function enqueue_custom_scripts() {
+    wp_enqueue_script('searchbar', get_template_directory_uri() . '/js/searchbar.js', array('jquery'), '1.0', true);
+}
+add_action('wp_enqueue_scripts', 'enqueue_custom_scripts');
