@@ -6,6 +6,7 @@
 }
 
 #professors-container {
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,9 +28,11 @@
         text-align: center;
         margin: 0; 
         padding: 0.5rem 0; 
+
     }
 
     /* PROFESSOR CARD */
+
     > div {
         flex: 0 0 120px;
         border-radius: 0.5rem;
