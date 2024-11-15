@@ -1,3 +1,4 @@
+/* Global Reset */
 * {
     margin: 0;
     padding: 0;
@@ -5,7 +6,6 @@
 }
 
 #professors-container {
-    /* min-height: 100vh; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,22 +18,22 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    height: 500px;
     gap: 10px;
-    flex-wrap: wrap;  
+    flex-wrap: wrap;
+    height: auto;
     
     h2 {
         font-size: 1.5rem;
         text-align: center;
         margin: 0; 
         padding: 0.5rem 0; 
-        } 
+    }
 
     /* PROFESSOR CARD */
     > div {
         flex: 0 0 120px;
         border-radius: 0.5rem;
-        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, filter 0.3s ease, opacity 0.3s ease;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, opacity 0.3s ease, filter 0.3s ease;
         cursor: pointer;
         box-shadow: 1px 5px 15px #1e0e3e;
         position: relative;
@@ -83,13 +83,16 @@
             }
         }
 
-        /* Default state: grayscale and blur */
-        filter: grayscale(100%) blur(2px); 
+        /* Default state: grayscale */
+        filter: grayscale(100%); /* Apply grayscale effect by default */
         opacity: 0.7;
 
+        /* On hover, remove grayscale and return to full color */
         &:hover {
             transform: scale(1.1);
             box-shadow: 1px 5px 15px #7645d8;
+            filter: grayscale(0%); /* Remove grayscale */
+            opacity: 1;
         }
 
         &:hover .content {
@@ -100,63 +103,28 @@
     }
 }
 
-// FIX LE TRUC DE CARD BLUR AU HOVER EN DESKTOP
-.container > div {
-    filter: grayscale(100%) blur(2px);
-    opacity: 0.7;
-    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out, opacity 0.5s ease, filter 0.5s ease;
-
-    &:hover {
-        transform: scale(1.1);
-        box-shadow: 1px 5px 15px #7645d8;
-        filter: grayscale(0%) blur(0);
-        opacity: 1;
-    }
-
-    &:hover .content {
-        opacity: 1;
-        transform: translateY(0%);
-        visibility: visible;
-    }
-}
-
-// RESPONSIVE sur MOBILE PAS TOUCHER SVP !IMPORTANT si vous voulez changer avec précaution
-/* Mobile responsive layout */
+/* RESPONSIVE: Mobile Layout */
 @media (max-width: 768px) {
-    /* Container */
     .container {
         height: auto; 
         display: grid; 
         grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); 
-        gap: 10px; /* Space between items */
+        gap: 10px;
     }
 
-    /* Professor Cards */
     .container > div {
         flex: 0 0 auto; 
         height: 200px;
         transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, opacity 0.3s ease, filter 0.3s ease;
-        filter: grayscale(100%) blur(2px);
+        filter: grayscale(100%); /* Apply grayscale effect by default */
         opacity: 0.7;
     }
 
-    /* Hover state en mobile */
     .container > div:hover {
         transform: scale(1.05);
         opacity: 1;
-        filter: grayscale(0%) blur(0);
+        filter: grayscale(0%); /* Remove grayscale on hover */
         box-shadow: 1px 5px 15px #7645d8; 
-    }
-
-    
-    .container:hover > div {
-        opacity: 0.7;
-        filter: grayscale(100%) blur(2px);
-    }
-
-    .container > div:hover {
-        opacity: 1; 
-        filter: grayscale(0%) blur(0); 
     }
 
     .container h2 {
@@ -170,7 +138,15 @@
     }
 }
 
-/* Popup CSS */
+/* RESPONSIVE: Desktop Layout (Fullscreen) */
+@media (min-width: 769px) {
+    .container > div {
+        /* Increase the height of the card on fullscreen */
+        height: 500px; /* Adjust height as needed */
+    }
+}
+
+/* CSS for the popup professor */
 .popup {
     display: none;
     position: fixed;
@@ -181,16 +157,17 @@
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px; /* Add padding to center the popup */
 }
 
 .popup-content {
     background-color: var(--color5);
     padding: 20px;
-    width: 80%;
-    max-width: 600px;
+    width: 60%; /* Adjust width to scale down */
+    max-width: 400px; /* Adjust max-width to scale down */
     border-radius: 10px;
     position: relative;
-    top: 43%;
+    top: 50%;
     transform: translateY(-50%);
     margin: auto;
 }
@@ -252,7 +229,7 @@
     text-decoration: none;
     margin-bottom: 10px;
     color: var(--color1);
-    cursor: pointer;    
+    cursor: pointer;
     transition: color 0.3s;
 }
 
