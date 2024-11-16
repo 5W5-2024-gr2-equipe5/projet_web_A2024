@@ -1,5 +1,6 @@
     <link rel="stylesheet" href=" <?php echo get_template_directory_uri() . '/normalize.css'; ?> ">
     <link rel="stylesheet" href=" <?php echo get_template_directory_uri() . '/style.css'; ?> ">
+
     <!-- POUR QUE GOOGLE MATERIALS FONCTIONNE !IMPORTANT -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
     <?php
@@ -9,9 +10,11 @@
 <div id="professors-container" class="container">
 
 
+
   <?php
 
 /* Template Name: Professeurs */
+
 
 
 
@@ -56,7 +59,9 @@ endif;
                       <?php endforeach ?>
                       ]'>
                     <h2><?php the_title(); ?></h2>
+
                     <!-- <span>Prof</span> -->
+
                     <span>
 
 

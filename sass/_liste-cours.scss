@@ -1,21 +1,22 @@
-
-
-/*********************************** tableau **************************/
+/*********************************** Tableau **************************/
 .table-c {
   overflow-x: auto;
   white-space: nowrap;
+  padding-bottom: 10vh;
 }
+
 table {
   margin: 0 auto;
-  width: 50%; /* Adjust the width as needed */
+  width: 50%;
+  border-collapse: collapse;
 }
 
 td,
 th {
   padding: 8px;
   border: 1px solid #11055c;
-  display: inline-block;
-  width: 50vw;
+  display: block; /* Utilisation du block pour afficher les éléments en colonnes */
+  width: 100%;
   box-sizing: border-box;
   background-color: #44a5c27f;
 }
@@ -25,15 +26,45 @@ td:empty {
 }
 
 th {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  justify-content: space-between;
+  display: none; /* Masquer tous les th par défaut */
 }
 
-/* Navigation Button Styles */
+th.session-1 {
+  display: block; /* Afficher seulement le premier th (Session 1) */
+  text-align: center;
+}
+
+/* Masquer les sessions par défaut */
+.session-courses {
+  display: none;
+}
+
+/* Afficher une session active */
+.session-courses.active {
+  display: block;
+}
+
+.session-1,
+.session-2,
+.session-3,
+.session-4,
+.session-5,
+.session-6 {
+  display: none; /* Initialement, toutes les sessions sont masquées */
+}
+
+.session-1.active,
+.session-2.active,
+.session-3.active,
+.session-4.active,
+.session-5.active,
+.session-6.active {
+  display: block; /* Une session active sera affichée */
+}
+
+/* Styles pour les flèches de navigation */
 .nav-arrow {
-  background-color: var(--color1); /* Match the banner background color */
+  background-color: var(--color1);
   color: white;
   border: none;
   padding: 10px 20px;
@@ -66,15 +97,7 @@ th {
   margin: 0 20px;
 }
 
-.session {
-  display: none;
-}
-
-.session.active {
-  display: block;
-}
-
-/************************ pour montrer la descr du cours ************************/
+/************************ Pour montrer la description du cours ************************/
 .collapse {
   display: none;
   padding: 15px;
@@ -85,7 +108,7 @@ th {
   display: block;
 }
 
-/* le style du bouton (à changer) */
+/* Style du bouton (à changer) */
 .btn {
   cursor: pointer;
   background-color: var(--color1);
@@ -105,6 +128,8 @@ th {
 .btn:hover {
   background-color: var(--color2);
 }
+
+/* Styles responsives pour les boutons et descriptions */
 @media (max-width: 768px) {
   .btn {
     font-size: 14px;
@@ -131,9 +156,7 @@ th {
   }
 }
 
-/************************************************/
-// HEINNN ON A BESOIN DE CA POUR QUE LES FONTS MARCHE POUR LE PLUGIN SUR WORDPRESS !IMPORTANT
-/* Style pour le banner */
+/************************ Banner et Slider ************************/
 .banner .slider .item figure {
   margin: 0;
   padding: 0;
@@ -153,7 +176,7 @@ th {
   font-size: 14px;
   box-sizing: border-box;
   z-index: 1;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .banner {
@@ -214,8 +237,7 @@ th {
   z-index: 1;
 }
 
-/* Responsive Banner */
-
+/* Styles responsives pour la bannière */
 @media screen and (max-width: 1023px) {
   .banner .slider {
     width: 120px;
@@ -282,10 +304,8 @@ th {
   letter-spacing: normal;
   text-align: center;
   z-index: 10;
-  font-family: 'Poppins';
+  font-family: "Poppins";
   align-content: center;
- 
-  
 }
 
 .banner .slider .item:hover .popup-message {
@@ -299,18 +319,21 @@ th {
     font-size: 10px;
     padding: 5px;
     height: auto;
-    
   }
   figcaption {
     display: none;
   }
 }
-/************************************************/
 
-
-/*  */
+/*********************************** Autres Ajustements **************************/
 h1 {
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
+
+@media (max-width: 1000px) {
+  .table-c {
+    white-space: wrap;
+  }
 }
