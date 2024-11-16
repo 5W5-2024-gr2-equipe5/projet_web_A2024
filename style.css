@@ -197,16 +197,54 @@ div.inscription-logo p {
   max-height: 75vh;
   overflow: hidden;
   z-index: 1;
-  margin: 100px 0;
+  margin: 130px 0;
+  position: relative;
 }
 
 .video video {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
+  position: relative;
+  z-index: 1;
 }
 
-/* Media query pour responsive video*/
+.video::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border-radius: 10px;
+  background: linear-gradient(315deg, var(--color2), var(--color1));
+  filter: blur(20px);
+  z-index: 0;
+  animation: neon-border 1.5s infinite alternate, color-change 3s infinite alternate;
+}
+
+/* Neon border animation */
+@keyframes neon-border {
+  from {
+    filter: blur(10px);
+  }
+  to {
+    filter: blur(20px);
+  }
+}
+/* Color change animation */
+@keyframes color-change {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+/* Media query pour responsive video */
 @media (max-width: 768px) {
   .video {
     height: 50vh;
@@ -1115,10 +1153,14 @@ div h3:nth-of-type(2) {
     gap: 10px;
   }
   .container > div {
-    flex: 0 0 auto;
-    height: 200px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4/3;
+    background-size: cover;
+    background-position: center;
+    border-radius: 0.5rem;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, opacity 0.3s ease, filter 0.3s ease;
-    filter: grayscale(100%); /* Apply grayscale effect by default */
+    filter: grayscale(100%);
     opacity: 0.7;
   }
   .container > div:hover {
@@ -1144,29 +1186,32 @@ div h3:nth-of-type(2) {
   }
 }
 /* CSS for the popup professor */
-.popup {
-  display: none;
+#popup-card {
+  display: none; /* Hidden by default */
   position: fixed;
-  z-index: 1;
-  left: 0;
   top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 20px; /* Add padding to center the popup */
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.5); /* Dim background */
+  display: flex;
+  justify-content: center; /* Horizontal centering */
+  align-items: center; /* Vertical centering */
 }
 
-.popup-content {
-  background-color: var(--color5);
-  padding: 20px;
-  width: 60%; /* Adjust width to scale down */
-  max-width: 400px; /* Adjust max-width to scale down */
+#popup-card .popup-content {
+  background: var(--color5);
   border-radius: 10px;
+  padding: 20px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-  margin: auto;
+}
+
+body.no-scroll {
+  overflow: hidden; /* Disable scrolling on the body */
 }
 
 .popup-content h2 {
@@ -1359,7 +1404,7 @@ div h3:nth-of-type(2) {
 
 @media (max-width: 600px) {
   .recherche {
-    margin-top: 20px;
+    margin-top: 40px;
   }
 }
 #burger {

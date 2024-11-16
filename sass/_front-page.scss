@@ -7,17 +7,58 @@
   max-height: 75vh;
   overflow: hidden;
   z-index: 1;
-  margin: 100px 0;
+  margin: 130px 0;
+  position: relative;
 }
 
 .video video {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
-
+  position: relative;
+  z-index: 1;
 }
 
-/* Media query pour responsive video*/
+.video::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border-radius: 10px;
+  // POUR DONNER EFFECT NEON (glowing effectsque )
+  // PEUT ALTERNER COLOR 1 ET 2
+  background: linear-gradient(315deg, var(--color2), var(--color1));
+  filter: blur(20px);
+  z-index: 0;
+  animation: neon-border 1.5s infinite alternate, color-change 3s infinite alternate;
+}
+
+/* Neon border animation */
+@keyframes neon-border {
+  from {
+    filter: blur(10px);
+  }
+  to {
+    filter: blur(20px);
+  }
+}
+
+/* Color change animation */
+@keyframes color-change {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Media query pour responsive video */
 @media (max-width: 768px) {
   .video {
     height: 50vh;
