@@ -82,7 +82,7 @@ wp_reset_postdata();
 
 
 <!-- Popup-card pour les profs -->
-<div id="popup-card" class="popup">
+<div id="popup-card" style="display: none;">
   <div class="popup-content">
     <span id="close-popup" class="close">&times;</span>
     <h2 id="popup-name"></h2>
