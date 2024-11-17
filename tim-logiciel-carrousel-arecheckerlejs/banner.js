@@ -7,18 +7,22 @@ document.addEventListener('DOMContentLoaded', () => {
   let lastInteractionTime = Date.now();
   let emphasizedCard = null;
 
+  // Start auto-rotation
   const startAutoRun = () => {
-    if (autoRunInterval) return; // Prevent multiple intervals
+    if (autoRunInterval) return;
+
     const autoRun = () => {
-      if (Date.now() - lastInteractionTime > 2000) { // 2 seconds of inactivity
+      if (Date.now() - lastInteractionTime > 2000) {
         rotationY += 0.05; // Slower speed
         slider.style.transform = `perspective(1000px) rotateX(${rotationX}deg) rotateY(${rotationY}deg)`;
       }
       autoRunInterval = requestAnimationFrame(autoRun);
     };
+
     autoRunInterval = requestAnimationFrame(autoRun);
   };
 
+  // Stop auto-rotation
   const stopAutoRun = () => {
     if (autoRunInterval) {
       cancelAnimationFrame(autoRunInterval);
@@ -26,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
+  // Mouse event handlers
   const onMouseDown = (e) => {
     isDragging = true;
     startX = e.pageX - slider.offsetLeft;
@@ -36,13 +41,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const onMouseMove = (e) => {
     if (!isDragging) return;
+
     currentX = e.pageX - slider.offsetLeft;
     currentY = e.pageY - slider.offsetTop;
+
     const deltaX = currentX - startX;
     const deltaY = currentY - startY;
-    rotationY += deltaX * 0.05; // Slower speed
-    rotationX -= deltaY * 0.05; // Slower speed
+
+    rotationY += deltaX * 0.05; // Adjust speed
+    rotationX -= deltaY * 0.05;
+
     slider.style.transform = `perspective(1000px) rotateX(${rotationX}deg) rotateY(${rotationY}deg)`;
+
     startX = currentX;
     startY = currentY;
     lastInteractionTime = Date.now();
@@ -55,47 +65,53 @@ document.addEventListener('DOMContentLoaded', () => {
     startAutoRun();
   };
 
+  // Reset carousel state
   const resetCarousel = () => {
-    stopAutoRun(); // Stop any existing auto-run before resetting
+    stopAutoRun();
 
-    slider.style.transition = 'transform 0.5s ease'; // Add transition for smooth reset
+    slider.style.transition = 'transform 0.5s ease';
     rotationX = -16;
     rotationY = 0;
     slider.style.transform = `perspective(1000px) rotateX(${rotationX}deg) rotateY(${rotationY}deg)`;
+
     if (emphasizedCard) {
       emphasizedCard.classList.remove('emphasized');
       emphasizedCard = null;
       cards.forEach(card => card.style.opacity = '');
     }
-    lastInteractionTime = Date.now();
-    startAutoRun(); // Start a new auto-run
 
-    // Remove the transition after it completes to avoid affecting other transformations
+    lastInteractionTime = Date.now();
+    startAutoRun();
+
     setTimeout(() => {
       slider.style.transition = '';
-    }, 500); // Match the duration of the transition
+    }, 500);
   };
 
+  // Highlight a card
   const emphasizeCard = (card) => {
     if (emphasizedCard) {
       emphasizedCard.classList.remove('emphasized');
       cards.forEach(card => card.style.opacity = '');
     }
+
     emphasizedCard = card;
     card.classList.add('emphasized');
     cards.forEach(c => {
       if (c !== card) c.style.opacity = '0.5';
     });
+
     stopAutoRun();
   };
 
+  // Attach mouse events
   slider.addEventListener('mousedown', onMouseDown);
   document.addEventListener('mousemove', onMouseMove);
   document.addEventListener('mouseup', onMouseUp);
 
   slider.style.cursor = 'grab';
 
-  // Add event listeners to the cards
+  // Add click event listeners to cards
   cards.forEach(card => {
     card.addEventListener('click', (e) => {
       e.stopPropagation();
@@ -103,19 +119,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Add a reset button container
+  // Add a reset button
   const resetButtonContainer = document.createElement('div');
   resetButtonContainer.className = 'reset-button-container';
 
-  // Add a reset button
   const resetButton = document.createElement('button');
   resetButton.textContent = 'Reset';
   resetButton.addEventListener('click', resetCarousel);
-  resetButtonContainer.appendChild(resetButton);
 
+  resetButtonContainer.appendChild(resetButton);
   document.querySelector('.banner').appendChild(resetButtonContainer);
 
-  // Add event listener to the document to detect clicks outside the emphasized card
+  // Detect clicks outside the emphasized card
   document.addEventListener('click', (e) => {
     if (emphasizedCard && !slider.contains(e.target)) {
       emphasizedCard.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
@@ -126,5 +141,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // Start the auto-run feature
   startAutoRun();
 });

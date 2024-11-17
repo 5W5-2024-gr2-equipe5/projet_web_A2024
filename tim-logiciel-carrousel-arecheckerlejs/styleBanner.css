@@ -7,7 +7,7 @@
 
 }
 
-/* Ensure the parent container takes up the full viewport height */
+/* Ensure the parent container takes up the full viewport height
 * {
   box-sizing: border-box;
   margin: 0;
@@ -19,7 +19,7 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} */
 
 .banner {
   background-color: var(--color5);

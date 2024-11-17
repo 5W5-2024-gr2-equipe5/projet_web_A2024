@@ -3,7 +3,7 @@
 Plugin Name: TIM LOGICIELS CARROUSEL 3D USER INTERFACE
 Description: Un carrousel d'icônes de logiciels utilisés dans le programme TIM qui affiche une image et une légende pour chaque logiciel.
 ON peut les modifier dans le menu "Icon Banner Slider" dans l'admin de WordPress. Carrousel 3D avec GSAP. 
-Les utilisateurs peuvent cliquer sur les icônes pour afficher une légende. Environnement 3D du carrousel avec view de 360 degrés.
+Les utilisateurs peuvent cliquer sur les icônes pour afficher une légende. Environnement 3D du carrousel
 Version: 3.0
 Author: Eric
 */
