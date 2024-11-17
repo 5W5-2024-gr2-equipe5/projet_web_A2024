@@ -9,38 +9,31 @@ get_header();
 
         // Query custom post type 'project'
         $projects = new WP_Query(array(
-          
           'post_type' => 'project',
           'posts_per_page' => -1,
         ));
 
-        // Debuggage: Check if projects are found
         if ($projects->have_posts()) :
-          error_log('Projects found: ' . $projects->found_posts);
           while ($projects->have_posts()) : $projects->the_post();
-            // Retrieve ACF fields (importance de mettre le nom du champ exactement comme dans ACF)
             $team_name = get_field('team_name');
             $project_description = get_field('project_description');
-            $project_image = get_field('project_image');
-
-            // Debuggage: Check if ACF fields are found
-            error_log('Project Image: ' . print_r($project_image, true));
-
-            $project_image_url = !empty($project_image) && is_array($project_image) && isset($project_image['url']) ? $project_image['url'] : '';
-
-            // Debuggage: Check if ACF fields are retrieved
-            error_log('Project Title: ' . get_the_title());
-            error_log('Team Name: ' . $team_name);
-            error_log('Project Description: ' . $project_description);
-            error_log('Project Image URL: ' . $project_image_url);
+            
+            // Retrieve multiple image fields
+            $gallery_images = [];
+            for ($i = 1; $i <= 5; $i++) { // Assuming you have up to 5 images
+              $image = get_field('project_image_' . $i);
+              if ($image) {
+                $gallery_images[] = $image['url'];
+              }
+            }
       ?>
           <div class="box">
             <span></span>
             <div class="content">
               <h1><?php the_title(); ?></h1>
               <h2><?php echo esc_html($team_name); ?></h2>
-              <?php if ($project_image_url): ?>
-                <img src="<?php echo esc_url($project_image_url); ?>" alt="Project Image">
+              <?php if (!empty($gallery_images)): ?>
+                <img src="<?php echo esc_url($gallery_images[0]); ?>" alt="Project Image">
               <?php else: ?>
                 <img src="https://via.placeholder.com/200" alt="Placeholder Image">
               <?php endif; ?>
@@ -48,7 +41,7 @@ get_header();
                  data-title="<?php the_title(); ?>" 
                  data-team="<?php echo esc_html($team_name); ?>" 
                  data-description="<?php echo esc_html($project_description); ?>" 
-                 data-image="<?php echo esc_url($project_image_url); ?>">En savoir plus</a>
+                 data-images="<?php echo esc_attr(json_encode($gallery_images)); ?>">En savoir plus</a>
             </div>
           </div>
       <?php 
@@ -69,7 +62,13 @@ get_header();
     <span class="close">&times;</span>
     <h1 id="modalTitle">Titre du Projet</h1>
     <h2 id="modalTeam">Nom de l'équipe / élèves</h2>
-    <img id="modalImage" src="" alt="Project Image" style="width: 100%; height: auto;">
+    <div id="carousel" class="carousel">
+      <button class="prev">&lt;</button>
+      <div class="carousel-images">
+        <!-- Images will be injected here by JavaScript -->
+      </div>
+      <button class="next">&gt;</button>
+    </div>
     <p id="modalDescription">Description du projet</p>
   </div>
 </div>

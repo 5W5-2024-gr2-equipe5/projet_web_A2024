@@ -852,6 +852,81 @@ h1 {
 }
 
 /* ****************************** */
+/* Style for carousel buttons */
+.carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel .prev,
+.carousel .next {
+  background-color: var(--color4);
+  border: none;
+  color: var(--color5);
+  padding: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  position: absolute;
+  bottom: 10px; /* Move buttons towards the bottom */
+  z-index: 1;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel .prev {
+  left: 10px;
+}
+
+.carousel .next {
+  right: 10px;
+}
+
+.carousel .prev:hover,
+.carousel .next:hover {
+  background-color: var(--color1);
+  transform: scale(1.1);
+}
+
+/* Style for carousel images */
+.carousel-images {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  height: 500px; /* Set a fixed height */
+  justify-content: center;
+  position: relative;
+}
+
+.carousel-images img {
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Positioning for prev and next buttons */
+.carousel-prev,
+.carousel-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.carousel-prev {
+  left: 10px; /* Adjust as needed */
+}
+
+.carousel-next {
+  right: 10px; /* Adjust as needed */
+}
+
 .container-vie-etudiante {
   display: flex;
   flex-direction: column;
@@ -1419,7 +1494,7 @@ body.no-scroll {
   width: 35px;
   margin: 35px auto;
   position: absolute;
-  top: 5px;
+  top: 50px;
   right: 27px;
   display: flex;
   flex-direction: column;
