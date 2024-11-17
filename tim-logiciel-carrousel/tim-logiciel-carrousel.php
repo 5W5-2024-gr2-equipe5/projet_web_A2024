@@ -1,14 +1,14 @@
 <?php
 /*
-Plugin Name: TIM LOGICIELS CARROUSEL BANDEROLE 3D
-Description: Un carrousel d'icônes de logiciels utilisés dans le programme TIM qui affiche une image et une légende pour chaque logiciel. 
-On peut les modifier dans le menu "Icon Banner Slider" dans l'admin de WordPress. Maintenant avec des animations 3D! Environnement 3D avec GSAP.
-L'interactivité est ajoutée pour afficher un message contextuel lorsque vous survolez chaque icône. Faire bouger le carrousel avec la souris.
-Version: 2.0
+Plugin Name: TIM LOGICIELS CARROUSEL 3D USER INTERFACE
+Description: Un carrousel d'icônes de logiciels utilisés dans le programme TIM qui affiche une image et une légende pour chaque logiciel.
+ON peut les modifier dans le menu "Icon Banner Slider" dans l'admin de WordPress. Carrousel 3D avec GSAP. 
+Les utilisateurs peuvent cliquer sur les icônes pour afficher une légende. Environnement 3D du carrousel avec view de 360 degrés.
+Version: 3.0
 Author: Eric
 */
 
-// Enregistrer la page dans WordPress Admin
+// Enregistre la page dans WordPress Admin
 function icon_banner_slider_menu() {
     add_menu_page(
         'Icon Banner Slider Settings',
@@ -94,15 +94,7 @@ function icon_banner_slider_admin_scripts($hook) {
 }
 add_action('admin_enqueue_scripts', 'icon_banner_slider_admin_scripts');
 
-// Enqueue the front-end scripts and styles
-function icon_banner_slider_enqueue_scripts() {
-    wp_enqueue_style('icon-banner-slider-style', plugin_dir_url(__FILE__) . 'style.css');
-    wp_enqueue_script('gsap', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.2/gsap.min.js', array(), null, true);
-    wp_enqueue_script('icon-banner-slider-script', plugin_dir_url(__FILE__) . 'banner.js', array('jquery'), null, true);
-}
-add_action('wp_enqueue_scripts', 'icon_banner_slider_enqueue_scripts');
-
-// Creer les shortcode pour montrer le Banner sur la page
+// Créer les shortcode pour montrer le Banner sur la page
 function icon_banner_slider_shortcode() {
     ob_start();
 
@@ -137,9 +129,21 @@ function icon_banner_slider_shortcode() {
                 </div>
             <?php endforeach; ?>
         </div>
+        <div class="reset-button-container">
+            <button>Reset</button>
+        </div>
     </div>
     <?php
 
     return ob_get_clean();
 }
 add_shortcode('icon_banner_slider', 'icon_banner_slider_shortcode');
+
+// Enqueue les scripts et styles pour le front-end
+function icon_banner_slider_enqueue_scripts() {
+    wp_enqueue_style('banner-carousel-style', plugin_dir_url(__FILE__) . 'styleBanner.css');
+    wp_enqueue_script('banner-carousel-script', plugin_dir_url(__FILE__) . 'banner.js', array(), null, true);
+    wp_enqueue_script('gsap', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.2/gsap.min.js', array(), null, true);
+}
+add_action('wp_enqueue_scripts', 'icon_banner_slider_enqueue_scripts');
+?>

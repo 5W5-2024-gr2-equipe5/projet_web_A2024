@@ -3,21 +3,27 @@ document.addEventListener('DOMContentLoaded', () => {
   const cards = document.querySelectorAll('.banner .slider .item');
   let isDragging = false;
   let startX, startY, currentX, currentY, rotationX = -16, rotationY = 0;
-  let autoRunInterval;
+  let autoRunInterval = null;
   let lastInteractionTime = Date.now();
   let emphasizedCard = null;
 
   const startAutoRun = () => {
-    autoRunInterval = setInterval(() => {
-      if (Date.now() - lastInteractionTime > 2000) { // 5 seconds of inactivity
-        rotationY += 0.5; // Adjust the speed as needed
+    if (autoRunInterval) return; // Prevent multiple intervals
+    const autoRun = () => {
+      if (Date.now() - lastInteractionTime > 2000) { // 2 seconds of inactivity
+        rotationY += 0.05; // Slower speed
         slider.style.transform = `perspective(1000px) rotateX(${rotationX}deg) rotateY(${rotationY}deg)`;
       }
-    }, 100);
+      autoRunInterval = requestAnimationFrame(autoRun);
+    };
+    autoRunInterval = requestAnimationFrame(autoRun);
   };
 
   const stopAutoRun = () => {
-    clearInterval(autoRunInterval);
+    if (autoRunInterval) {
+      cancelAnimationFrame(autoRunInterval);
+      autoRunInterval = null;
+    }
   };
 
   const onMouseDown = (e) => {
@@ -34,8 +40,8 @@ document.addEventListener('DOMContentLoaded', () => {
     currentY = e.pageY - slider.offsetTop;
     const deltaX = currentX - startX;
     const deltaY = currentY - startY;
-    rotationY += deltaX * 0.1;
-    rotationX -= deltaY * 0.1;
+    rotationY += deltaX * 0.05; // Slower speed
+    rotationX -= deltaY * 0.05; // Slower speed
     slider.style.transform = `perspective(1000px) rotateX(${rotationX}deg) rotateY(${rotationY}deg)`;
     startX = currentX;
     startY = currentY;
@@ -50,23 +56,33 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const resetCarousel = () => {
+    stopAutoRun(); // Stop any existing auto-run before resetting
+
+    slider.style.transition = 'transform 0.5s ease'; // Add transition for smooth reset
     rotationX = -16;
     rotationY = 0;
     slider.style.transform = `perspective(1000px) rotateX(${rotationX}deg) rotateY(${rotationY}deg)`;
     if (emphasizedCard) {
-      emphasizedCard.style.transform = '';
+      emphasizedCard.classList.remove('emphasized');
       emphasizedCard = null;
       cards.forEach(card => card.style.opacity = '');
     }
+    lastInteractionTime = Date.now();
+    startAutoRun(); // Start a new auto-run
+
+    // Remove the transition after it completes to avoid affecting other transformations
+    setTimeout(() => {
+      slider.style.transition = '';
+    }, 500); // Match the duration of the transition
   };
 
   const emphasizeCard = (card) => {
     if (emphasizedCard) {
-      emphasizedCard.style.transform = '';
+      emphasizedCard.classList.remove('emphasized');
       cards.forEach(card => card.style.opacity = '');
     }
     emphasizedCard = card;
-    card.style.transform = 'scale(1.5)';
+    card.classList.add('emphasized');
     cards.forEach(c => {
       if (c !== card) c.style.opacity = '0.5';
     });
@@ -103,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('click', (e) => {
     if (emphasizedCard && !slider.contains(e.target)) {
       emphasizedCard.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
-      emphasizedCard.style.transform = '';
+      emphasizedCard.classList.remove('emphasized');
       emphasizedCard = null;
       cards.forEach(card => card.style.opacity = '');
       startAutoRun();
