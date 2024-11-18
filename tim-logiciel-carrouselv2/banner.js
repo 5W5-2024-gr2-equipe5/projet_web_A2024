@@ -1,6 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
   const slider = document.querySelector('.banner .slider');
   const cards = document.querySelectorAll('.banner .slider .item');
+  if (!slider || cards.length === 0) {
+    console.error('Slider or cards not found');
+    return;
+  }
+
   let isDragging = false;
   let startX, startY, currentX, currentY, rotationX = -16, rotationY = 0;
   let autoRunInterval = null;
