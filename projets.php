@@ -6,7 +6,14 @@ get_header();
 <div class="container-projet">
   <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
       <?php 
-
+        // ACF fields sont utilisés pour récupérer les informations des projets
+        // !IMPORTANT POUR QUE CA MARCHE:
+        // Les champs ACF doivent être nommés comme suit:
+        // 'team_name' pour le nom de l'équipe
+        // 'project_description' pour la description du projet
+        // 'project_image_1' à 'project_image_5' pour les images du projet
+        // 'project_video' pour l'URL de la vidéo du projet
+      
         // Query custom post type 'project'
         $projects = new WP_Query(array(
           'post_type' => 'project',
@@ -18,13 +25,20 @@ get_header();
             $team_name = get_field('team_name');
             $project_description = get_field('project_description');
             
-            // Retrieve multiple image fields
-            $gallery_images = [];
+            // Retrieve multiple image fields and video URL 
+            // METTRE LES BONNES URL POUR VIDEO (MEDIA LIBRARY sur WordPress) 
+            $gallery_items = [];
             for ($i = 1; $i <= 5; $i++) { // Assuming you have up to 5 images
               $image = get_field('project_image_' . $i);
               if ($image) {
-                $gallery_images[] = $image['url'];
+                $gallery_items[] = ['type' => 'image', 'url' => $image['url']];
               }
+            }
+
+            // Retrieve video URL
+            $video_url = get_field('project_video');
+            if ($video_url) {
+              $gallery_items[] = ['type' => 'video', 'url' => $video_url];
             }
       ?>
           <div class="box">
@@ -32,8 +46,15 @@ get_header();
             <div class="content">
               <h1><?php the_title(); ?></h1>
               <h2><?php echo esc_html($team_name); ?></h2>
-              <?php if (!empty($gallery_images)): ?>
-                <img src="<?php echo esc_url($gallery_images[0]); ?>" alt="Project Image">
+              <?php if (!empty($gallery_items)): ?>
+                <?php if ($gallery_items[0]['type'] == 'image'): ?>
+                  <img src="<?php echo esc_url($gallery_items[0]['url']); ?>" alt="Project Image">
+                <?php else: ?>
+                  <video controls>
+                    <source src="<?php echo esc_url($gallery_items[0]['url']); ?>" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                <?php endif; ?>
               <?php else: ?>
                 <img src="https://via.placeholder.com/200" alt="Placeholder Image">
               <?php endif; ?>
@@ -41,7 +62,7 @@ get_header();
                  data-title="<?php the_title(); ?>" 
                  data-team="<?php echo esc_html($team_name); ?>" 
                  data-description="<?php echo esc_html($project_description); ?>" 
-                 data-images="<?php echo esc_attr(json_encode($gallery_images)); ?>">En savoir plus</a>
+                 data-items="<?php echo esc_attr(json_encode($gallery_items)); ?>">En savoir plus</a>
             </div>
           </div>
       <?php 
@@ -65,7 +86,7 @@ get_header();
     <div id="carousel" class="carousel">
       <button class="prev">&lt;</button>
       <div class="carousel-images">
-        <!-- Images will be injected here by JavaScript -->
+        <!-- IMAGES ET VIDEO DANS LE CAROUSEL ICI VIA JAVASCRIPT -->
       </div>
       <button class="next">&gt;</button>
     </div>

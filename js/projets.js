@@ -1,49 +1,73 @@
+// Le JavaScript pour la page projets
 document.addEventListener('DOMContentLoaded', function() {
   const modal = document.getElementById('projectModal');
-  const closeModal = modal.querySelector('.close');
   const modalTitle = document.getElementById('modalTitle');
   const modalTeam = document.getElementById('modalTeam');
   const modalDescription = document.getElementById('modalDescription');
-  const carouselImages = modal.querySelector('.carousel-images');
-  const prevButton = modal.querySelector('.prev');
-  const nextButton = modal.querySelector('.next');
+  const carouselImages = document.querySelector('.carousel-images');
+  const prevButton = document.querySelector('.prev');
+  const nextButton = document.querySelector('.next');
+  const closeModal = document.querySelector('.close');
+  let items = [];
   let currentImageIndex = 0;
-  let images = [];
 
-  document.querySelectorAll('.more-info').forEach(button => {
+  // Ouvrir le modal pour afficher plus d'informations sur le projet
+  document.querySelectorAll('.more-info').forEach(function(button) {
     button.addEventListener('click', function(event) {
       event.preventDefault();
       modalTitle.textContent = this.dataset.title;
       modalTeam.textContent = this.dataset.team;
       modalDescription.textContent = this.dataset.description;
-      images = JSON.parse(this.dataset.images);
+      items = JSON.parse(this.dataset.items);
       currentImageIndex = 0;
       updateCarousel();
       modal.style.display = 'block';
     });
   });
 
+  // Fermer le modal
   closeModal.addEventListener('click', function() {
     modal.style.display = 'none';
   });
 
+  // Button précédent et suivant pour le carousel
   prevButton.addEventListener('click', function() {
-    currentImageIndex = (currentImageIndex > 0) ? currentImageIndex - 1 : images.length - 1;
+    currentImageIndex = (currentImageIndex > 0) ? currentImageIndex - 1 : items.length - 1;
     updateCarousel();
   });
 
   nextButton.addEventListener('click', function() {
-    currentImageIndex = (currentImageIndex < images.length - 1) ? currentImageIndex + 1 : 0;
+    currentImageIndex = (currentImageIndex < items.length - 1) ? currentImageIndex + 1 : 0;
     updateCarousel();
   });
 
+  // Fonctionnalité du Carousel Card PROJET pour les projets étudiants
+  // IMAGES ET VIDÉOS
   function updateCarousel() {
     carouselImages.innerHTML = '';
-    const img = document.createElement('img');
-    img.src = images[currentImageIndex];
-    img.alt = 'Project Image';
-    img.style.width = '100%';
-    img.style.height = 'auto';
-    carouselImages.appendChild(img);
+    if (items && items.length > 0) {
+      const item = items[currentImageIndex];
+      if (item) {
+        if (item.type === 'image') {
+          const img = document.createElement('img');
+          img.src = item.url;
+          img.alt = 'Project Image';
+          img.style.width = '100%';
+          img.style.height = 'auto';
+          carouselImages.appendChild(img);
+        } else if (item.type === 'video') {
+          const video = document.createElement('video');
+          video.controls = true;
+          video.classList.add('carousel-video');
+          const source = document.createElement('source');
+          source.src = item.url;
+          source.type = 'video/mp4';
+          video.appendChild(source);
+          video.style.width = '100%';
+          video.style.height = 'auto';
+          carouselImages.appendChild(video);
+        }
+      }
+    }
   }
 });
