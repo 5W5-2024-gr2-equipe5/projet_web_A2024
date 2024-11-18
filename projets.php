@@ -6,41 +6,55 @@ get_header();
 <div class="container-projet">
   <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
       <?php 
-
+        // ACF fields sont utilisés pour récupérer les informations des projets
+        // !IMPORTANT POUR QUE CA MARCHE:
+        // Les champs ACF doivent être nommés comme suit:
+        // 'team_name' pour le nom de l'équipe
+        // 'project_description' pour la description du projet
+        // 'project_image_1' à 'project_image_5' pour les images du projet
+        // 'project_video' pour l'URL de la vidéo du projet
+      
         // Query custom post type 'project'
         $projects = new WP_Query(array(
-          
           'post_type' => 'project',
           'posts_per_page' => -1,
         ));
 
-        // Debuggage: Check if projects are found
         if ($projects->have_posts()) :
-          error_log('Projects found: ' . $projects->found_posts);
           while ($projects->have_posts()) : $projects->the_post();
-            // Retrieve ACF fields (importance de mettre le nom du champ exactement comme dans ACF)
             $team_name = get_field('team_name');
             $project_description = get_field('project_description');
-            $project_image = get_field('project_image');
+            
+            // Retrieve multiple image fields and video URL 
+            // METTRE LES BONNES URL POUR VIDEO (MEDIA LIBRARY sur WordPress) 
+            $gallery_items = [];
+            for ($i = 1; $i <= 5; $i++) { // Assuming you have up to 5 images
+              $image = get_field('project_image_' . $i);
+              if ($image) {
+                $gallery_items[] = ['type' => 'image', 'url' => $image['url']];
+              }
+            }
 
-            // Debuggage: Check if ACF fields are found
-            error_log('Project Image: ' . print_r($project_image, true));
-
-            $project_image_url = !empty($project_image) && is_array($project_image) && isset($project_image['url']) ? $project_image['url'] : '';
-
-            // Debuggage: Check if ACF fields are retrieved
-            error_log('Project Title: ' . get_the_title());
-            error_log('Team Name: ' . $team_name);
-            error_log('Project Description: ' . $project_description);
-            error_log('Project Image URL: ' . $project_image_url);
+            // Retrieve video URL
+            $video_url = get_field('project_video');
+            if ($video_url) {
+              $gallery_items[] = ['type' => 'video', 'url' => $video_url];
+            }
       ?>
           <div class="box">
             <span></span>
             <div class="content">
               <h1><?php the_title(); ?></h1>
               <h2><?php echo esc_html($team_name); ?></h2>
-              <?php if ($project_image_url): ?>
-                <img src="<?php echo esc_url($project_image_url); ?>" alt="Project Image">
+              <?php if (!empty($gallery_items)): ?>
+                <?php if ($gallery_items[0]['type'] == 'image'): ?>
+                  <img src="<?php echo esc_url($gallery_items[0]['url']); ?>" alt="Project Image">
+                <?php else: ?>
+                  <video controls>
+                    <source src="<?php echo esc_url($gallery_items[0]['url']); ?>" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                <?php endif; ?>
               <?php else: ?>
                 <img src="https://via.placeholder.com/200" alt="Placeholder Image">
               <?php endif; ?>
@@ -48,7 +62,7 @@ get_header();
                  data-title="<?php the_title(); ?>" 
                  data-team="<?php echo esc_html($team_name); ?>" 
                  data-description="<?php echo esc_html($project_description); ?>" 
-                 data-image="<?php echo esc_url($project_image_url); ?>">En savoir plus</a>
+                 data-items="<?php echo esc_attr(json_encode($gallery_items)); ?>">En savoir plus</a>
             </div>
           </div>
       <?php 
@@ -69,7 +83,13 @@ get_header();
     <span class="close">&times;</span>
     <h1 id="modalTitle">Titre du Projet</h1>
     <h2 id="modalTeam">Nom de l'équipe / élèves</h2>
-    <img id="modalImage" src="" alt="Project Image" style="width: 100%; height: auto;">
+    <div id="carousel" class="carousel">
+      <button class="prev">&lt;</button>
+      <div class="carousel-images">
+        <!-- IMAGES ET VIDEO DANS LE CAROUSEL ICI VIA JAVASCRIPT -->
+      </div>
+      <button class="next">&gt;</button>
+    </div>
     <p id="modalDescription">Description du projet</p>
   </div>
 </div>
