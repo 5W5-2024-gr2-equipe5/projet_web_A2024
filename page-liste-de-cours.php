@@ -1,3 +1,28 @@
+<?php 
+get_header();
+/* Template Name: liste-de-cours */ 
+?>
+
+<div class="content">
+ <h1><?php  the_title(); ?></h1>
+ <div class="navigation"> 
+    <!-- Navigation des sessions ici -->
+  </div>
+  <div class="table-c">
+    <table id="course-table">
+      <thead>
+        <tr>
+          <?php 
+          // Affichage des en-têtes de sessions
+          for ($i = 1; $i <= 6; $i++) : ?>
+            <th class="session-header" data-session="<?php echo $i; ?>">
+              <button class="nav-arrow" onclick="changeSession(-1)">&#10094;</button>
+              <h2>Session <?php echo $i; ?></h2>
+              <button class="nav-arrow" onclick="changeSession(1)">&#10095;</button>
+            </th>
+          <?php endfor; ?>
+        </tr>
+      </thead>
 <tbody id="courseRows">
   <?php
   // Boucle pour chaque session
@@ -52,3 +77,11 @@
   </tr>
   <?php endfor; ?>
 </tbody>
+</table>
+</div>
+</div>
+
+<?php 
+wp_enqueue_script('custom-script', get_stylesheet_directory_uri() . '/js/liste-cours.js', array('jquery'), null, true);
+get_footer();
+?>
