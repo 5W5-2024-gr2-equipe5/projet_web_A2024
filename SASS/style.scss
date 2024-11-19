@@ -15,6 +15,7 @@ Text Domain: tim
 /*/////////////////////////////////////////////////*/
 /* sections de pages                               */
 /*/////////////////////////////////////////////////*/
+@import "404";
 @import "header";
 @import "footer";
 @import "couleurs";
@@ -24,7 +25,6 @@ Text Domain: tim
 @import "vie-etudiante";
 @import "professeur";
 @import "search-results";
-@import "404";
 
 /*/////////////////////////////////////////////////*/
 /* composants                                      */
