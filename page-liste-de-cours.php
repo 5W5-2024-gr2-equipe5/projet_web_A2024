@@ -2,7 +2,7 @@
 get_header();
 /* Template Name: liste-de-cours */ 
 ?>
-
+<!-- PLEASE DONT TOUCH -->
 <div class="content">
  <h1><?php  the_title(); ?></h1>
  <div class="navigation"> 
