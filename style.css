@@ -571,6 +571,7 @@ h1 {
 .container-projet .box .content img {
   width: 100%;
   aspect-ratio: 16/9;
+  height: 60%;
   object-fit: cover;
   margin-bottom: 10px;
 }
@@ -578,6 +579,7 @@ h1 {
 .container-projet .box .content h1 {
   font-size: 2.2rem;
   color: var(--color1);
+  text-align: center;
 }
 
 .container-projet .box .content h2 {
@@ -1546,6 +1548,7 @@ svg path {
 h1 {
   font-family: "Harlow";
   max-width: fit-content;
+  text-align: center;
 }
 
 h2 {
