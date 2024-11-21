@@ -16,9 +16,16 @@
   font-weight: normal;
 }
 
-h1,
-h2 {
+h1
+{
   font-family: "Harlow";
+  max-width: fit-content;
+}
+
+h2{
+  font-family: "Poppins-Regular";
+  font-weight: normal;
+  max-width: fit-content;
 }
 
 h3 {
