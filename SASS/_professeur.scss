@@ -192,20 +192,21 @@ body.no-scroll {
 }
 
 .popup-content blockquote {
-    font-size: 20px;
-    margin-top: 30px;
+    font-size: 17px;
+    margin-top: 35px;
     margin-bottom: 20px;
     text-align: center;
     color: var(--color4);
 }
 
 #popup-description {
-    font-size: 15px;
+    font-size: 13px;
     // margin-top: 20px;
     // margin-bottom: 20px;
     text-align: center;
     line-height: 1.6;
     color: var(--color4);
+    white-space: break-spaces;
 }
 
 .close {
