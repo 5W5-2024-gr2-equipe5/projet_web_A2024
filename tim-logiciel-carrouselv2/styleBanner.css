@@ -28,6 +28,9 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 125px;
+
+
 }
 /* Style for the banner */
 .banner .slider .item {
@@ -79,7 +82,7 @@ body, html {
   position: absolute;
   width: 150px;
   height: 200px;
-  top: 10%;
+  top: 25%;
   left: calc(50% - 75px);
   transform-style: preserve-3d;
   transform: perspective(1000px);
@@ -229,7 +232,7 @@ body, html {
 /* Styles for reset button */
 .reset-button-container {
   position: absolute;
-  bottom: 20px;
+  bottom: 15px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 3;
