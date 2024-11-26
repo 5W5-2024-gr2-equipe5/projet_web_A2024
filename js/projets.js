@@ -1,4 +1,3 @@
-// Le JavaScript pour la page projets
 document.addEventListener('DOMContentLoaded', function() {
   const modal = document.getElementById('projectModal');
   const modalTitle = document.getElementById('modalTitle');
@@ -50,10 +49,22 @@ document.addEventListener('DOMContentLoaded', function() {
       if (item) {
         if (item.type === 'image') {
           const img = document.createElement('img');
-          img.src = item.url;
+          img.dataset.src = item.url; // Use data-src for lazy loading
           img.alt = 'Project Image';
           img.style.width = '100%';
           img.style.height = 'auto';
+          
+          // Lazy load the image using IntersectionObserver
+          const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.src = entry.target.dataset.src; // Load the image
+                observer.unobserve(entry.target); // Stop observing once the image is loaded
+              }
+            });
+          }, { threshold: 0.1 }); // Trigger when 10% of the image is in view
+
+          observer.observe(img);
           carouselImages.appendChild(img);
         } else if (item.type === 'video') {
           const video = document.createElement('video');
