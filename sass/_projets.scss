@@ -20,6 +20,8 @@
   height: 100%;
   gap: 80px;
   margin-top: 120px;
+  // PADDING BOTTOM = solution QUE LE TRUC POUSSE EN BAS !MPORTANT 
+  padding-bottom: 100px; 
 
 }
 
@@ -157,22 +159,23 @@
 
 .container-projet .box .content img {
   width: 100%;
-  height: 400px; // Set a fixed height
+  // height: 400px; // Set a fixed height
+  aspect-ratio: 16/9; // Set the aspect ratio
+  height: 60%;
   object-fit: cover; // Ensures the image covers the entire area
-  border-radius: 8px;
   margin-bottom: 10px;
 }
 
+// TITRE DU PROJET CARD
 .container-projet .box .content h1 {
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   color: var(--color1);
-  margin-bottom: 30px;
- 
-
+  text-align: center;
 }
 
+// AUTEUR DU PROJET CARD
 .container-projet .box .content h2 {
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: var(--color4);
   margin-bottom: 10px;
   letter-spacing: 1.5px;
@@ -244,7 +247,7 @@
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
 .modal-content {
@@ -258,13 +261,14 @@
   transform: translateY(-50%);
   margin: auto;
 }
-
+// AUTEUR DU PROJET CARD MODAL
 .modal-content h2 {
   text-align: center;
   margin-bottom: 20px;
-  font-size: 50px;
+  font-size: 25px;
   color: var(--color4);
 }
+// TITRE DU PROJET CARD MODAL
 .modal-content h1 {
   text-align: center;
   margin-bottom: 20px;
@@ -273,8 +277,9 @@
   
   
 }
+// DESCRIPTION DU PROJET CARD MODAL
 .modal-content p{
-  text-align: center;
+  text-align: end;
   margin-bottom: 20px;
   margin-top: 80px;
   font-size: 20px;
@@ -342,7 +347,7 @@
   display: flex;
   overflow: hidden;
   width: 100%;
-  height: 500px; /* Set a fixed height */
+  height: 100%; /* Set a fixed height */
   justify-content: center;
   position: relative;
 }
@@ -371,7 +376,7 @@
 }
 
 .carousel-video {
-  margin-bottom: 100px; 
+  margin-bottom: 10px; 
 }
 // FIN DE LA PAGE PROJETS PLUS DE UPDATE A FAIRE SVP
 

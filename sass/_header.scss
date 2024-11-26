@@ -21,7 +21,7 @@ body {
 // Push the menu to the right
 // Push the logo to the very left of the screen
 .logo {
-  width: 100%;
+  width: fit-content;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -30,4 +30,21 @@ body {
     max-width: 100px; // Adjusted max-width to maintain aspect ratio
     max-height: 50px; // Set max-height to make the logo smaller in height
   }
+}
+
+.current_page_item a,
+.current-cat a,
+.current-menu-item a {
+  background-color: var(--color1);
+  border-radius: 5px;
+}
+
+@media (min-width: 1024px) {
+    header {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex-wrap: wrap;
+      align-items: center;
+    }
 }
