@@ -48,9 +48,8 @@ get_header();
               <h2><?php echo esc_html($team_name); ?></h2>
               <?php if (!empty($gallery_items)): ?>
                 <?php if ($gallery_items[0]['type'] == 'image'): ?>
-                  <!-- LAZY LOADING -->
-                  <img data-src="<?php echo esc_url($gallery_items[0]['url']); ?>" alt="Project Image">
-                  <?php else: ?>
+                  <img src="<?php echo esc_url($gallery_items[0]['url']); ?>" alt="Project Image">
+                <?php else: ?>
                   <video controls>
                     <source src="<?php echo esc_url($gallery_items[0]['url']); ?>" type="video/mp4">
                     Your browser does not support the video tag.
