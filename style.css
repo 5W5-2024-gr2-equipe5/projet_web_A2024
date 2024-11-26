@@ -219,6 +219,32 @@ div.inscription-logo p {
   position: relative;
 }
 
+.video-description {
+  text-align: start;
+  margin: 20px auto; /* Center align horizontally */
+  max-width: 800px;
+  padding: 30px;
+  background-color: rgba(69, 63, 180, 0.25);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.video-description h1 {
+  font-size: 50px;
+  margin-bottom: 50px;
+}
+.video-description h2 {
+  font-size: 20px;
+  color: var(--color4);
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+.video-description p {
+  font-size: 16px;
+  color: white;
+  line-height: 1.5;
+  text-align: start;
+}
+
 .video video {
   max-width: 100%;
   max-height: 100%;
@@ -1025,7 +1051,7 @@ h1 {
   /* PROFESSOR CARD */
 }
 .container h2 {
-  font-size: 1.5rem;
+  font-size: 1rem;
   text-align: center;
   margin: 0;
   padding: 0.5rem 0;
