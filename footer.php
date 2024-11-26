@@ -23,7 +23,7 @@
       <!-- Inscription & Logo -->
       <div class="inscription-logo">
         <!-- First Inscription Link and Logo -->
-        <p>Programme offert à Maisonneuve</p>
+        <p>Plus d’info sur le programme</p>
         <a href="<?php echo esc_url(get_theme_mod('inscription_url')); ?>" target="_blank">
           <img class="logoM9" src="<?php echo esc_url(get_theme_mod('inscription_logo')); ?>" alt="logo de collège Maisonneuve" />
         </a>
@@ -37,7 +37,6 @@
 
       <!-- Section Sociaux HARD CODED -->
       <div class="sociaux">
-        <h2>Sociaux</h2>
         <p class="social-icons">
           <a href="https://www.instagram.com/maisonneuvetim/" target="_blank"><i class="fab fa-instagram"></i></a>
           <a href="https://www.facebook.com/maisonneuvetim/" target="_blank"><i class="fab fa-facebook"></i></a>
