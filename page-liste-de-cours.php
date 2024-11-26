@@ -2,7 +2,7 @@
 get_header();
 /* Template Name: liste-de-cours */ 
 ?>
-
+<!-- PLEASE DONT TOUCH -->
 <div class="content">
  <h1><?php  the_title(); ?></h1>
  <div class="navigation"> 
@@ -17,8 +17,8 @@ get_header();
           for ($i = 1; $i <= 6; $i++) : ?>
             <th class="session-header" data-session="<?php echo $i; ?>">
               <button class="nav-arrow" onclick="changeSession(-1)">&#10094;</button>
-              <h2>Session <?php echo $i; ?></h2>
               <button class="nav-arrow" onclick="changeSession(1)">&#10095;</button>
+              <h2>Session <?php echo $i; ?></h2>
             </th>
           <?php endfor; ?>
         </tr>
