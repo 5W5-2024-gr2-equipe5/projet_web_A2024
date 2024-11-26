@@ -108,6 +108,7 @@ div.inscription-logo p{
   .footer-content {
     flex-direction: row;
     justify-content: space-between;
+    flex-wrap: wrap;
     text-align: left;
     align-items: flex-start;
   }
