@@ -47,9 +47,10 @@ endif;
             <!-- on met l'image du prof en background -->
             <div class="professeur"  style = 'background-image : url("<?= get_the_post_thumbnail_url(); ?>")' >
                 <!-- on remplie la class content avec toutes les informations nessessaire à la création de la carte prof -->
+                 <!-- Ligne 50 a voir si on trouve une solution si prof pas de citation -->
                 <div class="content" 
                      data-description="<?= strip_tags(get_the_content()); ?>" 
-                     data-quote="Quote for <?php the_title(); ?>: <?php the_field("citation") ?>"
+                     data-quote="<?php the_title(); ?> : « <?php the_field("citation") ?> »"
                      data-image="<?= get_the_post_thumbnail_url(); ?>" 
                      data-icons='[
                       <?php //on cherche dans tous les champs personnalisé pour compléter les informations et on sépare les requète par une vigule s'il y a un élémet suivant 
@@ -81,7 +82,7 @@ wp_reset_postdata();
 
 
 <!-- Popup-card pour les profs -->
-<div id="popup-card" class="popup">
+<div id="popup-card" style="display: none;">
   <div class="popup-content">
     <span id="close-popup" class="close">&times;</span>
     <h2 id="popup-name"></h2>

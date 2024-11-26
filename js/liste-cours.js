@@ -14,38 +14,40 @@ function toggleCollapse(id) {
   element.classList.toggle("show");
 }
 
-// changer de session
 let currentSession = 1;
-const totalSessions = 6;
+const maxSessions = 6;
 
-function changeSession(direction) {
-  const table = document.getElementById("course-table");
-  const rows = table.getElementsByTagName("tr");
+function showSession(session) {
+  const rows = document.querySelectorAll(".session-courses");
+  const headers = document.querySelectorAll(".session-header");
 
-  // cacher les rows
-  for (let i = 0; i < rows.length; i++) {
-    const cells = rows[i].getElementsByTagName(i === 0 ? "th" : "td");
-    for (let j = 0; j < cells.length; j++) {
-      cells[j].style.display = "none";
+  rows.forEach((row) => {
+    row.classList.remove("active");
+    if (parseInt(row.getAttribute("data-session")) === session) {
+      row.classList.add("active");
     }
-  }
+  });
 
-  // Update la session (avec un décalage de +1 pour correspondre aux sessions PHP)
-  currentSession += direction;
+  headers.forEach((header) => {
+    header.style.display = "none"; // Masquer tous les th
+  });
 
-  if (currentSession < 0) {
-    currentSession = totalSessions - 1;
-  } else if (currentSession >= totalSessions) {
-    currentSession = 0;
-  }
-
-  // montrer les cells de la session
-  for (let i = 0; i < rows.length; i++) {
-    const cells = rows[i].getElementsByTagName(i === 0 ? "th" : "td");
-    if (cells[currentSession]) {
-      cells[currentSession].style.display = "";
-    }
+  // Afficher le th de la session actuelle
+  const currentHeader = document.querySelector(
+    `.session-header[data-session="${session}"]`
+  );
+  if (currentHeader) {
+    currentHeader.style.display = "block";
   }
 }
 
-changeSession(0);
+function changeSession(direction) {
+  currentSession += direction;
+  if (currentSession < 1) currentSession = maxSessions;
+  if (currentSession > maxSessions) currentSession = 1;
+  showSession(currentSession);
+}
+document.addEventListener("DOMContentLoaded", () => {
+  // Initial setup
+  showSession(currentSession);
+});

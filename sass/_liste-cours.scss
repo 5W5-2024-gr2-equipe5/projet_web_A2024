@@ -1,20 +1,22 @@
-/*********************************** tableau **************************/
+/*********************************** Tableau **************************/
 .table-c {
   overflow-x: auto;
   white-space: nowrap;
   padding-bottom: 10vh;
 }
+
 table {
   margin: 0 auto;
   width: 50%;
+  border-collapse: collapse;
 }
 
 td,
 th {
   padding: 8px;
   border: 1px solid #11055c;
-  display: inline-block;
-  width: 50vw;
+  display: block; /* Utilisation du block pour afficher les éléments en colonnes */
+  width: 100%;
   box-sizing: border-box;
   background-color: #44a5c27f;
 }
@@ -24,13 +26,43 @@ td:empty {
 }
 
 th {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  justify-content: space-between;
+  display: none; /* Masquer tous les th par défaut */
 }
 
-/* Navigation Button Styles */
+th.session-1 {
+  display: block; /* Afficher seulement le premier th (Session 1) */
+  text-align: center;
+}
+
+/* Masquer les sessions par défaut */
+.session-courses {
+  display: none;
+}
+
+/* Afficher une session active */
+.session-courses.active {
+  display: block;
+}
+
+.session-1,
+.session-2,
+.session-3,
+.session-4,
+.session-5,
+.session-6 {
+  display: none; /* Initialement, toutes les sessions sont masquées */
+}
+
+.session-1.active,
+.session-2.active,
+.session-3.active,
+.session-4.active,
+.session-5.active,
+.session-6.active {
+  display: block; /* Une session active sera affichée */
+}
+
+/* Styles pour les flèches de navigation */
 .nav-arrow {
   background-color: var(--color1);
   color: white;
@@ -65,15 +97,7 @@ th {
   margin: 0 20px;
 }
 
-.session {
-  display: none;
-}
-
-.session.active {
-  display: block;
-}
-
-/************************ pour montrer la descr du cours ************************/
+/************************ Pour montrer la description du cours ************************/
 .collapse {
   display: none;
   padding: 15px;
@@ -84,7 +108,7 @@ th {
   display: block;
 }
 
-/* le style du bouton (à changer) */
+/* Style du bouton (à changer) */
 .btn {
   cursor: pointer;
   background-color: var(--color1);
@@ -104,6 +128,8 @@ th {
 .btn:hover {
   background-color: var(--color2);
 }
+
+/* Styles responsives pour les boutons et descriptions */
 @media (max-width: 768px) {
   .btn {
     font-size: 14px;
@@ -130,187 +156,19 @@ th {
   }
 }
 
-/************************************************/
-// HEINNN ON A BESOIN DE CA POUR QUE LES FONTS MARCHE POUR LE PLUGIN SUR WORDPRESS !IMPORTANT
-/* Style pour le banner */
-.banner .slider .item figure {
-  margin: 0;
-  padding: 0;
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.banner .slider .item figcaption {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  background: var(--color2);
-  color: white;
-  text-align: center;
-  padding: 5px 0;
-  font-size: 14px;
-  box-sizing: border-box;
-  z-index: 1;
-  font-family: "Poppins", sans-serif;
-}
-
-.banner {
-  width: 100%;
-  height: 40vh;
-  text-align: center;
-  overflow: hidden;
-  position: relative;
-  background-color: var(--color5);
-}
-
-.banner .slider {
-  position: absolute;
-  width: 150px;
-  height: 200px;
-  top: 10%;
-  left: calc(50% - 75px);
-  transform-style: preserve-3d;
-  transform: perspective(1000px);
-  animation: autoRun 20s linear infinite;
-  z-index: 2;
-}
-
-.banner .slider:hover {
-  animation-play-state: paused;
-}
-
-@keyframes autoRun {
-  from {
-    transform: perspective(1000px) rotateX(-16deg) rotateY(0deg);
-  }
-  to {
-    transform: perspective(1000px) rotateX(-16deg) rotateY(360deg);
-  }
-}
-
-.banner .slider .item {
-  position: absolute;
-  inset: 0 0 0 0;
-  transform: rotateY(
-      calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
-    )
-    translateZ(400px);
-}
-
-.banner .content {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: min(1400px, 100vw);
-  height: max-content;
-  padding-bottom: 50px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 1;
-}
-
-/* Responsive Banner */
-
-@media screen and (max-width: 1023px) {
-  .banner .slider {
-    width: 120px;
-    height: 160px;
-    left: calc(50% - 60px);
-  }
-  .banner .slider .item {
-    transform: rotateY(
-        calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
-      )
-      translateZ(250px);
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .banner .slider {
-    width: 80px;
-    height: 120px;
-    left: calc(50% - 40px);
-  }
-  .banner .slider .item {
-    transform: rotateY(
-        calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
-      )
-      translateZ(150px);
-  }
-}
-
-@media (max-width: 600px) {
-  .banner .slider .item figcaption {
-    font-size: 1px;
-    padding: 3px 0;
-  }
-  .banner {
-    height: 30vh;
-  }
-}
-
-.banner .slider .item img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  filter: grayscale(100%);
-  transition: filter 0.3s ease;
-}
-
-.banner .slider .item:hover img {
-  filter: grayscale(0%);
-}
-
-.popup-message {
-  display: none;
-  position: absolute;
-  bottom: 150px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 250px;
-  height: 85px;
-  background-color: rgba(0, 0, 0, 0.7);
-  color: white;
-  padding: 10px;
-  border-radius: 5px;
-  font-size: 15px;
-  letter-spacing: normal;
-  text-align: center;
-  z-index: 10;
-  font-family: "Poppins";
-  align-content: center;
-}
-
-.banner .slider .item:hover .popup-message {
-  display: block;
-}
-
-@media (max-width: 600px) {
-  .popup-message {
-    width: 90%;
-    bottom: 100px;
-    font-size: 10px;
-    padding: 5px;
-    height: auto;
-  }
-  figcaption {
-    display: none;
-  }
-}
-/************************************************/
-
-/*  */
-@media (max-width: 1000px) {
-  .table-c {
-    white-space: wrap;
-  }
-}
+/************************ Banner et Slider ************************/
+// CHANGER POUR PLUGIN !IMPORTANT PAS BESOIN BANNER SLIDER ICI !IMPORTANT
+// MAIS RIEN ICI !!
+/*********************************** Autres Ajustements **************************/
 h1 {
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
+
+@media (max-width: 1000px) {
+  .table-c {
+    white-space: wrap;
+  }
+}
+// DONT TOUCH PLEASE

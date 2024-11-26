@@ -1,31 +1,73 @@
-// Description: JavaScript file for the projets page
-// POUR AFFICHER LES MODALS (PROJECT POPUPS)
-document.addEventListener("DOMContentLoaded", function () {
-  const modal = document.getElementById("projectModal");
-  const modalTitle = document.getElementById("modalTitle");
-  const modalTeam = document.getElementById("modalTeam");
-  const modalImage = document.getElementById("modalImage");
-  const modalDescription = document.getElementById("modalDescription");
-  const closeModal = document.querySelector(".close");
+// Le JavaScript pour la page projets
+document.addEventListener('DOMContentLoaded', function() {
+  const modal = document.getElementById('projectModal');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalTeam = document.getElementById('modalTeam');
+  const modalDescription = document.getElementById('modalDescription');
+  const carouselImages = document.querySelector('.carousel-images');
+  const prevButton = document.querySelector('.prev');
+  const nextButton = document.querySelector('.next');
+  const closeModal = document.querySelector('.close');
+  let items = [];
+  let currentImageIndex = 0;
 
-  document.querySelectorAll(".more-info").forEach(button => {
-    button.addEventListener("click", function (e) {
-      e.preventDefault();
-      modalTitle.textContent = button.dataset.title;
-      modalTeam.textContent = button.dataset.team;
-      modalDescription.textContent = button.dataset.description;
-      modalImage.src = button.dataset.image;
-      modal.style.display = "block";
+  // Ouvrir le modal pour afficher plus d'informations sur le projet
+  document.querySelectorAll('.more-info').forEach(function(button) {
+    button.addEventListener('click', function(event) {
+      event.preventDefault();
+      modalTitle.textContent = this.dataset.title;
+      modalTeam.textContent = this.dataset.team;
+      modalDescription.textContent = this.dataset.description;
+      items = JSON.parse(this.dataset.items);
+      currentImageIndex = 0;
+      updateCarousel();
+      modal.style.display = 'block';
     });
   });
 
-  closeModal.addEventListener("click", function () {
-    modal.style.display = "none";
+  // Fermer le modal
+  closeModal.addEventListener('click', function() {
+    modal.style.display = 'none';
   });
 
-  window.addEventListener("click", function (e) {
-    if (e.target === modal) {
-      modal.style.display = "none";
-    }
+  // Button précédent et suivant pour le carousel
+  prevButton.addEventListener('click', function() {
+    currentImageIndex = (currentImageIndex > 0) ? currentImageIndex - 1 : items.length - 1;
+    updateCarousel();
   });
+
+  nextButton.addEventListener('click', function() {
+    currentImageIndex = (currentImageIndex < items.length - 1) ? currentImageIndex + 1 : 0;
+    updateCarousel();
+  });
+
+  // Fonctionnalité du Carousel Card PROJET pour les projets étudiants
+  // IMAGES ET VIDÉOS
+  function updateCarousel() {
+    carouselImages.innerHTML = '';
+    if (items && items.length > 0) {
+      const item = items[currentImageIndex];
+      if (item) {
+        if (item.type === 'image') {
+          const img = document.createElement('img');
+          img.src = item.url;
+          img.alt = 'Project Image';
+          img.style.width = '100%';
+          img.style.height = 'auto';
+          carouselImages.appendChild(img);
+        } else if (item.type === 'video') {
+          const video = document.createElement('video');
+          video.controls = true;
+          video.classList.add('carousel-video');
+          const source = document.createElement('source');
+          source.src = item.url;
+          source.type = 'video/mp4';
+          video.appendChild(source);
+          video.style.width = '100%';
+          video.style.height = 'auto';
+          carouselImages.appendChild(video);
+        }
+      }
+    }
+  }
 });

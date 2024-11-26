@@ -1,0 +1,253 @@
+:root {
+  --color1: #Da1d8e; /* rose */
+  --color2: #44a5c2; /* turquoise */
+  --color3: #ece639; /* yellow */
+  --color4: #f0f0c2; /* beige */
+  --color5: #0a023b; /* navy blue */
+
+}
+
+
+/* * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+.banner {
+  background-color: var(--color5);
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 125px;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+
+
+}
+/* Style for the banner */
+.banner .slider .item {
+
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.banner .slider .item img {
+}
+
+.banner .slider .item.emphasized {
+  transform: translateZ(200px) scale(1.5) !important;
+  z-index: 10;
+}
+
+.banner .slider .item figure {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.banner .slider .item figcaption {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: var(--color2);
+  color: white;
+  text-align: center;
+  padding: 5px 0;
+  font-size: 14px;
+  box-sizing: border-box;
+  z-index: 1;
+  font-family: 'Poppins', sans-serif;
+}
+
+.banner .slider {
+  position: absolute;
+  width: 150px;
+  height: 200px;
+  top: 25%;
+  left: calc(50% - 75px);
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+  z-index: 2;
+}
+
+.banner .slider .item {
+  position: absolute;
+  inset: 0;
+  transform: rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)) translateZ(400px);
+}
+
+.banner .content {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(1400px, 100vw);
+  height: max-content;
+  padding-bottom: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+}
+
+/* Responsive Banner */
+@media screen and (max-width: 1023px) {
+  .banner .slider {
+    width: 120px;
+    height: 160px;
+    left: calc(50% - 60px);
+  }
+  .banner .slider .item {
+    transform: rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)) translateZ(250px);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .banner .slider {
+    width: 80px;
+    height: 120px;
+    left: calc(50% - 40px);
+  }
+  .banner .slider .item {
+    transform: rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)) translateZ(150px);
+  }
+}
+
+@media (max-width: 600px) {
+  .banner .slider .item figcaption {
+    font-size: 1px;
+    padding: 3px 0;
+  }
+  .banner {
+    height: 30vh;
+  }
+}
+
+.banner .slider .item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: grayscale(100%);
+  transition: filter 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.banner .slider .item:hover img {
+  filter: grayscale(0%);
+ 
+}
+
+.popup-message {
+  display: none;
+  position: absolute;
+  bottom: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  height: 80px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  letter-spacing: normal;
+  text-align: center;
+  z-index: 10;
+  font-family: 'Poppins', sans-serif;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner .slider .item:hover .popup-message {
+  display: flex;
+}
+
+.banner .slider .item figcaption {
+  font-size: 14px;
+  padding: 5px 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1023px) {
+  .popup-message {
+    width: 250px;
+    height: 70px;
+    font-size: 14px;
+    padding: 8px;
+  }
+  .banner .slider .item figcaption {
+    font-size: 12px;
+    padding: 4px 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .popup-message {
+    width: 200px;
+    height: 60px;
+    font-size: 12px;
+    padding: 6px;
+  }
+  .banner .slider .item figcaption {
+    font-size: 10px;
+    padding: 3px 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .popup-message {
+    width: 150px;
+    height: auto;
+    font-size: 8px;
+    padding: 10px;
+    bottom: 100px;
+    text-align: start;
+  }
+  .banner .slider .item figcaption {
+    font-size: 8px;
+    padding: 2px 0;
+  }
+}
+
+
+/* Styles for reset button */
+.reset-button-container {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+.reset-button-container button {
+  padding: 10px 20px;
+  font-size: 15px;
+  cursor: pointer;
+  background-color: var(--color4);
+  color: var(--color5);
+  border: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bolder;
+  box-shadow: 0 0 5px var(--color1), 0 0 20px var(--color1), 0 0 30px var(--color1);
+  transition: all 0.3s ease;
+}
+
+.reset-button-container button:hover {
+  background-color: var(--color1);
+  box-shadow: 0 0 5px var(--color1), 0 0 20px var(--color1), 0 0 30px var(--color1), 0 0 40px var(--color1);
+}
