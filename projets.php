@@ -4,6 +4,8 @@ get_header();
 ?>
 
 <div class="container-projet">
+<h1><?php the_title(); ?></h1>
+
   <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
       <?php 
         // ACF fields sont utilisés pour récupérer les informations des projets
@@ -41,6 +43,9 @@ get_header();
               $gallery_items[] = ['type' => 'video', 'url' => $video_url];
             }
       ?>
+
+        <div class="project-item <?php echo esc_attr($category->slug); ?>">
+
           <div class="box">
             <span></span>
             <div class="content">
@@ -65,6 +70,8 @@ get_header();
                  data-items="<?php echo esc_attr(json_encode($gallery_items)); ?>">En savoir plus</a>
             </div>
           </div>
+        </div> 
+
       <?php 
           endwhile; 
           wp_reset_postdata();
