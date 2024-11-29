@@ -28,41 +28,35 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  const onMouseDown = (e) => {
+  // For mouse and touch events (common handling)
+  const onPointerDown = (e) => {
     isDragging = true;
-    startX = e.pageX - slider.offsetLeft;
-    startY = e.pageY - slider.offsetTop;
+    startX = e.pageX || e.touches[0].pageX;  // For touch or mouse
+    startY = e.pageY || e.touches[0].pageY;  // For touch or mouse
     slider.style.cursor = 'grabbing';
     stopAutoRun();
   };
 
-  const onMouseMove = (e) => {
+  const onPointerMove = (e) => {
     if (!isDragging) return;
-    currentX = e.pageX - slider.offsetLeft;
-    currentY = e.pageY - slider.offsetTop;
+    currentX = e.pageX || e.touches[0].pageX;  // For touch or mouse
+    currentY = e.pageY || e.touches[0].pageY;  // For touch or mouse
     const deltaX = currentX - startX;
     const deltaY = currentY - startY;
 
     // Apply rotation based on the dragging movement
-    rotationY += deltaX * 0.05; 
+    rotationY += deltaX * 0.05;
     rotationX -= deltaY * 0.05;
 
     // Update slider's rotation
     slider.style.transform = `perspective(1000px) rotateX(${rotationX}deg) rotateY(${rotationY}deg)`;
-
-    // Update the position of the emphasized card separately if it's set
-    if (emphasizedCard) {
-      const cardPosition = cardPositions[cards.indexOf(emphasizedCard)];
-      const transformValue = `translateZ(${cardPosition.z + 400}px) scale(1.5)`;
-      emphasizedCard.style.transform = transformValue;
-    }
 
     startX = currentX;
     startY = currentY;
     lastInteractionTime = Date.now();
   };
 
-  const onMouseUp = () => {
+  const onPointerUp = () => {
     isDragging = false;
     slider.style.cursor = 'grab';
     lastInteractionTime = Date.now();
@@ -89,25 +83,33 @@ document.addEventListener('DOMContentLoaded', () => {
       emphasizedCard.style.transform = '';
       emphasizedCard.classList.remove('emphasized');
       emphasizedCard = null;
-      cards.forEach(card => card.style.opacity = '');
+      cards.forEach(card => {
+        card.style.opacity = '';  // Reset opacity of all cards
+        card.style.pointerEvents = ''; // Enable interaction with all cards
+      });
     }
   };
 
   const emphasizeCard = (card) => {
     if (emphasizedCard) {
       emphasizedCard.classList.remove('emphasized');
-      cards.forEach(card => card.style.opacity = '');
+      cards.forEach(card => {
+        card.style.opacity = ''; // Reset opacity of all cards
+        card.style.pointerEvents = ''; // Enable interaction with all cards
+      });
     }
     emphasizedCard = card;
     card.classList.add('emphasized');
     cards.forEach(c => {
-      if (c !== card) c.style.opacity = '0.5';
+      if (c !== card) {
+        c.style.opacity = '0.3'; // Dim down the non-emphasized cards
+        c.style.pointerEvents = 'none'; // Disable interaction with non-emphasized cards
+      }
     });
     stopAutoRun();
 
     // Ensure the correct 3D position of the emphasized card
     const cardPosition = cardPositions[cards.indexOf(card)];
-    // Calculate the new transform based on the card's position
     const transformValue = `translateZ(${cardPosition.z + 400}px) scale(1.5)`;
     card.style.transform = transformValue;
 
@@ -158,9 +160,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  slider.addEventListener('mousedown', onMouseDown);
-  document.addEventListener('mousemove', onMouseMove);
-  document.addEventListener('mouseup', onMouseUp);
+  // Add event listeners for both mouse and touch events
+  slider.addEventListener('mousedown', onPointerDown);
+  slider.addEventListener('touchstart', onPointerDown, { passive: true });
+  
+  document.addEventListener('mousemove', onPointerMove);
+  document.addEventListener('touchmove', onPointerMove, { passive: true });
+
+  document.addEventListener('mouseup', onPointerUp);
+  document.addEventListener('touchend', onPointerUp);
 
   slider.style.cursor = 'grab';
   startAutoRun();
