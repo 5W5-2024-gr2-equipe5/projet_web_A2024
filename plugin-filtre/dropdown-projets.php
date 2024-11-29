@@ -35,7 +35,7 @@ function ej_generate_dropdown() {
     // Exclure la catégorie "projets" pour éviter qu'elle apparaisse dans le filtre
     $categories = get_categories(array(
         'taxonomy' => 'category',
-        'exclude' => array(27, 28, 29, 30, 31, 32, 5, 26, 16, 7, 6),
+        'exclude' => array(27, 28, 29, 30, 31, 32, 5, 6, 7),
         'orderby' => 'name',
         'order' => 'ASC',
     ));
