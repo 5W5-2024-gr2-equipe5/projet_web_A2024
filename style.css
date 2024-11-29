@@ -292,23 +292,27 @@ div.inscription-logo p {
 
 .video-description {
   text-align: start;
-  margin: 20px auto; /* Center align horizontally */
+  margin: 20px auto;
   max-width: 800px;
   padding: 30px;
   background-color: rgba(69, 63, 180, 0.25);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 125px;
 }
+
 .video-description h1 {
   font-size: 50px;
   margin-bottom: 50px;
 }
+
 .video-description h2 {
   font-size: 20px;
   color: var(--color4);
   line-height: 1.5;
   margin-bottom: 30px;
 }
+
 .video-description p {
   font-size: 16px;
   color: white;
@@ -316,6 +320,56 @@ div.inscription-logo p {
   text-align: start;
 }
 
+@media (max-width: 1024px) {
+  .video-description {
+    max-width: 90%;
+    padding: 20px;
+  }
+  .video-description h1 {
+    font-size: 40px;
+    margin-bottom: 30px;
+  }
+  .video-description h2 {
+    font-size: 18px;
+    margin-bottom: 25px;
+  }
+  .video-description p {
+    font-size: 14px;
+  }
+}
+@media (max-width: 768px) {
+  .video-description {
+    max-width: 100%;
+    padding: 15px;
+  }
+  .video-description h1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+  .video-description h2 {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  .video-description p {
+    font-size: 14px;
+  }
+}
+@media (max-width: 480px) {
+  .video-description {
+    padding: 10px;
+  }
+  .video-description h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  .video-description h2 {
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+  .video-description p {
+    font-size: 12px;
+  }
+}
 .video video {
   max-width: 100%;
   max-height: 100%;
