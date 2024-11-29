@@ -3,9 +3,10 @@
 get_header(); 
 ?>
 
+<div class="projets">
+  <h1><?php the_title(); ?></h1>
+  <?php echo do_shortcode('[ej_category_dropdown]'); ?>
 <div class="container-projet">
-<h1><?php the_title(); ?></h1>
-<?php echo do_shortcode('[ej_category_dropdown]'); ?>
   <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
       <?php 
         // ACF fields sont utilisés pour récupérer les informations des projets
@@ -88,7 +89,7 @@ get_header();
       <p>Pas de projet disponible.</p>
   <?php endif; ?>
 </div>
-
+</div>
 <!-- Carte Modal pour montrer les projects de façon individuel -->
 <div id="projectModal" class="modal">
   <div class="modal-content">
