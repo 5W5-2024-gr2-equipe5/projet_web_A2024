@@ -29,7 +29,7 @@ get_header(); // Include the WordPress header
       <h2>Évènements</h2>
       <div class="conteneur-event">
         <h3>Au collège</h3>
-        <div>
+        <div class="droite">
           <p>
             À Maisonneuve, nous sommes comme une grande famille et nous avons à cœur le bonheur de nos étudiants. 
             Dans cette optique, le cégep offre plusieurs activités durant la session, incluant 
@@ -42,12 +42,14 @@ get_header(); // Include the WordPress header
 
       <div class="conteneur-event">
         <h3 class="espace-haut">Au TIM</h3>
-        <p>
-          Grâce à l’implication de notre comité et l’aide des incroyables professeurs du TIM, nous avons la chance d’avoir 
-          énormément d'activités tout au long de notre parcours. Le BienvenueTIM, les nombreuses Soirées gaming, 
-          les dîners cinéma ou Jackbox, les jeux de société, quelques Game jams, des concours de design et bien d'autres.
-        </p>
-        <img class="image-vie-etudiante" src="<?php echo get_template_directory_uri(); ?>/images/VieEtudiante/activite_Jackbox.jpg" alt="*Insérer caroussel ici*">
+        <div class="gauche">
+          <p>
+            Grâce à l’implication de notre comité et l’aide des incroyables professeurs du TIM, nous avons la chance d’avoir 
+            énormément d'activités tout au long de notre parcours. Le BienvenueTIM, les nombreuses Soirées gaming, 
+            les dîners cinéma ou Jackbox, les jeux de société, quelques Game jams, des concours de design et bien d'autres.
+          </p>
+          <img class="image-vie-etudiante" src="<?php echo get_template_directory_uri(); ?>/images/VieEtudiante/activite_Jackbox.jpg" alt="*Insérer caroussel ici*">
+        </div>
       </div>
     </div>
 

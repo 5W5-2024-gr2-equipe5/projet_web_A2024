@@ -1078,6 +1078,18 @@ h1 {
   }
 }
 @media (min-width: 1200px) {
+  .droite {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .gauche {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+  }
   .div-vie-etudiante img {
     width: 35%;
   }
@@ -1128,7 +1140,7 @@ h1 {
   padding: 0.5rem 0;
 }
 .container > div {
-  flex: 1 0 120px;
+  flex: 0 0 120px;
   border-radius: 0.5rem;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, opacity 0.3s ease, filter 0.3s ease;
   cursor: pointer;
@@ -1449,7 +1461,7 @@ body.no-scroll {
   font-size: 2rem;
 }
 
-.div-perspective .conteneur-event h3 {
+.div-perspective .conteneur-event h3, .div-perspective .conteneur-event-video h3 {
   margin-top: 20px;
   text-align: center;
 }
@@ -1458,9 +1470,53 @@ body.no-scroll {
   margin: 4vw 0;
 }
 
+.div-perspective .conteneur-event-video p {
+  margin: 4vw 0;
+  width: 100%;
+}
+
+.div-perspective .conteneur-event-video {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.div-perspective .conteneur-event-reverse p {
+  margin: 4vw 0;
+}
+
 .video-futur {
   width: 56vw;
   height: 31.5vw;
+}
+
+.div-perspective .conteneur-event {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+@media (min-width: 1200px) {
+  .div-perspective .conteneur-event {
+    align-items: center;
+    justify-content: space-around;
+  }
+}
+
+.div-perspective .conteneur-event-reverse {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+@media (min-width: 1200px) {
+  .div-perspective .conteneur-event-reverse {
+    align-items: center;
+    justify-content: space-around;
+  }
+}
+
+.div-perspective .conteneur-event img {
+  align-self: center;
 }
 
 /*/////////////////////////////////////////////////*/
@@ -1705,18 +1761,18 @@ svg path {
   }
 }
 @font-face {
+  src: url("fonts/Poppins-Regular.ttf") format("truetype");
   font-family: "Poppins-Regular";
-  src: url("../fonts/Poppins-Regular.ttf") format("truetype");
   font-weight: normal;
 }
 @font-face {
+  src: url("fonts/Poppins-Black.ttf") format("truetype");
   font-family: "Poppins-Black";
-  src: url("../fonts/Poppins-Black.ttf") format("truetype");
   font-weight: bolder;
 }
 @font-face {
+  src: url("fonts/HARLOWSI_1.TTF") format("truetype");
   font-family: "Harlow";
-  src: url("../fonts/HARLOWSI_1.ttf") format("truetype");
   font-weight: normal;
 }
 h1 {
