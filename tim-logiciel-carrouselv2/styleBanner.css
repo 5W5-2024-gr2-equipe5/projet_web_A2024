@@ -135,7 +135,8 @@ body, html {
     padding: 3px 0;
   }
   .banner {
-    height: 30vh;
+    height: 50vh;
+    margin-top: 150px;
   }
 }
 
@@ -229,7 +230,7 @@ body, html {
 .reset-button-container {
   position: absolute;
   /* Methode du pauvre */
-  bottom: -200px;
+  bottom: 15px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 3;
