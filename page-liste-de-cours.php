@@ -3,7 +3,7 @@ get_header();
 /* Template Name: liste-de-cours */ 
 ?>
 <!-- PLEASE DONT TOUCH -->
-<div class="content">
+<div class="content contentListeCours">
  <h1><?php  the_title(); ?></h1>
  <div class="navigation"> 
     <!-- Navigation des sessions ici -->
@@ -17,8 +17,8 @@ get_header();
           for ($i = 1; $i <= 6; $i++) : ?>
             <th class="session-header" data-session="<?php echo $i; ?>">
               <button class="nav-arrow" onclick="changeSession(-1)">&#10094;</button>
-              <button class="nav-arrow" onclick="changeSession(1)">&#10095;</button>
               <h2>Session <?php echo $i; ?></h2>
+              <button class="nav-arrow" onclick="changeSession(1)">&#10095;</button>
             </th>
           <?php endfor; ?>
         </tr>
@@ -56,11 +56,11 @@ get_header();
         $prealables = esc_html(get_field('prealables'));
     ?>
         <td id="<?php echo sanitize_title(get_the_title()); ?>">
-          <button class="btn" onclick="toggleCollapse('<?php the_ID(); ?>')">
+          <button class="btn material-symbols-outlined" onclick="toggleCollapse('<?php the_ID(); ?>'); spinArrow(this);">
             <?php the_title(); ?>
           </button>
           <div id="<?php the_ID(); ?>" class="collapse">
-            <p><?php the_content(); ?></p>
+            <?php the_content(); ?>
             <p>Durée: <?php echo $duree; ?></p>
             <p>Unités: <?php echo $unites; ?></p>
             <p>Pondération: <?php echo $ponderation; ?></p>
