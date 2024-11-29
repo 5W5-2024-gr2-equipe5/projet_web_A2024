@@ -1,18 +1,18 @@
 @font-face {
+  src: url("fonts/Poppins-Regular.ttf") format("truetype");
   font-family: "Poppins-Regular";
-  src: url("../fonts/Poppins-Regular.ttf") format("truetype");
   font-weight: normal;
 }
 
 @font-face {
+  src: url("fonts/Poppins-Black.ttf") format("truetype");
   font-family: "Poppins-Black";
-  src: url("../fonts/Poppins-Black.ttf") format("truetype");
   font-weight: bolder;
 }
 
 @font-face {
+  src: url("fonts/HARLOWSI_1.TTF") format("truetype");
   font-family: "Harlow";
-  src: url("../fonts/HARLOWSI_1.ttf") format("truetype");
   font-weight: normal;
 }
 
@@ -22,7 +22,7 @@ h1
 }
 
 h2{
-  font-family: "Poppins-Regular";
+  font-family: "Poppins-Regular"; 
 }
 
 h3 {
