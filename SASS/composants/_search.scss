@@ -9,6 +9,7 @@
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin-left: 10px;
+  
 }
 
 .recherche__input {
@@ -18,7 +19,7 @@
   padding: 8px;
   border: none;
   outline: none;
-  width: 200px;
+  width: 100%;
   transition: background-color 0.3s ease;
 }
 
@@ -46,8 +47,12 @@
 }
 
 // Ajoute pour version mobile 
-@media (max-width: 600px) {
+@media (max-width: 480px) {
   .recherche {
-    margin-top: 40px; // Adjuster la valeur a mesure
+    width: 60vw;
+  }
+  .recherche__input{
+    font-size: 50%;
+    height: 80%;
   }
 }

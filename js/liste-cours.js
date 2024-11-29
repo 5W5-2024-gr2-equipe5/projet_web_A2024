@@ -8,6 +8,10 @@ function toggleCollapse(id) {
   }
 }
 
+function spinArrow(btn) {
+  btn.classList.toggle("active");
+}
+
 // buttons
 function toggleCollapse(id) {
   const element = document.getElementById(id);
@@ -37,7 +41,7 @@ function showSession(session) {
     `.session-header[data-session="${session}"]`
   );
   if (currentHeader) {
-    currentHeader.style.display = "block";
+    currentHeader.style.display = "flex";
   }
 }
 
