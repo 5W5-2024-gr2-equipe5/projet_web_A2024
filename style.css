@@ -232,7 +232,7 @@ div.inscription-logo p {
     justify-content: space-between;
     flex-wrap: wrap;
     text-align: left;
-    align-items: flex-start;
+    align-items: center;
   }
   .map-info,
   .inscription-logo,
@@ -292,23 +292,27 @@ div.inscription-logo p {
 
 .video-description {
   text-align: start;
-  margin: 20px auto; /* Center align horizontally */
+  margin: 20px auto;
   max-width: 800px;
   padding: 30px;
   background-color: rgba(69, 63, 180, 0.25);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 125px;
 }
+
 .video-description h1 {
   font-size: 50px;
   margin-bottom: 50px;
 }
+
 .video-description h2 {
   font-size: 20px;
   color: var(--color4);
   line-height: 1.5;
   margin-bottom: 30px;
 }
+
 .video-description p {
   font-size: 16px;
   color: white;
@@ -316,6 +320,56 @@ div.inscription-logo p {
   text-align: start;
 }
 
+@media (max-width: 1024px) {
+  .video-description {
+    max-width: 90%;
+    padding: 20px;
+  }
+  .video-description h1 {
+    font-size: 40px;
+    margin-bottom: 30px;
+  }
+  .video-description h2 {
+    font-size: 18px;
+    margin-bottom: 25px;
+  }
+  .video-description p {
+    font-size: 14px;
+  }
+}
+@media (max-width: 768px) {
+  .video-description {
+    max-width: 100%;
+    padding: 15px;
+  }
+  .video-description h1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+  .video-description h2 {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  .video-description p {
+    font-size: 14px;
+  }
+}
+@media (max-width: 480px) {
+  .video-description {
+    padding: 10px;
+  }
+  .video-description h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  .video-description h2 {
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+  .video-description p {
+    font-size: 12px;
+  }
+}
 .video video {
   max-width: 100%;
   max-height: 100%;
@@ -376,17 +430,23 @@ div.inscription-logo p {
     max-height: 30vh;
   }
 }
+/*********************************** Le contenue **********************/
+.contentListeCours {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
 /*********************************** Tableau **************************/
 .table-c {
   overflow-x: auto;
   white-space: nowrap;
-  padding-bottom: 10vh;
 }
 
 table {
-  margin: 0 auto;
-  width: 50%;
   border-collapse: collapse;
+  width: 85%;
+  margin: auto;
 }
 
 td,
@@ -405,6 +465,15 @@ td:empty {
 
 th {
   display: none; /* Masquer tous les th par défaut */
+}
+
+th h1 {
+  width: 50%;
+}
+
+th.session-header {
+  display: flex;
+  justify-content: space-between;
 }
 
 th.session-1 {
@@ -507,6 +576,32 @@ th.session-1 {
   background-color: var(--color2);
 }
 
+.btn::after {
+  font-family: "Font Awesome 6 Free";
+  content: "\f106";
+  font-weight: 900;
+  display: inline-block;
+  margin-left: 8px;
+  font-size: 16px;
+  vertical-align: middle;
+  vertical-align: middle;
+  transition: transform 0.3s ease;
+  transform: rotate(0deg);
+}
+
+.btn.active::after {
+  transform: rotate(180deg); /* Rotation à 180° */
+}
+
+/******************************* style du texte ****************************************/
+td p {
+  margin: 0.5rem;
+}
+
+table h2 {
+  margin: 1rem;
+}
+
 /* Styles responsives pour les boutons et descriptions */
 @media (max-width: 768px) {
   .btn {
@@ -516,7 +611,6 @@ th.session-1 {
   .collapse p {
     font-size: 14px;
     line-height: 1.5;
-    padding: 10px;
   }
 }
 @media (max-width: 480px) {
@@ -527,7 +621,9 @@ th.session-1 {
   .collapse p {
     font-size: 12px;
     line-height: 1.4;
-    padding: 8px;
+  }
+  h2 {
+    font-size: 5vw;
   }
 }
 /************************ Banner et Slider ************************/
@@ -1078,6 +1174,18 @@ h1 {
   }
 }
 @media (min-width: 1200px) {
+  .droite {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .gauche {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+  }
   .div-vie-etudiante img {
     width: 35%;
   }
@@ -1434,6 +1542,79 @@ body.no-scroll {
   color: var(--color4);
 }
 
+.container-futur {
+  padding: 0 5vw;
+}
+
+.container-futur h1 {
+  font-size: 4rem;
+  width: 100%;
+  text-align: center;
+}
+
+.div-perspective h2 {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.div-perspective .conteneur-event h3, .div-perspective .conteneur-event-video h3 {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.div-perspective .conteneur-event p {
+  margin: 4vw 0;
+}
+
+.div-perspective .conteneur-event-video p {
+  margin: 4vw 0;
+  width: 100%;
+}
+
+.div-perspective .conteneur-event-video {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.div-perspective .conteneur-event-reverse p {
+  margin: 4vw 0;
+}
+
+.video-futur {
+  width: 56vw;
+  height: 31.5vw;
+}
+
+.div-perspective .conteneur-event {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+@media (min-width: 1200px) {
+  .div-perspective .conteneur-event {
+    align-items: center;
+    justify-content: space-around;
+  }
+}
+
+.div-perspective .conteneur-event-reverse {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+@media (min-width: 1200px) {
+  .div-perspective .conteneur-event-reverse {
+    align-items: center;
+    justify-content: space-around;
+  }
+}
+
+.div-perspective .conteneur-event img {
+  align-self: center;
+}
+
 /*/////////////////////////////////////////////////*/
 /* composants                                      */
 /*/////////////////////////////////////////////////*/
@@ -1455,7 +1636,7 @@ body.no-scroll {
   padding: 8px;
   border: none;
   outline: none;
-  width: 200px;
+  width: 100%;
   transition: background-color 0.3s ease;
 }
 
@@ -1482,9 +1663,13 @@ body.no-scroll {
   background-color: var(--color2);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 480px) {
   .recherche {
-    margin-top: 40px;
+    width: 60vw;
+  }
+  .recherche__input {
+    font-size: 50%;
+    height: 80%;
   }
 }
 #burger {
@@ -1676,18 +1861,18 @@ svg path {
   }
 }
 @font-face {
+  src: url("fonts/Poppins-Regular.ttf") format("truetype");
   font-family: "Poppins-Regular";
-  src: url("../fonts/Poppins-Regular.ttf") format("truetype");
   font-weight: normal;
 }
 @font-face {
+  src: url("fonts/Poppins-Black.ttf") format("truetype");
   font-family: "Poppins-Black";
-  src: url("../fonts/Poppins-Black.ttf") format("truetype");
   font-weight: bolder;
 }
 @font-face {
+  src: url("fonts/HARLOWSI_1.TTF") format("truetype");
   font-family: "Harlow";
-  src: url("../fonts/HARLOWSI_1.ttf") format("truetype");
   font-weight: normal;
 }
 h1 {
