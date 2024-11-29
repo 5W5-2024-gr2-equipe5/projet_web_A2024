@@ -6,11 +6,13 @@ document.addEventListener('DOMContentLoaded', () => {
   let autoRunInterval = null;
   let lastInteractionTime = Date.now();
   let emphasizedCard = null;
+  let cardPositions = []; // To store the relative positions of cards
 
+  // Start auto-run when idle
   const startAutoRun = () => {
-    if (autoRunInterval) return; // Prevent multiple intervals
+    if (autoRunInterval) return;
     const autoRun = () => {
-      if (Date.now() - lastInteractionTime > 2000) { // 2 seconds of inactivity
+      if (Date.now() - lastInteractionTime > 2000) {
         rotationY += 0.05; // Slower speed
         slider.style.transform = `perspective(1000px) rotateX(${rotationX}deg) rotateY(${rotationY}deg)`;
       }
@@ -40,9 +42,21 @@ document.addEventListener('DOMContentLoaded', () => {
     currentY = e.pageY - slider.offsetTop;
     const deltaX = currentX - startX;
     const deltaY = currentY - startY;
-    rotationY += deltaX * 0.05; // Slower speed
-    rotationX -= deltaY * 0.05; // Slower speed
+
+    // Apply rotation based on the dragging movement
+    rotationY += deltaX * 0.05; 
+    rotationX -= deltaY * 0.05;
+
+    // Update slider's rotation
     slider.style.transform = `perspective(1000px) rotateX(${rotationX}deg) rotateY(${rotationY}deg)`;
+
+    // Update the position of the emphasized card separately if it's set
+    if (emphasizedCard) {
+      const cardPosition = cardPositions[cards.indexOf(emphasizedCard)];
+      const transformValue = `translateZ(${cardPosition.z + 400}px) scale(1.5)`;
+      emphasizedCard.style.transform = transformValue;
+    }
+
     startX = currentX;
     startY = currentY;
     lastInteractionTime = Date.now();
@@ -55,25 +69,28 @@ document.addEventListener('DOMContentLoaded', () => {
     startAutoRun();
   };
 
+  // Reset the carousel
   const resetCarousel = () => {
-    stopAutoRun(); // Stop any existing auto-run before resetting
-
-    slider.style.transition = 'transform 0.5s ease'; // Add transition for smooth reset
+    stopAutoRun();
+    slider.style.transition = 'transform 0.5s ease';
     rotationX = -16;
     rotationY = 0;
     slider.style.transform = `perspective(1000px) rotateX(${rotationX}deg) rotateY(${rotationY}deg)`;
+    resetEmphasizedCard();
+    lastInteractionTime = Date.now();
+    startAutoRun();
+    setTimeout(() => {
+      slider.style.transition = '';
+    }, 500);
+  };
+
+  const resetEmphasizedCard = () => {
     if (emphasizedCard) {
+      emphasizedCard.style.transform = '';
       emphasizedCard.classList.remove('emphasized');
       emphasizedCard = null;
       cards.forEach(card => card.style.opacity = '');
     }
-    lastInteractionTime = Date.now();
-    startAutoRun(); // Start a new auto-run
-
-    // Remove the transition after it completes to avoid affecting other transformations
-    setTimeout(() => {
-      slider.style.transition = '';
-    }, 500); // Match the duration of the transition
   };
 
   const emphasizeCard = (card) => {
@@ -87,27 +104,45 @@ document.addEventListener('DOMContentLoaded', () => {
       if (c !== card) c.style.opacity = '0.5';
     });
     stopAutoRun();
+
+    // Ensure the correct 3D position of the emphasized card
+    const cardPosition = cardPositions[cards.indexOf(card)];
+    // Calculate the new transform based on the card's position
+    const transformValue = `translateZ(${cardPosition.z + 400}px) scale(1.5)`;
+    card.style.transform = transformValue;
+
+    // Apply the current rotation to the carousel
+    slider.style.transform = `perspective(1000px) rotateX(${rotationX}deg) rotateY(${rotationY}deg)`;
   };
 
-  slider.addEventListener('mousedown', onMouseDown);
-  document.addEventListener('mousemove', onMouseMove);
-  document.addEventListener('mouseup', onMouseUp);
+  // Store the initial positions of all cards relative to the carousel
+  const storeCardPositions = () => {
+    cardPositions = [];
+    cards.forEach((card, index) => {
+      const transform = window.getComputedStyle(card).transform;
+      const matrix = new DOMMatrix(transform);
+      cardPositions.push({
+        x: matrix.m41,
+        y: matrix.m42,
+        z: matrix.m43,
+        rotation: matrix.rotate(0, 0).a
+      });
+    });
+  };
 
-  slider.style.cursor = 'grab';
-
-  // Add event listeners to the cards
+  // On card click, emphasize the card and store its position
   cards.forEach(card => {
     card.addEventListener('click', (e) => {
       e.stopPropagation();
       emphasizeCard(card);
+      storeCardPositions(); // Store card positions on click
     });
   });
 
-  // Add a reset button container
+  // Reset button to reset the carousel to default state
   const resetButtonContainer = document.createElement('div');
   resetButtonContainer.className = 'reset-button-container';
 
-  // Add a reset button
   const resetButton = document.createElement('button');
   resetButton.textContent = 'Reset';
   resetButton.addEventListener('click', resetCarousel);
@@ -115,16 +150,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelector('.banner').appendChild(resetButtonContainer);
 
-  // Add event listener to the document to detect clicks outside the emphasized card
+  // Click anywhere outside the carousel to reset emphasized card
   document.addEventListener('click', (e) => {
     if (emphasizedCard && !slider.contains(e.target)) {
-      emphasizedCard.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
-      emphasizedCard.classList.remove('emphasized');
-      emphasizedCard = null;
-      cards.forEach(card => card.style.opacity = '');
+      resetEmphasizedCard();
       startAutoRun();
     }
   });
 
+  slider.addEventListener('mousedown', onMouseDown);
+  document.addEventListener('mousemove', onMouseMove);
+  document.addEventListener('mouseup', onMouseUp);
+
+  slider.style.cursor = 'grab';
   startAutoRun();
 });
