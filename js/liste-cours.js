@@ -9,7 +9,7 @@ function toggleCollapse(id) {
 }
 
 function spinArrow(btn) {
-  btn.classList.toggle("active");
+  btn.classList.toggle("unactive");
 }
 
 // buttons
