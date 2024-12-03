@@ -48,6 +48,7 @@
       <h6 class="texte-nous">Site réalisé par Éric Nguyen,&nbsp; Émily Joly,&nbsp; David Rousseau,&nbsp; Raymond Beauregard-Casavant et Olivier Poulin ©</h6 >
     </div>
   </div>
+  <script src="../js/anim.click.js"></script>
 </footer>
 
 <?php wp_footer(); ?>
