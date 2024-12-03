@@ -1,49 +1,52 @@
-document.addEventListener("click", playAnimationClick);
+document.addEventListener("click", (event) => playAnimationClick(event));
 
-document.addEventListener("mousemove", handleMouseMove);
+function playAnimationClick(event) {
+    const nouveauCercle = document.createElement("div");
 
-function playAnimationClick() {
-    nouveauCercle = document.createElement("div");
-
-    print(nouveauCercle + "va jouer une belle animation de click");
+    console.log("A new circle will play a click animation");
 
     nouveauCercle.setAttribute("id", "on-click");
-    nouveauCercle.style.opacity = "none";
     nouveauCercle.style.position = "absolute";
-    nouveauCercle.style.backgroundColor = "#ffc7ec";
-    handleMouseMove(nouveauCercle);
+    nouveauCercle.style.zIndex = "30000";
+    nouveauCercle.style.width = "100px";
+    nouveauCercle.style.height = "100px";
+    nouveauCercle.style.pointerEvents = "none";
+    nouveauCercle.style.background = "#ffc7ec";
+    nouveauCercle.style.borderRadius = "50%"; // Ensures it's a circle
 
+    handleMouseMove(event, nouveauCercle);
     nouveauCercle.classList.add("ping");
-    setTimeout(removeElement(nouveauCercle), 1500);
+    document.body.appendChild(nouveauCercle);
+
+    setTimeout(() => removeElement(nouveauCercle), 1500);
 }
 
-function handleMouseMove(event) {
+function handleMouseMove(event, element) {
     var eventDoc, doc, body;
 
     event = event || window.event; // IE-ism
 
-    print(event + "est le meme cercle qu'avant")
-
-    // If pageX/Y aren't available and clientX/Y are,
-    // calculate pageX/Y - logic taken from jQuery.
-    // (This is to support old IE)
     if (event.pageX == null && event.clientX != null) {
         eventDoc = (event.target && event.target.ownerDocument) || document;
         doc = eventDoc.documentElement;
         body = eventDoc.body;
 
         event.pageX = event.clientX +
-          (doc && doc.scrollLeft || body && body.scrollLeft || 0) -
-          (doc && doc.clientLeft || body && body.clientLeft || 0);
+            (doc && doc.scrollLeft || body && body.scrollLeft || 0) -
+            (doc && doc.clientLeft || body && body.clientLeft || 0);
         event.pageY = event.clientY +
-          (doc && doc.scrollTop  || body && body.scrollTop  || 0) -
-          (doc && doc.clientTop  || body && body.clientTop  || 0 );
+            (doc && doc.scrollTop || body && body.scrollTop || 0) -
+            (doc && doc.clientTop || body && body.clientTop || 0);
     }
 
-    event.style.left = event.pageX;
-    event.style.top = event.pageY;
+    // Offset the position to center the circle
+    const circleWidth = parseInt(element.style.width, 10);
+    const circleHeight = parseInt(element.style.height, 10);
+
+    element.style.left = `${event.pageX - circleWidth / 2}px`;
+    element.style.top = `${event.pageY - circleHeight / 2}px`;
 }
 
-function removeElement(event) {
-    event.remove();
+function removeElement(element) {
+    element.remove();
 }
