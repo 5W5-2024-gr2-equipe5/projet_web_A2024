@@ -14,18 +14,6 @@ function _5w5_requete($query) {
 }
 add_action('pre_get_posts', '_5w5_requete');
 
-// Enqueue les styles et les scripts
-function custom_theme_scripts()
- {
-    // Enqueue FontAwesome
-    wp_enqueue_style('fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css', array(), '5.15.4');
-
-    // Enqueue le style du thème
-    wp_enqueue_style('custom-style', get_template_directory_uri() . '/style.css');
-    
-}
-add_action('wp_enqueue_scripts', 'custom_theme_scripts');
-
 // Enqueue les styles et les scripts pour les projets
 function enqueue_project_styles_scripts() {
     wp_enqueue_style('normalize', get_template_directory_uri() . '/normalize.css');
