@@ -22,7 +22,7 @@ get_header() ?>
           </p>
           <img src="images/Avenir/lumiere_Apprentissage.jpg" alt="image de stage">
       </div>
-      <div class="conteneur-event">
+      <div class="conteneur-event-video">
         <h3>Stage de fin d'étude</h3>
         <p>
           À la fin de votre parcours, vous aurez la chance de vivre un stage de 2 mois en entreprise dans le domaine de votre choix : vidéo, animation, web ou jeu. Peu importe votre domaine d'intérêt, de nombreuses opportunités d'embauche s'offrent à vous ! De plus, si votre stage se déroule bien, l'entreprise peut vous proposer un poste, ce qui vous permettrait d'intégrer directement le marché du travail à la fin de vos études. Selon les dernières statistiques, 85 % des étudiants ayant terminé leur formation sont engagés ou poursuivent leurs études à l’université.
@@ -48,7 +48,7 @@ get_header() ?>
   </div>
   <div class="div-vie-etudiante" id="etude-sup">
     <div class="div-perspective">
-      <div class="conteneur-event">
+      <div class="conteneur-event-reverse">
         <h2>Études supérieurs</h2>
         <p>
           Le programme vous offre également la possibilité de poursuivre vos études à l’université ! Plusieurs baccalauréats sont accessibles grâce aux passerelles DEC-BAC, comme celui en création de jeux vidéo à l'UQAT, en génie des technologies de l’information ou en génie logiciel à l’ÉTS, en médias interactifs à l’UQAM, ainsi que des programmes en création 3D pour le cinéma ou pour le jeu vidéo.

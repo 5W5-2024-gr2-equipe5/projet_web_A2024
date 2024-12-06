@@ -13,7 +13,7 @@
     font-size: 2rem;
 }
 
-.div-perspective .conteneur-event h3 {
+.div-perspective .conteneur-event h3, .div-perspective .conteneur-event-video h3 {
     margin-top: 20px;
     text-align: center;
 }
@@ -22,7 +22,49 @@
     margin: 4vw 0;
 }
 
+.div-perspective .conteneur-event-video p {
+    margin: 4vw 0;
+    width: 100%;
+}
+
+.div-perspective .conteneur-event-video {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.div-perspective .conteneur-event-reverse p {
+    margin: 4vw 0;
+}
+
 .video-futur {
     width: 56vw;
     height: 31.5vw;
+}
+
+.div-perspective .conteneur-event {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    @media (min-width: 1200px) {
+       align-items: center;
+       justify-content: space-around;
+    }
+}
+
+.div-perspective .conteneur-event-reverse {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    @media (min-width: 1200px) {
+       align-items: center;
+       justify-content: space-around;
+    }
+}
+
+.div-perspective .conteneur-event img {
+    align-self: center;
 }

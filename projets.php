@@ -3,6 +3,9 @@
 get_header(); 
 ?>
 
+<div class="projets">
+  <h1><?php the_title(); ?></h1>
+  <?php echo do_shortcode('[ej_category_dropdown]'); ?>
 <div class="container-projet">
   <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
       <?php 
@@ -41,6 +44,14 @@ get_header();
               $gallery_items[] = ['type' => 'video', 'url' => $video_url];
             }
       ?>
+
+        <div class="project-item 
+          <?php $categories = get_the_category();
+            if (!empty($categories)) {
+              foreach ($categories as $category) {
+                echo ' ' . esc_attr($category->slug);
+              }
+            } ?>">
           <div class="box">
             <span></span>
             <div class="content">
@@ -65,6 +76,8 @@ get_header();
                  data-items="<?php echo esc_attr(json_encode($gallery_items)); ?>">En savoir plus</a>
             </div>
           </div>
+        </div> 
+
       <?php 
           endwhile; 
           wp_reset_postdata();
@@ -76,7 +89,7 @@ get_header();
       <p>Pas de projet disponible.</p>
   <?php endif; ?>
 </div>
-
+</div>
 <!-- Carte Modal pour montrer les projects de façon individuel -->
 <div id="projectModal" class="modal">
   <div class="modal-content">
@@ -94,7 +107,6 @@ get_header();
   </div>
 </div>
 
-<?php get_footer(); ?>
-
 <!-- Inclure le JavaScript fichier pour que les cartes modal (PROJET Étudiants) fonctionne -->
 <script src="<?php echo get_template_directory_uri(); ?>/js/projets.js"></script>
+<?php get_footer(); ?>
