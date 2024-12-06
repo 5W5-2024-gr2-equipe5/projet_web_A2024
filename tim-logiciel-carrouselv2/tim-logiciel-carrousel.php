@@ -129,9 +129,9 @@ function icon_banner_slider_shortcode() {
                 </div>
             <?php endforeach; ?>
         </div>
-        <div class="reset-button-container">
-            <button>Reset</button>
-        </div>
+        <!-- <div class="reset-button-container">
+            <button>Réinitialisation</button>
+        </div> -->
     </div>
     <?php
 
