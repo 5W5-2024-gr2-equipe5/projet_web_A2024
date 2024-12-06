@@ -24,7 +24,11 @@ get_header(); ?>
                                 <?php the_title(); // Display the post title ?>
                             </h2>
                             <div class="search-result-content">
-                                <?php the_content(); // Display the full post content ?>
+                                <?php 
+                                // Limit content to 40 characters
+                                $content = get_the_content(); 
+                                echo esc_html(mb_substr(strip_tags($content), 0, 40)) . '...'; 
+                                ?>
                             </div>
                         </li>
                         <?php endwhile; ?>
@@ -52,12 +56,11 @@ get_header(); ?>
             <h3 class="marge-retour">Revenir à l'accueil</h3>
 
             <div class="bouton-retour" id="retour-search">
-                <a href="https://gftnth00.mywhc.ca/tim30/" class="custom-logo-link" rel="home"><img width="256" height="127" src="https://gftnth00.mywhc.ca/tim30/wp-content/uploads/2024/10/tim_icon.png" class="custom-logo" alt="TIM" decoding="async"></a>
+                <a href="https://gftnth00.mywhc.ca/tim30/" class="custom-logo-link" rel="home"><img width="150" height="75" src="https://gftnth00.mywhc.ca/tim30/wp-content/uploads/2024/10/tim_icon.png" class="custom-logo" alt="TIM" decoding="async"></a>
             </div>
         </div>
     </div>
     <script src="<?php echo get_template_directory_uri(); ?>/js/fond-peinture.js"></script>
 </div>
-
 
 <?php get_footer(); ?>
