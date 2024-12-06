@@ -74,12 +74,21 @@
       color: var(--color4);
       text-decoration: none;
       padding: 1rem;
+      margin: 1rem;
       display: block;
       text-align: center;
       font-family: 'Poppins', sans-serif;
-
-      
+      background-color: none;
+      border-radius: 5px;
+      transform: scale(1);
+      transition-property: scale, background-color, color;
+      transition-duration: 0.5s;     
     }
+  }
+  a:hover{
+    transform: scale(1.1);
+    background-color: var(--color2);
+    color: var(--color5); 
   }
   .sub-menu {
     display: none;
