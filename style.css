@@ -500,6 +500,7 @@ th.session-1 {
 /* Afficher une session active */
 .session-courses.active {
   display: block;
+  margin-bottom: 3rem;
 }
 
 .session-1,
@@ -557,16 +558,21 @@ th.session-1 {
 
 /************************ Pour montrer la description du cours ************************/
 .collapse {
-  display: block;
+  display: flex;
   max-height: 0;
   overflow: hidden;
   white-space: wrap;
   margin: 0 10px;
   transition: max-height 0.7s ease-out, margin 0.7s;
 }
+@media (max-width: 1024px) {
+  .collapse {
+    flex-direction: column;
+  }
+}
 
 .collapse.show {
-  display: block;
+  display: flex;
   max-height: 500px;
   margin: 10px;
 }
@@ -650,6 +656,74 @@ table h2 {
   }
   h2 {
     font-size: 5vw;
+  }
+}
+.session-header-mobile {
+  display: none;
+}
+
+thead {
+  display: contents;
+}
+
+@media (min-width: 1024px) {
+  thead {
+    display: none;
+  }
+  .session-header-mobile {
+    display: flex;
+    justify-content: center;
+  }
+}
+/****************** liste style ************************/
+.collapse > p {
+  margin-right: 3rem;
+  display: flex;
+  flex: 0 0 0px;
+  height: fit-content;
+}
+
+ul {
+  list-style-type: none;
+  text-overflow: clip;
+}
+ul li {
+  margin: 0.3rem;
+  width: 100%;
+}
+
+.ACF-style {
+  border-left: 2px solid var(--color1);
+}
+
+.ACF-style p {
+  margin-top: 3rem;
+  font-size: 0.7rem;
+}
+
+@media (min-width: 1024px) {
+  ul {
+    list-style-type: disc;
+    list-style-position: inside;
+    translate: -0.57rem;
+    width: 100%;
+  }
+  ul li::marker {
+    color: var(--color1);
+    font-size: 1.3rem;
+  }
+  .ACF-style {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1 1 300px;
+  }
+  .ACF-style p {
+    margin-right: 3rem;
+    height: fit-content;
+  }
+  .collapse > p {
+    flex: 2 1 700px;
   }
 }
 /************************ Banner et Slider ************************/
