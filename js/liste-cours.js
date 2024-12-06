@@ -1,3 +1,6 @@
+//Appel initial de la fonction
+window.addEventListener("load", checkWindowSize);
+
 // buttons
 function toggleCollapse(id) {
   var element = document.getElementById(id);
@@ -55,3 +58,47 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initial setup
   showSession(currentSession);
 });
+
+// Fonction qui sera appelée lorsque la taille de la fenêtre change
+function checkWindowSize() {
+  // Définir la largeur minimale souhaitée
+  const minWidth = 1024; // par exemple, 1024px
+  const sessionCoursesDivs = document.querySelectorAll('.session-courses');
+  const sessionHeaders = document.querySelectorAll('.session-header');
+  let dataSession;
+  // Vérifier si la largeur de la fenêtre est supérieure à minWidth
+  if (window.innerWidth >= minWidth) {
+        sessionCoursesDivs.forEach(div => {
+          if (!div.classList.contains('active')) {
+            div.classList.add('active');
+          }
+        });
+  } else {
+        sessionCoursesDivs.forEach(div => {
+          div.classList.remove('active');
+        });
+
+        sessionHeaders.forEach(header => {
+          // Vérifier si l'élément a un style "display: flex"
+          const computedStyle = window.getComputedStyle(header);
+          if (computedStyle.display === 'flex') {
+            // Extraire la valeur de l'attribut data-session
+            dataSession = header.getAttribute('data-session');
+            
+            // Afficher ou utiliser la valeur de data-session
+            if (dataSession !== null) {
+              console.log('Data-session:', dataSession);
+            } else {
+              console.log('L\'élément "session-header" n\'a pas d\'attribut data-session.');
+            }
+          }
+        });
+        sessionCoursesDivs[dataSession-1].classList.add('active');
+  }
+}
+
+// Attacher l'événement 'resize' à la fenêtre
+window.addEventListener("resize", checkWindowSize);
+
+// Appeler la fonction une première fois pour vérifier la taille actuelle au chargement
+checkWindowSize();
