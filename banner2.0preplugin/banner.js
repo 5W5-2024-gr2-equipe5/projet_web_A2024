@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
   resetButtonContainer.className = 'reset-button-container';
 
   const resetButton = document.createElement('button');
-  resetButton.textContent = 'Reset';
+  resetButton.textContent = 'Réinitialisation';
   resetButton.addEventListener('click', resetCarousel);
   resetButtonContainer.appendChild(resetButton);
 
