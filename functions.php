@@ -90,7 +90,7 @@ add_action('customize_register', 'mytheme_customize_register');
 
 function search_by_title_or_category($query) {
     if (!is_admin() && $query->is_search && $query->is_main_query()) {
-        $query->set('post_type', 'post'); // Limit search to posts
+        $query->set('post_type', ['post', 'Project']); // Limit search to posts
         $query->set('posts_per_page', 10); // Adjust the number of posts per page
 
         // Add custom logic for searching by title or category
@@ -105,7 +105,7 @@ function search_by_title_or_category($query) {
                         SELECT 1 FROM {$wpdb->term_relationships} AS tr
                         INNER JOIN {$wpdb->term_taxonomy} AS tt ON tr.term_taxonomy_id = tt.term_taxonomy_id
                         INNER JOIN {$wpdb->terms} AS t ON tt.term_id = t.term_id
-                        WHERE tt.taxonomy = 'category' 
+                        WHERE tt.taxonomy IN ('category', 'Project_category')
                         AND tr.object_id = {$wpdb->posts}.ID 
                         AND t.name LIKE '%$search_term%'
                     )
@@ -123,7 +123,7 @@ add_action('pre_get_posts', 'search_by_title_or_category');
 function live_search_handler() {
     $query = sanitize_text_field($_GET['query'] ?? '');
     $args = [
-        'post_type' => 'post',
+        'post_type' => ['post', 'Project'],
         's' => $query,
         'posts_per_page' => 5,
     ];
