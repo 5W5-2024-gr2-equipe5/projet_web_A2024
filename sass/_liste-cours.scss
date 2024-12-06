@@ -115,13 +115,24 @@ th.session-1 {
 
 /************************ Pour montrer la description du cours ************************/
 .collapse {
-  display: none;
-  padding: 15px;
+  display: block;
+  max-height: 0;
+  overflow: hidden;
   white-space: wrap;
+  margin:0 10px ;
+  transition: max-height 0.7s ease-out, margin 0.7s;
 }
 
 .collapse.show {
   display: block;
+  max-height: 500px;
+  margin: 10px;
+  @media (max-width: 1024px){
+    max-height: 800px;
+  }
+  @media (max-width: 768px){
+    max-height: 1500px;
+  }
 }
 
 /* Style du bouton (à changer) */
@@ -155,11 +166,11 @@ th.session-1 {
   vertical-align: middle; 
   vertical-align: middle;
   transition: transform 0.3s ease;
-  transform: rotate(0deg); 
+  transform: rotate(180deg); 
 }
 
-.btn.active::after {
-  transform: rotate(180deg); /* Rotation à 180° */
+.btn.unactive::after {
+  transform: rotate(0deg); /* Rotation à 180° */
 }
 
 /******************************* style du texte ****************************************/

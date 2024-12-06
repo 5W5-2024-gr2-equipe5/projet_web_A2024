@@ -131,7 +131,7 @@ svg path {
           display: flex;
 
           a {
-            padding: 0.5rem 1rem;
+            padding: 0.4rem 0.4rem;
             flex-wrap: nowrap;
           }
 
@@ -192,6 +192,9 @@ svg path {
     white-space: nowrap;
     transition: all 0.5s ease-out;
   }
+
+
+
 
   /* Jello-like slide up animation */
   @keyframes slideUp {
