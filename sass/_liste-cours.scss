@@ -242,13 +242,13 @@ thead{
   display: flex;
   flex: 0 0 0px;
   height:fit-content;
+  
 }
 
 ul{
   list-style-type:none ;
   //translate: 2rem;
   text-overflow:clip;
-
   li{
     margin: 0.3rem;
     width: 100%;
@@ -256,6 +256,8 @@ ul{
 }
 .ACF-style{
   border-left: 2px solid var(--color1);
+  line-height: 150%;
+  font-size: 0.8rem;
 }
 .ACF-style p{
   margin-top: 3rem;
@@ -278,6 +280,7 @@ ul{
     flex-direction: column;
     justify-content: space-between;
     flex: 1 1 300px;
+    font-size: 1rem;
   }
   .ACF-style p{
     margin-right: 3rem;
