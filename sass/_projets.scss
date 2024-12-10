@@ -10,6 +10,10 @@
   font-weight: normal;
 }
 
+body.no-scroll {
+  overflow: hidden; /* Disable scrolling on the body */
+}
+
 /* Container card */
 .container-projet {
   display: flex;
