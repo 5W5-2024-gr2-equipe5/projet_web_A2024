@@ -20,7 +20,7 @@ get_header() ?>
           <p>
             Les stages Alternance Travail-Étude (ATE) sont une opportunité offerte aux étudiants du TIM. Ils vous permettent de réaliser des stages d'été dès votre première année. Vous développerez rapidement des compétences utiles aux employeurs, ce qui vous aidera à décrocher un stage lors de vos premières vacances. Ces stages sont non seulement rémunérés, mais également subventionnés par le gouvernement, vous offrant ainsi un avantage significatif par rapport à vos concurrents. D'une durée de 8 à 12 semaines, ces stages vous permettront de perfectionner vos compétences, de vivre des expériences uniques et d'acquérir une précieuse expérience qui facilitera grandement votre entrée dans le monde du travail.
           </p>
-          <img src="images/Avenir/lumiere_Apprentissage.jpg" alt="image de stage">
+          <img src="https://gftnth00.mywhc.ca/tim30/wp-content/uploads/2024/12/lumiere_Apprentissage.jpg" alt="image de stage">
       </div>
       <div class="conteneur-event-video">
         <h3>Stage de fin d'étude</h3>
@@ -42,7 +42,7 @@ get_header() ?>
         <p>
           À la fin de votre parcours, vous aurez acquis toutes les connaissances nécessaires pour entrer sur le marché du travail. Grâce à la diversité du programme, aussi bien créatif que technique, vous pouvez devenir une pièce maîtresse dans divers domaines. Si vous êtes davantage porté sur la créativité, des opportunités s’offrent à vous dans des secteurs tels que designer, infographiste ou animateur 2D/3D. Si la programmation vous intéresse, des postes comme concepteur et développeur de jeux, développeur de sites web, programmeur multimédia ou développeur d'applications mobiles s’ouvrent à vous. Si vous avez un intérêt pour plusieurs domaines, des postes comme chargé de projet ou intégrateur multimédia sont faits pour vous !
         </p>
-        <img src="images/Avenir/sdf.jpg" alt="Nicolas Carrière en tenue de cinéma">
+        <img src="https://gftnth00.mywhc.ca/tim30/wp-content/uploads/2024/12/sdf.jpg" alt="Nicolas Carrière en tenue de cinéma">
       </div>
     </div>
   </div>
@@ -54,7 +54,7 @@ get_header() ?>
           Le programme vous offre également la possibilité de poursuivre vos études à l’université ! Plusieurs baccalauréats sont accessibles grâce aux passerelles DEC-BAC, comme celui en création de jeux vidéo à l'UQAT, en génie des technologies de l’information ou en génie logiciel à l’ÉTS, en médias interactifs à l’UQAM, ainsi que des programmes en création 3D pour le cinéma ou pour le jeu vidéo.
           En plus de ces options, la technique ouvre d'autres débouchés dans les domaines des arts visuels et de l’informatique !
         </p>
-        <img src="images/Avenir/Finissants_Ahmed.jpeg" alt="image de finissant">
+        <img src="https://gftnth00.mywhc.ca/tim30/wp-content/uploads/2024/12/Finissants_Ahmed-scaled-1.jpeg" alt="image de finissant">
       </div>
     </div>
   </div>

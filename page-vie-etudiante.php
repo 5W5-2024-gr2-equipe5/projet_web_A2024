@@ -15,7 +15,7 @@ get_header(); // Include the WordPress header
 
     <div class="div-vie-etudiante" id="comite">
       <h2>Comité étudiant</h2>
-      <img class="image-vie-etudiante" src="<?php echo get_template_directory_uri(); ?>/images/VieEtudiante/cetim.png" alt="CÉTIM">
+      <img class="image-vie-etudiante" src="https://gftnth00.mywhc.ca/tim30/wp-content/uploads/2024/12/cetim.png" alt="CÉTIM">
       <p>
         Le comité étudiant du TIM est une organisation étudiante à but non lucratif 
         qui vise à rendre votre passage au TIM mémorable. Le comité est composé d'étudiants 
@@ -36,7 +36,7 @@ get_header(); // Include the WordPress header
             la fête de la rentrée, le dîner des programmes (qui vise à favoriser la socialisation entre étudiants), 
             la fête d’halloween et plusieurs autres surprises que vous découvrirez le mardi et jeudi midi durant vos pauses.
           </p>
-          <img class="image-vie-etudiante" src="<?php echo get_template_directory_uri(); ?>/images/Photo_arcade_vie_etudiante.jpg" alt="Arcade jeux en équipe">
+          <img class="image-vie-etudiante" src="https://gftnth00.mywhc.ca/tim30/wp-content/uploads/2024/12/Photo_arcade_vie_etudiante.jpg" alt="Arcade jeux en équipe">
         </div>
       </div>
 
@@ -48,7 +48,7 @@ get_header(); // Include the WordPress header
             énormément d'activités tout au long de notre parcours. Le BienvenueTIM, les nombreuses Soirées gaming, 
             les dîners cinéma ou Jackbox, les jeux de société, quelques Game jams, des concours de design et bien d'autres.
           </p>
-          <img class="image-vie-etudiante" src="<?php echo get_template_directory_uri(); ?>/images/VieEtudiante/activite_Jackbox.jpg" alt="*Insérer caroussel ici*">
+          <img class="image-vie-etudiante" src="https://gftnth00.mywhc.ca/tim30/wp-content/uploads/2024/12/activite_Jackbox-scaled-1.jpg" alt="*Insérer caroussel ici*">
         </div>
       </div>
     </div>
@@ -77,7 +77,7 @@ get_header(); // Include the WordPress header
         (Par exemple, grâce au programme Dec-Bac ou au passerelle!)
       </p>
 
-      <img class="image-vie-etudiante" src="<?php echo get_template_directory_uri(); ?>/images/VieEtudiante/etudiants_groupe_2.jpg" alt="Heureuse Surprise!">
+      <img class="image-vie-etudiante" src="https://gftnth00.mywhc.ca/tim30/wp-content/uploads/2024/12/etudiants_groupe_2-scaled-1.jpg" alt="Heureuse Surprise!">
     </div>
 
     <script src="<?php echo get_template_directory_uri(); ?>/js/marge-neon.js"></script>
