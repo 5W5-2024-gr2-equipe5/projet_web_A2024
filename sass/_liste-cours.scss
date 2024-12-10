@@ -58,6 +58,7 @@ th.session-1 {
 /* Afficher une session active */
 .session-courses.active {
   display: block;
+  margin-bottom: 3rem;
 }
 
 .session-1,
@@ -115,13 +116,27 @@ th.session-1 {
 
 /************************ Pour montrer la description du cours ************************/
 .collapse {
-  display: none;
-  padding: 15px;
+  display: flex;
+  max-height: 0;
+  overflow: hidden;
   white-space: wrap;
+  margin:0 10px ;
+  transition: max-height 0.7s ease-out, margin 0.7s;
+  @media (max-width: 1024px){
+    flex-direction: column;
+  }
 }
 
 .collapse.show {
-  display: block;
+  display: flex;
+  max-height: 500px;
+  margin: 10px;
+  @media (max-width: 1024px){
+    max-height: 800px;
+  }
+  @media (max-width: 768px){
+    max-height: 1500px;
+  }
 }
 
 /* Style du bouton (à changer) */
@@ -144,7 +159,7 @@ th.session-1 {
 .btn:hover {
   background-color: var(--color2);
 }
-
+//petite flèche
 .btn::after {
   font-family: "Font Awesome 6 Free";
   content: "\f106"; 
@@ -155,11 +170,11 @@ th.session-1 {
   vertical-align: middle; 
   vertical-align: middle;
   transition: transform 0.3s ease;
-  transform: rotate(0deg); 
+  transform: rotate(180deg); 
 }
 
-.btn.active::after {
-  transform: rotate(180deg); /* Rotation à 180° */
+.btn.unactive::after {
+  transform: rotate(0deg); /* Rotation à 180° */
 }
 
 /******************************* style du texte ****************************************/
@@ -178,7 +193,7 @@ table h2{
     font-size: 14px;
     padding: 8px 16px;
   }
-
+  
   .collapse p {
     font-size: 14px;
     line-height: 1.5;
@@ -190,14 +205,86 @@ table h2{
     font-size: 12px;
     padding: 6px 12px;
   }
-
+  
   .collapse p {
     font-size: 12px;
     line-height: 1.4;
   }
-
+  
   h2{
     font-size: 5vw;
+  }
+}
+
+.session-header-mobile{
+  display: none;
+}
+
+thead{
+  display:contents;
+}
+
+@media (min-width:1024px){
+  thead{
+    display: none;
+  }
+  .session-header-mobile{
+    display: flex;
+    justify-content: center;
+  }
+  
+  
+}
+
+/****************** liste style ************************/
+.collapse>p{
+  margin-right:3rem;
+  display: flex;
+  flex: 0 0 0px;
+  height:fit-content;
+}
+
+ul{
+  list-style-type:none ;
+  //translate: 2rem;
+  text-overflow:clip;
+
+  li{
+    margin: 0.3rem;
+    width: 100%;
+  }
+}
+.ACF-style{
+  border-left: 2px solid var(--color1);
+}
+.ACF-style p{
+  margin-top: 3rem;
+  font-size: 0.7rem;
+}
+@media (min-width:1024px){
+  ul{
+    
+    list-style-type:disc;
+    list-style-position:outside;
+    translate: 0.65rem;
+    width: 100%;
+    li::marker{
+      color: var(--color1);
+      font-size: 1.3rem;
+    }
+  }
+  .ACF-style{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1 1 300px;
+  }
+  .ACF-style p{
+    margin-right: 3rem;
+    height: fit-content;
+  }
+  .collapse>p{
+    flex: 2 1 700px;
   }
 }
 

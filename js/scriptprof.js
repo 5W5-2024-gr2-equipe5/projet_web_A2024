@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
       popupIconsContainer.innerHTML = '';
       if (Array.isArray(icons)) {
         icons.forEach(icon => {
-          const iconElement = document.createElement('a');
+          const iconElement = document.createElement('span');
           iconElement.href = icon.url;
           iconElement.className = 'popup-icon material-icons';
           iconElement.textContent = icon.class;

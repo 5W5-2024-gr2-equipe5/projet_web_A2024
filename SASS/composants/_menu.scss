@@ -69,17 +69,26 @@
     position: relative;
     flex: 1;
     box-sizing: border-box;
-    
+    // Animation pour le hover sur le nav
     a {
       color: var(--color4);
       text-decoration: none;
       padding: 1rem;
+      margin: 1rem;
       display: block;
       text-align: center;
       font-family: 'Poppins', sans-serif;
-
-      
+      background-color: none;
+      border-radius: 5px;
+      transform: scale(1);
+      transition-property: scale, background-color, color;
+      transition-duration: 0.5s;     
     }
+  }
+  a:hover{
+    transform: scale(1.1);
+    background-color: var(--color2);
+    color: var(--color5); 
   }
   .sub-menu {
     display: none;
@@ -131,7 +140,7 @@ svg path {
           display: flex;
 
           a {
-            padding: 0.5rem 1rem;
+            padding: 0.4rem 0.4rem;
             flex-wrap: nowrap;
           }
 
@@ -192,6 +201,9 @@ svg path {
     white-space: nowrap;
     transition: all 0.5s ease-out;
   }
+
+
+
 
   /* Jello-like slide up animation */
   @keyframes slideUp {

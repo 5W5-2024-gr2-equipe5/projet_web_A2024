@@ -45,7 +45,11 @@ get_header();
       ],
     ]);
   ?>
+  
   <tr class="session-courses <?php echo $session === 1 ? 'active' : ''; ?>" data-session="<?php echo $session; ?>">
+            <th class="session-header-mobile" data-session="<?php echo $session; ?>">
+              <h2>Session <?php echo $session; ?></h2>
+            </th>
     <?php
     if ($courses->have_posts()) :
       while ($courses->have_posts()) : $courses->the_post();
@@ -61,10 +65,15 @@ get_header();
           </button>
           <div id="<?php the_ID(); ?>" class="collapse">
             <?php the_content(); ?>
-            <p>Durée: <?php echo $duree; ?></p>
-            <p>Unités: <?php echo $unites; ?></p>
-            <p>Pondération: <?php echo $ponderation; ?></p>
-            <p>Préalable(s): <?php echo $prealables; ?></p>
+            <div class=ACF-style>
+              <ul>
+                <li>Durée: <?php echo $duree; ?></li>
+                <li>Unités: <?php echo $unites; ?></li>
+                <li>Pondération: <?php echo $ponderation; ?></li>
+                <li>Préalable(s): <?php echo $prealables; ?></li>
+              </ul>
+              <p>*La pondération ce lit comme suit:"Nombre d'heures de théorie", "Nombre d'heures de pratique", "Nombre d'heures à la maison"</p>
+            </div>
           </div>
         </td>
     <?php
