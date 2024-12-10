@@ -1506,6 +1506,8 @@ h1 {
   display: flex;
   justify-content: center; /* Horizontal centering */
   align-items: center; /* Vertical centering */
+  overflow: auto;
+  padding-top: 20%;
 }
 
 #popup-card .popup-content {
