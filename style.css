@@ -711,6 +711,8 @@ ul li {
 
 .ACF-style {
   border-left: 2px solid var(--color1);
+  line-height: 150%;
+  font-size: 0.8rem;
 }
 
 .ACF-style p {
@@ -734,6 +736,7 @@ ul li {
     flex-direction: column;
     justify-content: space-between;
     flex: 1 1 300px;
+    font-size: 1rem;
   }
   .ACF-style p {
     margin-right: 3rem;
@@ -766,6 +769,10 @@ h1 {
   src: url("fonts/HARLOWSI_1.ttf") format("truetype");
   font-weight: normal;
 }
+body.no-scroll {
+  overflow: hidden; /* Disable scrolling on the body */
+}
+
 /* Container card */
 .container-projet {
   display: flex;
@@ -942,6 +949,9 @@ h1 {
 /* ******************************************** */
 /* Responsive Design */
 @media (max-width: 768px) {
+  .modal {
+    padding-top: 35%;
+  }
   .container-projet {
     padding: 20px;
   }
@@ -1456,6 +1466,7 @@ h1 {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
     gap: 10px;
+    padding-top: 20%;
   }
   .container > div {
     width: 100%;
@@ -1489,6 +1500,9 @@ h1 {
     /* Increase the height of the card on fullscreen */
     height: 500px; /* Adjust height as needed */
   }
+  .popup-card {
+    padding-top: 20%;
+  }
 }
 /* CSS for the popup professor */
 #popup-card {
@@ -1503,6 +1517,7 @@ h1 {
   display: flex;
   justify-content: center; /* Horizontal centering */
   align-items: center; /* Vertical centering */
+  overflow: auto;
 }
 
 #popup-card .popup-content {
