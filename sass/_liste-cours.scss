@@ -159,7 +159,7 @@ th.session-1 {
 .btn:hover {
   background-color: var(--color2);
 }
-
+//petite flèche
 .btn::after {
   font-family: "Font Awesome 6 Free";
   content: "\f106"; 
@@ -265,8 +265,8 @@ ul{
   ul{
     
     list-style-type:disc;
-    list-style-position:inside;
-    translate: -.57rem;
+    list-style-position:outside;
+    translate: 0.65rem;
     width: 100%;
     li::marker{
       color: var(--color1);
