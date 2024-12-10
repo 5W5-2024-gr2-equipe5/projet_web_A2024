@@ -154,10 +154,15 @@ a {
   bottom: 0;
 }
 
+#sram {
+  margin-top: 30px;
+}
+
 .texte-nous {
   margin-top: 20px;
   color: var(--color2);
   text-align: center;
+  line-height: 15px;
 }
 
 .footer-content {
@@ -309,7 +314,7 @@ div.inscription-logo p {
   max-height: 75vh;
   overflow: hidden;
   z-index: 1;
-  margin: 130px 0;
+  margin: clamp(1rem, 0.651rem + 2.791vw, 4rem) 0;
   position: relative;
 }
 
@@ -321,7 +326,7 @@ div.inscription-logo p {
   background-color: rgba(69, 63, 180, 0.25);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-bottom: 125px;
+  margin-bottom: clamp(1rem, 0.651rem + 2.791vw, 4rem);
 }
 
 .video-description h1 {
@@ -1000,7 +1005,7 @@ h1 {
 }
 
 .modal-content p {
-  text-align: end;
+  text-align: start;
   margin-bottom: 20px;
   margin-top: 80px;
   font-size: 20px;
@@ -1764,7 +1769,7 @@ body.no-scroll {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin-left: 10px;
   flex: 1 1 100px;
-  max-width: 500px;
+  max-width: 5000px;
 }
 
 .recherche label {
@@ -1821,7 +1826,7 @@ body.no-scroll {
 #burger {
   cursor: pointer;
   width: 35px;
-  margin: 35px auto;
+  margin: 15px auto;
   position: absolute;
   top: 50px;
   right: 27px;
@@ -1885,7 +1890,7 @@ body.no-scroll {
   color: var(--color4);
   text-decoration: none;
   padding: 1rem;
-  margin: 1rem;
+  margin: clamp(0rem, -0.416rem + 0.763vw, 0.5rem);
   display: block;
   text-align: center;
   font-family: "Poppins", sans-serif;

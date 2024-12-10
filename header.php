@@ -9,9 +9,6 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/normalize.css'; ?> ">
-    <link rel="stylesheet" href=" <?php echo get_template_directory_uri() . '/style.css'; ?> ">
-
   </head>
 
   <body>
