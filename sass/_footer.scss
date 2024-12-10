@@ -8,8 +8,10 @@
 // DIV INSCRIPTION-LOGO = Contient le logo Maisonneuve et SRAM avec lien cliquable vers les sites appropriés
 // DIV SOCIAUX = Contient les liens vers les réseaux sociaux de Maisonneuve instagram, facebook et YouTube
 
+// IMPORTATION DES POLICES DE CARACTERES et DES ICONES
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
-  
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css");
+
 .footer {
   background-color: var(--color5);
   padding: 20px;

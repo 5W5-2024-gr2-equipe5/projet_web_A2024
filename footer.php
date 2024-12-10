@@ -1,7 +1,6 @@
 <?php
 // Footer.php content starts
 ?>
-
 <footer class="footer">
   <div>
     <div class="footer-content">
