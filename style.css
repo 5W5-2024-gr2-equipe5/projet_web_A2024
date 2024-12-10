@@ -1459,6 +1459,7 @@ h1 {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
     gap: 10px;
+    padding-top: 20%;
   }
   .container > div {
     width: 100%;
@@ -1492,6 +1493,9 @@ h1 {
     /* Increase the height of the card on fullscreen */
     height: 500px; /* Adjust height as needed */
   }
+  .popup-card {
+    padding-top: 20%;
+  }
 }
 /* CSS for the popup professor */
 #popup-card {
@@ -1507,7 +1511,6 @@ h1 {
   justify-content: center; /* Horizontal centering */
   align-items: center; /* Vertical centering */
   overflow: auto;
-  padding-top: 20%;
 }
 
 #popup-card .popup-content {
