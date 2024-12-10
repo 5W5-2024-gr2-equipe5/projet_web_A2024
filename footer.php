@@ -29,7 +29,7 @@
         </a>
 
         <!-- Second Inscription Link and SRAM Logo -->
-        <p>S'inscrire avec le SRAM</p>
+        <p id="sram">S'inscrire avec le SRAM</p>
         <a href="<?php echo esc_url(get_theme_mod('sram_url')); ?>" target="_blank">
           <img class="logoSRAM" src="<?php echo esc_url(get_theme_mod('sram_logo')); ?>" alt="logo de SRAM" />
         </a>

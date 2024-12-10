@@ -7,7 +7,7 @@
   max-height: 75vh;
   overflow: hidden;
   z-index: 1;
-  margin: 130px 0;
+  margin: clamp(1rem, 0.651rem + 2.791vw, 4rem) 0;
   position: relative;
 }
 
@@ -19,7 +19,7 @@
   background-color: rgba(69, 63, 180, 0.25);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-bottom: 125px;
+  margin-bottom: clamp(1rem, 0.651rem + 2.791vw, 4rem);
 }
 
 .video-description h1 {
