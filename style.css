@@ -716,8 +716,8 @@ ul li {
 @media (min-width: 1024px) {
   ul {
     list-style-type: disc;
-    list-style-position: inside;
-    translate: -0.57rem;
+    list-style-position: outside;
+    translate: 0.65rem;
     width: 100%;
   }
   ul li::marker {
@@ -2100,4 +2100,4 @@ body {
     transform: scale(2.2);
     opacity: 0;
   }
-}/*# sourceMappingURL=style.css.map */
+}
