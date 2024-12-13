@@ -10,6 +10,10 @@
   font-weight: normal;
 }
 
+body.no-scroll {
+  overflow: hidden; /* Disable scrolling on the body */
+}
+
 /* Container card */
 .container-projet {
   display: flex;
@@ -20,9 +24,8 @@
   height: 100%;
   gap: 80px;
   margin-top: 120px;
-  // PADDING BOTTOM = solution QUE LE TRUC POUSSE EN BAS !MPORTANT 
-  padding-bottom: 100px; 
-
+  // PADDING BOTTOM = solution QUE LE TRUC POUSSE EN BAS !MPORTANT
+  padding-bottom: 100px;
 }
 
 .container-projet .box {
@@ -38,10 +41,9 @@
   transition: 0.5s;
   // margin-top: 150px;
 }
-
 .container-projet .box::before,
 .container-projet .box::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 50px;
@@ -112,7 +114,7 @@
 
 .container-projet .box span::before,
 .container-projet .box span::after {
-  content: '';
+  content: "";
   position: absolute;
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.1);
@@ -185,7 +187,6 @@
   font-size: 1rem;
   margin-bottom: 10px;
   line-height: 1.4em;
-  
 }
 
 .container-projet .box .content a {
@@ -208,10 +209,14 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .modal {
+    padding-top: 35%;
+  }
+
   .container-projet {
     padding: 20px;
   }
-  
+
   .container-projet .box {
     width: 100%;
     max-width: 350px;
@@ -221,7 +226,7 @@
   .container-projet .box .content {
     padding: 20px;
   }
-  
+
   .container-projet .box .content h1 {
     font-size: 1.5rem;
   }
@@ -274,12 +279,10 @@
   margin-bottom: 20px;
   font-size: 50px;
   color: var(--color1);
-  
-  
 }
 // DESCRIPTION DU PROJET CARD MODAL
-.modal-content p{
-  text-align: end;
+.modal-content p {
+  text-align: start;
   margin-bottom: 20px;
   margin-top: 80px;
   font-size: 20px;
@@ -372,11 +375,10 @@
 }
 
 .carousel-next {
-  right: 10px; 
+  right: 10px;
 }
 
 .carousel-video {
-  margin-bottom: 10px; 
+  margin-bottom: 10px;
 }
 // FIN DE LA PAGE PROJETS PLUS DE UPDATE A FAIRE SVP
-

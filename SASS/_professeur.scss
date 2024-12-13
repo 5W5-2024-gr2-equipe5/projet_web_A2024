@@ -1,251 +1,291 @@
 /* Global Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 #professors-container {
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--color5);
-    font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color5);
+  font-family: "Poppins", sans-serif;
 }
 
 /* Container for Professors */
 .container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
-    height: auto;
-    
-    h2 {
-        font-size: 1rem;
-        text-align: center;
-        margin: 0; 
-        padding: 0.5rem 0; 
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  height: auto;
 
+  h2 {
+    font-size: 1rem;
+    text-align: center;
+    margin: 0;
+    padding: 0.5rem 0;
+  }
+
+  /* PROFESSOR CARD */
+
+  > div {
+    flex: 0 0 120px;
+    border-radius: 0.5rem;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out,
+      opacity 0.3s ease, filter 0.3s ease;
+    cursor: pointer;
+    box-shadow: 1px 5px 15px #1e0e3e;
+    position: relative;
+    overflow: hidden;
+    height: 100%; /* Fixed height */
+    background-size: cover;
+    background-position: center;
+    margin-top: 25px;
+
+    /* Image backgrounds */
+    &:nth-of-type(1) {
+      background-image: url("../images/Manon.png");
+    }
+    &:nth-of-type(2) {
+      background-image: url("../images/Greg.png");
+    }
+    &:nth-of-type(3) {
+      background-image: url("../images/Ahmed.png");
+    }
+    &:nth-of-type(4) {
+      background-image: url("../images/Mathieu.png");
+    }
+    &:nth-of-type(5) {
+      background-image: url("../images/Vincent.png");
+    }
+    &:nth-of-type(6) {
+      background-image: url("../images/Eddy.png");
+    }
+    &:nth-of-type(7) {
+      background-image: url("../images/Caroline.png");
+    }
+    &:nth-of-type(8) {
+      background-image: url("../images/Stephanie.png");
+    }
+    &:nth-of-type(9) {
+      background-image: url("../images/Denis.png");
+    }
+    &:nth-of-type(10) {
+      background-image: url("../images/David.png");
+    }
+    &:nth-of-type(11) {
+      background-image: url("../images/Camille.png");
+    }
+    &:nth-of-type(12) {
+      background-image: url("../images/Martin.png");
+    }
+    &:nth-of-type(13) {
+      background-image: url("../images/Dominic.png");
+    }
+    &:nth-of-type(14) {
+      background-image: url("../images/LOGOM9.png");
+    }
+    &:nth-of-type(15) {
+      background-image: url("../images/LOGOM9.png");
     }
 
-    /* PROFESSOR CARD */
+    /* Content style before popup */
+    .content {
+      font-size: 1.5rem;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      padding: 15px;
+      opacity: 0;
+      flex-direction: column;
+      height: 100%;
+      justify-content: flex-end;
+      background: rgb(2, 2, 46);
+      background: linear-gradient(
+        0deg,
+        rgba(2, 2, 46, 0.6755077030812324) 0%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      transform: translateY(100%);
+      transition: opacity 0.5s ease-in-out, transform 0.5s 0.2s;
+      visibility: hidden;
 
-    > div {
-        flex: 0 0 120px;
-        border-radius: 0.5rem;
-        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, opacity 0.3s ease, filter 0.3s ease;
-        cursor: pointer;
-        box-shadow: 1px 5px 15px #1e0e3e;
-        position: relative;
-        overflow: hidden;
-        height: 100%; /* Fixed height */
-        background-size: cover; 
-        background-position: center;
-        margin-top: 25px;
-
-        /* Image backgrounds */
-        &:nth-of-type(1) { background-image: url("../images/Manon.png"); }
-        &:nth-of-type(2) { background-image: url("../images/Greg.png"); }
-        &:nth-of-type(3) { background-image: url("../images/Ahmed.png"); }
-        &:nth-of-type(4) { background-image: url("../images/Mathieu.png"); }
-        &:nth-of-type(5) { background-image: url("../images/Vincent.png"); }
-        &:nth-of-type(6) { background-image: url("../images/Eddy.png"); }
-        &:nth-of-type(7) { background-image: url("../images/Caroline.png"); }
-        &:nth-of-type(8) { background-image: url("../images/Stephanie.png"); }
-        &:nth-of-type(9) { background-image: url("../images/Denis.png"); }
-        &:nth-of-type(10) { background-image: url("../images/David.png"); }
-        &:nth-of-type(11) { background-image: url("../images/Camille.png"); }
-        &:nth-of-type(12) { background-image: url("../images/Martin.png"); }
-        &:nth-of-type(13) { background-image: url("../images/Dominic.png"); }
-        &:nth-of-type(14) { background-image: url("../images/LOGOM9.png"); }
-        &:nth-of-type(15) { background-image: url("../images/LOGOM9.png"); }
-
-        /* Content style before popup */
-        .content {
-            font-size: 1.5rem;
-            color: #fff;
-            display: flex;
-            align-items: center;
-            padding: 15px;
-            opacity: 0;
-            flex-direction: column;
-            height: 100%;
-            justify-content: flex-end;
-            background: rgb(2, 2, 46);
-            background: linear-gradient(0deg, rgba(2, 2, 46, 0.6755077030812324) 0%, rgba(255, 255, 255, 0) 100%);
-            transform: translateY(100%);
-            transition: opacity 0.5s ease-in-out, transform 0.5s 0.2s;
-            visibility: hidden;
-
-            span {
-                display: block;
-                margin-top: 5px;
-                font-size: 1.2rem;
-            }
-        }
-
-        /* Default state: grayscale */
-        filter: grayscale(100%); /* Apply grayscale effect by default */
-        opacity: 0.7;
-
-        /* On hover, remove grayscale and return to full color */
-        &:hover {
-            transform: scale(1.1);
-            box-shadow: 1px 5px 15px #7645d8;
-            filter: grayscale(0%); /* Remove grayscale */
-            opacity: 1;
-        }
-
-        &:hover .content {
-            opacity: 1;
-            transform: translateY(0%);
-            visibility: visible;
-        }
+      span {
+        display: block;
+        margin-top: 5px;
+        font-size: 1.2rem;
+      }
     }
+
+    /* Default state: grayscale */
+    filter: grayscale(100%); /* Apply grayscale effect by default */
+    opacity: 0.7;
+
+    /* On hover, remove grayscale and return to full color */
+    &:hover {
+      transform: scale(1.1);
+      box-shadow: 1px 5px 15px #7645d8;
+      filter: grayscale(0%); /* Remove grayscale */
+      opacity: 1;
+    }
+
+    &:hover .content {
+      opacity: 1;
+      transform: translateY(0%);
+      visibility: visible;
+    }
+  }
 }
 
 /* RESPONSIVE: Mobile Layout */
 @media (max-width: 768px) {
-    .container {
-        height: auto; 
-        display: grid; 
-        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); 
-        gap: 10px;
-    }
+  .container {
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+    padding-top: 20%;
+  }
 
-    .container > div {
-        width: 100%;
-        height: auto;
-        aspect-ratio:  4/3;
-        background-size: cover;
-        background-position: center;
-        border-radius: 0.5rem;
-        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, opacity 0.3s ease, filter 0.3s ease;
-        filter: grayscale(100%);
-        opacity: 0.7;
-    }
+  .container > div {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4/3;
+    background-size: cover;
+    background-position: center;
+    border-radius: 0.5rem;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out,
+      opacity 0.3s ease, filter 0.3s ease;
+    filter: grayscale(100%);
+    opacity: 0.7;
+  }
 
-    .container > div:hover {
-        transform: scale(1.05);
-        opacity: 1;
-        filter: grayscale(0%); /* Remove grayscale on hover */
-        box-shadow: 1px 5px 15px #7645d8; 
-    }
+  .container > div:hover {
+    transform: scale(1.05);
+    opacity: 1;
+    filter: grayscale(0%); /* Remove grayscale on hover */
+    box-shadow: 1px 5px 15px #7645d8;
+  }
 
-    .container h2 {
-        font-size: 1rem;
-        margin-top: 20px;
-        padding: 0;
-    }
+  .container h2 {
+    font-size: 1rem;
+    margin-top: 20px;
+    padding: 0;
+  }
 
-    .container > div .content span {
-        font-size: 0.8rem;
-    }
+  .container > div .content span {
+    font-size: 0.8rem;
+  }
 }
 
 /* RESPONSIVE: Desktop Layout (Fullscreen) */
 @media (min-width: 769px) {
-    .container > div {
-        /* Increase the height of the card on fullscreen */
-        height: 500px; /* Adjust height as needed */
-    }
+  .container > div {
+    /* Increase the height of the card on fullscreen */
+    height: 500px; /* Adjust height as needed */
+  }
+
+  .popup-card {
+    padding-top: 20%;
+  }
 }
 
 /* CSS for the popup professor */
 #popup-card {
-    display: none; /* Hidden by default */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1000;
-    background: rgba(0, 0, 0, 0.9); /* Dim background */
-    display: flex;
-    justify-content: center; /* Horizontal centering */
-    align-items: center; /* Vertical centering */
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.9); /* Dim background */
+  display: flex;
+  justify-content: center; /* Horizontal centering */
+  align-items: center; /* Vertical centering */
+  overflow: auto;
 }
 
 #popup-card .popup-content {
-    background: var(--color5);
-    border-radius: 10px;
-    padding: 20px;
-    width: 90%;
-    max-width: 400px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    position: relative;
+  background: var(--color5);
+  border-radius: 10px;
+  padding: 20px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 
 // OUVERTURE DU POPUP DE PROFESSEUR DISABLE SCROLL
 body.no-scroll {
-    overflow: hidden; /* Disable scrolling on the body */
+  overflow: hidden; /* Disable scrolling on the body */
 }
 
 .popup-content h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 36px;
-    color: var(--color1);
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 36px;
+  color: var(--color1);
 }
 
 .popup-content blockquote {
-    font-size: 17px;
-    margin-top: 35px;
-    margin-bottom: 20px;
-    text-align: center;
-    color: var(--color4);
+  font-size: 17px;
+  margin-top: 35px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: var(--color4);
 }
 
 #popup-description {
-    font-size: 13px;
-    // margin-top: 20px;
-    // margin-bottom: 20px;
-    text-align: center;
-    line-height: 1.6;
-    color: var(--color4);
-    white-space: break-spaces;
+  font-size: 13px;
+  // margin-top: 20px;
+  // margin-bottom: 20px;
+  text-align: center;
+  line-height: 1.6;
+  color: var(--color4);
+  white-space: break-spaces;
 }
 
 .close {
-    color: var(--color4);
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+  color: var(--color4);
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
 }
 
 .close:hover,
 .close:focus {
-    color: var();
-    text-decoration: none;
-    cursor: pointer;
+  color: var();
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .popup-content img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 
 #popup-icons-container {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 15px;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 15px;
 }
 
 .popup-icon {
-    margin-left: 15px;
-    font-size: 30px;
-    text-decoration: none;
-    margin-bottom: 10px;
-    color: var(--color1);
-    cursor: pointer;
-    transition: color 0.3s;
+  margin-left: 15px;
+  font-size: 30px;
+  text-decoration: none;
+  margin-bottom: 10px;
+  color: var(--color1);
+  cursor: pointer;
+  transition: color 0.3s;
 }
 
 .popup-icon:hover {
-    color: var(--color4);
+  color: var(--color4);
 }
