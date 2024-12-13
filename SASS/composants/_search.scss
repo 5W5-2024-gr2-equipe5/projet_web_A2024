@@ -10,7 +10,8 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin-left: 10px;
   flex: 1 1 100px;
-  max-width: 400px;
+  max-width: 300px;
+  min-width: 150px;
 }
 
 .recherche label{
@@ -54,7 +55,6 @@
 
 @media (max-width: 1024px) {
   .recherche{
-    max-width: none;
     min-width: 300px;
     flex: 1 0 0px;
     margin-top: 1.5rem;
