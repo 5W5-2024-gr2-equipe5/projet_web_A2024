@@ -1,5 +1,3 @@
-## github page : https://5w5-2024-gr2-equipe5.github.io/projet_web_A2024/
-
 ## page Wordpress :https://gftnth00.mywhc.ca/tim30/
 
 ## google sheet : https://cmaisonneuveqcca-my.sharepoint.com/:x:/g/personal/e1446191_cmaisonneuve_qc_ca/Ebt2hhhE7CROr616PoIlfXYBbPX_ubDhSwkvndbLRxtt8Q?e=P4tU5Q&wdOrigin=TEAMS-MAGLEV.p2p_ns.rwc&wdExp=TEAMS-TREATMENT&wdhostclicktime=1729628333704&web=1
